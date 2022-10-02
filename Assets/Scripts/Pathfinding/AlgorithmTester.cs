@@ -6,7 +6,7 @@ class AlgorithmTester : MonoBehaviour
 {
     [SerializeField] int _gridWidth = 5;
     [SerializeField] int _gridHeight = 5;
-    [SerializeField] int _gridNodeSize = 1;
+    [SerializeField] float _gridNodeSize = 1;
 
     [SerializeField] Transform _testStartPosition;
     [SerializeField] Transform _testEndPosition;
