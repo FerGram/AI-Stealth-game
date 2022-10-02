@@ -1,45 +1,36 @@
 ﻿using System;
-using UnityEngine;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEngine;
 
 
-public class Grid : MonoBehaviour
+public class Grid
 {
-    public int Width = 5;
-    public int Height = 5;
-    public float NodeSize = 1;
-
     private int _width;
     private int _height;
     private float _nodeSize;
+
     private Node[,] _nodes;
 
-    private void Start()
+    public Grid(int gridWidth, int gridHeight, int gridNodeSize)
     {
-        GenerateGrid();
-    }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            GenerateGrid();
-        }
-
-        DrawGrid();
-    }
-
-    private void GenerateGrid()
-    {
-        _width = Width;
-        _height = Height;
-        _nodeSize = NodeSize;
+        _width = gridWidth;
+        _height = gridHeight;
+        _nodeSize = gridNodeSize;
         _nodes = new Node[_width, _height];
 
         PopulateGrid();
+        SetNodesNeighbours();
     }
 
+    public Node GetNodeAt(int i, int j)
+    {
+        return _nodes[i, j];
+    }
+
+    // <sumamary>
+    // Populate Grid array with nodes
+    // </summary>
     private void PopulateGrid()
     {
         for (int i = 0; i < _width; i++)
@@ -52,7 +43,45 @@ public class Grid : MonoBehaviour
         }
     }
 
-    private void DrawGrid()
+    // <sumamary>
+    // For each node in the grid, set its neighbours for Algorithm purposes
+    // </summary>
+    private void SetNodesNeighbours()
+    {
+        for (int i = 0; i < _width; i++)
+        {
+            for (int j = 0; j < _height; j++)
+            {
+                if (_nodes[i, j] != null) //Currently not checking if neighbour nodes are null
+                {
+                    if (j + 1 < _height)_nodes[i, j].SetNeighbour(_nodes[i, j + 1]);    //UP neighbour
+                    if (i + 1 < _width) _nodes[i, j].SetNeighbour(_nodes[i + 1, j]);    //RIGHT neighbour
+                    if (j - 1 >= 0)     _nodes[i, j].SetNeighbour(_nodes[i, j - 1]);    //DOWN neighbour
+                    if (i - 1 >= 0)     _nodes[i, j].SetNeighbour(_nodes[i - 1, j]);    //LEFT neighbour
+                }
+                else { Debug.LogWarning("Tried setting neighbours to a null node"); }
+            }
+        }
+    }
+
+    // <sumamary>
+    // For each node, clean the node it came from
+    // </summary>
+    public void CleanAllPreviousNodes()
+    {
+        for (int i = 0; i < _width; i++)
+        {
+            for (int j = 0; j < _height; j++)
+            {
+                _nodes[i, j].SetPreviousNode(null);
+            }
+        }
+    }
+
+    // <sumamary>
+    // Drawing visual elements on screen
+    // </summary>
+    public void DrawGrid()
     {
         for (int i = 0; i < _width; i++)
         {
@@ -62,7 +91,6 @@ public class Grid : MonoBehaviour
             }
         }
     }
-
     private void DrawNode(Node node)
     {
         Color drawColor = Color.white;
