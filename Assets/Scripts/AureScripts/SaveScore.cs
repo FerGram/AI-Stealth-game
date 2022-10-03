@@ -15,11 +15,19 @@ public class SaveScore : MonoBehaviour
     [SerializeField] GameObject inputField;
     [SerializeField] GameObject buttonOk;
     [SerializeField] GameObject highscoreText;
+
+
+    [SerializeField] GameObject player;
+    [SerializeField] GameObject cake;
+    private Vector3 initialPosCake;
     bool scoreChecked = false;
+
+
 
     private void Awake()
     {
         SaveFile();
+        initialPosCake = cake.transform.position;
     }
     public void CheckTime()
     {
@@ -45,7 +53,12 @@ public class SaveScore : MonoBehaviour
 
             scoreChecked = false;
 
-            //Todo vuelve a estado original
+            player.transform.position = player.GetComponent<PlayerModification>().initialPos;
+            cake.transform.position = initialPosCake;
+
+            GetComponent<ManageTime>().timer = 0.0f;
+            GetComponent<ManageTime>().isTimer = true;
+
         }
        
 

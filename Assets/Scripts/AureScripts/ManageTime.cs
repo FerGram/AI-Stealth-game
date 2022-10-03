@@ -38,7 +38,7 @@ public class ManageTime : MonoBehaviour
 
         if(textTimer != null)
         {
-            textTimer.GetComponent<TextMeshProUGUI>().text = string.Format("{0:00}:{1:00}", minutes, seconds);
+            textTimer.GetComponent<TextMeshProUGUI>().text = string.Format("Time: {0:00}:{1:00}", minutes, seconds);
             
         }
         

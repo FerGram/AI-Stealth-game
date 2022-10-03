@@ -435,7 +435,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 374421957}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 0.0001
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -1170,6 +1170,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7438738072484405706, guid: e58a8494f35e17f45ba5bbffdfb92517,
+        type: 3}
+      propertyPath: m_Mass
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7438738072484405706, guid: e58a8494f35e17f45ba5bbffdfb92517,
+        type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7439370067029982694, guid: e58a8494f35e17f45ba5bbffdfb92517,
         type: 3}
@@ -2070,6 +2080,8 @@ MonoBehaviour:
   inputField: {fileID: 103234771}
   buttonOk: {fileID: 719247904}
   highscoreText: {fileID: 740382416}
+  player: {fileID: 1931135240}
+  cake: {fileID: 374421957}
 --- !u!1 &1842634361
 GameObject:
   m_ObjectHideFlags: 0
@@ -2106,7 +2118,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -20.2, y: 310.2}
+  m_AnchoredPosition: {x: -20.2, y: 156.6}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1842634363
@@ -2309,6 +2321,12 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &1931135240 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6077229646317852079, guid: e58a8494f35e17f45ba5bbffdfb92517,
+    type: 3}
+  m_PrefabInstance: {fileID: 1066119815}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1997775483
 GameObject:
   m_ObjectHideFlags: 0
