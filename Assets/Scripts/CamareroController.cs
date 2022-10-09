@@ -65,19 +65,23 @@ public class CamareroController : MonoBehaviour
 
         if (Vector3.Distance(transform.position, mesaActual.transform.position) < 1 && irMesas)
         {
+            //Está cerca de mesa, tiene que ir a cocina
             irMesas = false;
             mesaActual.tag = "MesaOcupada";
-            mesas = GameObject.FindGameObjectsWithTag("MesaLibre");
+            //mesas = GameObject.FindGameObjectsWithTag("MesaLibre");
             DebugConsultarArrayMesasLibres(mesas);
             irCocina = true;
             StartCoroutine(IrHacia(entradaCocina));
 
         }
-        //Cerca de la cocina
+        
         else if (Vector3.Distance(transform.position, entradaCocina.transform.position) < 1 && irCocina)
         {
+            //Está cerca de la cocina, tiene que ir a una mesa
             irCocina = false;
             irMesas = true;
+            mesas = GameObject.FindGameObjectsWithTag("MesaLibre");
+            mesaActual = mesas[Random.Range(0, mesas.Length)];
             StartCoroutine(IrHacia(mesaActual));
         }
 
@@ -98,9 +102,9 @@ public class CamareroController : MonoBehaviour
         if (irCocina)
         {
             mesaActual.tag = "MesaLibre";
-            mesas = GameObject.FindGameObjectsWithTag("MesaLibre");
+            //mesas = GameObject.FindGameObjectsWithTag("MesaLibre");
             
-            mesaActual = mesas[Random.Range(0, mesas.Length)];
+            //mesaActual = mesas[Random.Range(0, mesas.Length)];
         }
         navMesh.destination = objetivo.transform.position;
     }
