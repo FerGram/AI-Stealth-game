@@ -6,9 +6,13 @@ using UnityEngine.AI;
 public class CamareroController : MonoBehaviour
 {
     public NavMeshAgent navMesh;
+    private MaquinaDeEstados fsm;
 
     public GameObject player;
     public GameObject entradaCocina;
+    public bool AlertaCliente = false;
+    public GameObject FloatingText;
+    private Vector3 targetLocation;
 
 
     //Patrulla
@@ -17,10 +21,19 @@ public class CamareroController : MonoBehaviour
     private GameObject[] mesas;
     private GameObject mesaActual;
 
+    //Alerta
+    public int radioDeteccion;
+    private GameObject[] camareros;
+   // float time = 0;
+
 
     void Start()
     {
+        targetLocation = GameObject.FindGameObjectWithTag("Cliente").transform.position;
         mesas = GameObject.FindGameObjectsWithTag("MesaLibre");
+        camareros = GameObject.FindGameObjectsWithTag("Camarero");
+        fsm = GetComponent<MaquinaDeEstados>();
+
         int randomNumber = Random.Range(0, mesas.Length);
         mesaActual = mesas[randomNumber];
         Debug.Log(randomNumber);
@@ -28,13 +41,13 @@ public class CamareroController : MonoBehaviour
         {
             irMesas = false;
             irCocina = true;
-            navMesh.destination = entradaCocina.transform.position;
+            navMesh.SetDestination(entradaCocina.transform.position);
         }
         else
         {
             irMesas = true;
             irCocina = false;
-            navMesh.destination = mesaActual.transform.position;
+            navMesh.SetDestination(mesaActual.transform.position);
         }
 
         
@@ -42,13 +55,26 @@ public class CamareroController : MonoBehaviour
 
     void Update()
     {
+        if (AlertaCliente && fsm.estadoActual != MaquinaDeEstados.Estado.persecucion)
+        {
+           // targetLocation = GameObject.FindGameObjectWithTag("Cliente").transform.position;
+            fsm.ActivarEstado(MaquinaDeEstados.Estado.alerta);
+            MostrarFloatingText("?");
+            TimerGlobal.globalTime = 0;
+            TimerGlobal.timerActivado = true;
+            AlertaCliente = false;
+        }
 
-        if(MaquinaDeEstados.estadoActual == MaquinaDeEstados.Estado.patrulla)
+        if(EstaJugadorEnRadio(radioDeteccion)) fsm.ActivarEstado(MaquinaDeEstados.Estado.persecucion);
+
+
+        if (fsm.estadoActual == MaquinaDeEstados.Estado.patrulla)
         {          
             Patrullar();
         }
-        else if (MaquinaDeEstados.estadoActual == MaquinaDeEstados.Estado.alerta)
+        else if (fsm.estadoActual == MaquinaDeEstados.Estado.alerta)
         {
+            
             Alerta();
         }
 
@@ -56,6 +82,18 @@ public class CamareroController : MonoBehaviour
         {
             Perseguir();
         }
+    }
+
+    private void MostrarFloatingText(string text)
+    {
+        FloatingText.GetComponent<TextMesh>().text = text;
+        FloatingText.SetActive(true);
+        //Instantiate(FloatingText, transform.position, Quaternion.identity, transform);
+    }
+
+    private void OcultarFloatingText()
+    {
+        FloatingText.SetActive(false);
     }
 
     private void Patrullar()
@@ -69,9 +107,9 @@ public class CamareroController : MonoBehaviour
             irMesas = false;
             mesaActual.tag = "MesaOcupada";
             //mesas = GameObject.FindGameObjectsWithTag("MesaLibre");
-            DebugConsultarArrayMesasLibres(mesas);
+            //DebugConsultarArrayMesasLibres(mesas);
             irCocina = true;
-            StartCoroutine(IrHacia(entradaCocina));
+            StartCoroutine(SeekObjectWithRetard(entradaCocina));
 
         }
         
@@ -82,20 +120,72 @@ public class CamareroController : MonoBehaviour
             irMesas = true;
             mesas = GameObject.FindGameObjectsWithTag("MesaLibre");
             mesaActual = mesas[Random.Range(0, mesas.Length)];
-            StartCoroutine(IrHacia(mesaActual));
+            //StartCoroutine(SeekObjectWithRetard(mesaActual));
+            Seek(mesaActual.transform.position);
         }
 
     }
     private void Alerta()
     {
+        //Buscar camareros en un rango determinado de un circulo de vision
+        //Ir a zona donde se ha producido la alerta
+        //Si en 5 segundos no detecta mapache en circulo de vision: estado patrulla. Sino, estado perseguir
+
+        List<GameObject> camarerosCercanos = BuscarNPCSEnRadio(radioDeteccion, camareros);
+        foreach (GameObject camarero in camarerosCercanos)
+        {
+            camarero.GetComponent<CamareroController>().fsm.ActivarEstado(MaquinaDeEstados.Estado.alerta);
+            //camarero.GetComponent<CamareroController>().targetLocation = targetLocation;
+            camarero.GetComponent<CamareroController>().MostrarFloatingText("?");
+            //camarero.GetComponent<CamareroController>().time = 0;
+        }
+        Seek(targetLocation);
+
+        //time += Time.deltaTime;
+
+        if(EstaJugadorEnRadio(radioDeteccion)) fsm.ActivarEstado(MaquinaDeEstados.Estado.persecucion);
+
+        if (TimerGlobal.globalTime >= 5)
+        {
+            fsm.ActivarEstado(MaquinaDeEstados.Estado.patrulla);
+            TimerGlobal.globalTime = 0;
+            TimerGlobal.timerActivado = false;
+
+            foreach (GameObject camarero in camareros)
+            {
+                CamareroController camcontrol = camarero.GetComponent<CamareroController>();
+                int randomNumber = Random.Range(0, mesas.Length);
+                camcontrol.mesaActual = camcontrol.mesas[randomNumber];
+                Debug.Log(randomNumber);
+                if (randomNumber == 0 || randomNumber == 1)
+                {
+                    camcontrol.irMesas = false;
+                    camcontrol.irCocina = true;
+                    camcontrol.navMesh.SetDestination(entradaCocina.transform.position);
+                }
+                else
+                {
+                    camcontrol.irMesas = true;
+                    camcontrol.irCocina = false;
+                    camcontrol.navMesh.SetDestination(mesaActual.transform.position);
+                }
+                camcontrol.OcultarFloatingText();
+
+                camcontrol.fsm.ActivarEstado(MaquinaDeEstados.Estado.patrulla);
+            }
+        }
 
     }
+
+
+
     private void Perseguir()
     {
-        navMesh.destination = player.transform.position;
+        MostrarFloatingText("!");
+        navMesh.SetDestination(player.transform.position);
     }
 
-    IEnumerator IrHacia(GameObject objetivo)
+    IEnumerator SeekObjectWithRetard(GameObject objetivo)
     {
         yield return new WaitForSeconds(Random.Range(1, 3));
         
@@ -106,7 +196,48 @@ public class CamareroController : MonoBehaviour
             
             //mesaActual = mesas[Random.Range(0, mesas.Length)];
         }
-        navMesh.destination = objetivo.transform.position;
+        navMesh.SetDestination(objetivo.transform.position);
+    }
+
+    public void Seek(Vector3 location)
+    {
+        navMesh.SetDestination(location);
+    }
+
+    private List<GameObject> BuscarNPCSEnRadio(int radio, GameObject[] arrayNpc)
+    {
+        List<GameObject> Cercanos = new List<GameObject>();
+        //Para determinar si un punto (x, y) pertenece a una
+        //circunferencia con centro (a, b) y radio r, se prueba que
+        //la distancia entre (x, y) y el centro (a, b) es ( x - a ) 2 + ( y - b ) 2 = r2 .
+        float x, y, a, b;
+        for (int i = 0; i < arrayNpc.Length; i++)
+        {
+            x = arrayNpc[i].transform.position.x;
+            y = arrayNpc[i].transform.position.y;
+            a = transform.position.x;
+            b = transform.position.y;
+            if ((x - a)* (x - a) + (y - b) * (y - b) <= radio*radio)
+            {
+                Cercanos.Add(arrayNpc[i]);
+            }
+        }
+
+        return Cercanos;
+    }
+
+    private bool EstaJugadorEnRadio(int radio)
+    {
+        float x, y, a, b;
+        x = player.transform.position.x;
+        y = player.transform.position.y;
+        a = transform.position.x;
+        b = transform.position.y;
+        if ((x - a) * (x - a) + (y - b) * (y - b) <= radio * radio)
+        {
+            return true;
+        }
+        return false;
     }
 
     private void DebugConsultarArrayMesasLibres(GameObject[] mesas)

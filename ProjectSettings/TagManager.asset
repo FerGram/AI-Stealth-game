@@ -6,6 +6,8 @@ TagManager:
   tags:
   - MesaLibre
   - MesaOcupada
+  - Camarero
+  - Cliente
   layers:
   - Default
   - TransparentFX
