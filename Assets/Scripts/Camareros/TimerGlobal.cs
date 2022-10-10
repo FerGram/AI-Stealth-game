@@ -7,7 +7,7 @@ public class TimerGlobal : MonoBehaviour
     public static float globalTime = 0;
     public static bool timerActivado = false;
 
-    public void Update()
+    public void FixedUpdate()
     {
         if (timerActivado)
         {
