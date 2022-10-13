@@ -12,13 +12,15 @@ static class Algorithm
         List<Node> visited = new List<Node>();
         Queue<Node> nodeQueue = new Queue<Node>();
 
-        Node currentNode = null;
+        UnityEngine.Debug.Log("Start node position at: " + start.GetPosition());
+        UnityEngine.Debug.Log("End node position at: " + end.GetPosition());
 
+        Node currentNode = null;
         nodeQueue.Enqueue(start);
         grid.CleanAllPreviousNodes();
 
         watch.Start();
-        while (currentNode != end || nodeQueue.Count == 0)
+        while (currentNode != end && nodeQueue.Count > 0)
         {
             currentNode = nodeQueue.Dequeue();
 
@@ -43,7 +45,7 @@ static class Algorithm
         if (currentNode == end) return GetPath(currentNode);
         else
         {
-            UnityEngine.Debug.LogWarning("Couldn't reach the end");
+            UnityEngine.Debug.LogWarning("Queue length reached 0");
             return null;
         }
     }

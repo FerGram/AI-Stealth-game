@@ -16,20 +16,20 @@ public class Node
         _nodePosition = position;
         _neighbours = new List<Node>();
 
-        InstantiateColliderObject(size);
+        DetermineWallNode(size);
     }
 
-    private void InstantiateColliderObject(float size)
+    private void DetermineWallNode(float size)
     {
-        _colliderObject = new GameObject("Collider");
+        //_colliderObject = new GameObject("Collider");
 
-        _colliderObject.transform.position = _nodePosition;
-        _colliderObject.transform.localScale *= size;
+        //_colliderObject.transform.position = _nodePosition;
+        //_colliderObject.transform.localScale *= size;
 
         //Check if it's a wall node
         if (Physics.CheckBox(_nodePosition, new Vector3(size / 2, size / 2, size / 2), Quaternion.identity, -1, QueryTriggerInteraction.Ignore))
         {
-            Debug.Log("Collider true at: " + _nodePosition);
+            //Debug.Log("Collider true at: " + _nodePosition);
             _isWallNode = true;
         }
     }

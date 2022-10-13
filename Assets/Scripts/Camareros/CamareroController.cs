@@ -5,36 +5,42 @@ using UnityEngine.AI;
 
 public class CamareroController : MonoBehaviour
 {
-    public NavMeshAgent navMesh;
+    //[SerializeField] NavMeshAgent navMesh;
 
-    public GameObject player;
-    public GameObject entradaCocina;
-
+    [SerializeField] GameObject _player;
+    [SerializeField] GameObject _entradaCocina;
+    [Space]
+    [Header("Navigation")]
+    [SerializeField] Pathfinder _pathfinder;
+    [SerializeField] float _speed = 3f;
+    [SerializeField] float _stoppingNodeDistance = 0.3f;
 
     //Patrulla
-    private bool irMesas;
-    private bool irCocina;
-    private GameObject[] mesas;
-    private GameObject mesaActual;
+    private bool _irMesas;
+    private bool _irCocina;
+    private GameObject[] _mesas;
+    private GameObject _mesaActual;
 
 
     void Start()
     {
-        mesas = GameObject.FindGameObjectsWithTag("MesaLibre");
-        int randomNumber = Random.Range(0, mesas.Length);
-        mesaActual = mesas[randomNumber];
+        _mesas = GameObject.FindGameObjectsWithTag("MesaLibre");
+        int randomNumber = Random.Range(0, _mesas.Length);
+        _mesaActual = _mesas[randomNumber];
         Debug.Log(randomNumber);
         if(randomNumber == 0 || randomNumber == 1)
         {
-            irMesas = false;
-            irCocina = true;
-            navMesh.destination = entradaCocina.transform.position;
+            _irMesas = false;
+            _irCocina = true;
+            //navMesh.destination = _entradaCocina.transform.position;
+            _pathfinder.StartPathfinding(transform, _entradaCocina.transform, _speed, _stoppingNodeDistance);
         }
         else
         {
-            irMesas = true;
-            irCocina = false;
-            navMesh.destination = mesaActual.transform.position;
+            _irMesas = true;
+            _irCocina = false;
+            //navMesh.destination = _mesaActual.transform.position;
+            _pathfinder.StartPathfinding(transform, _mesaActual.transform, _speed, _stoppingNodeDistance);
         }
 
         
@@ -63,26 +69,26 @@ public class CamareroController : MonoBehaviour
         //Tiene que ir de la entrada de la cocina a la mesa que esté disponible (sin camareros)
 
 
-        if (Vector3.Distance(transform.position, mesaActual.transform.position) < 1 && irMesas)
+        if (Vector3.Distance(transform.position, _mesaActual.transform.position) < 1 && _irMesas)
         {
             //Está cerca de mesa, tiene que ir a cocina
-            irMesas = false;
-            mesaActual.tag = "MesaOcupada";
+            _irMesas = false;
+            _mesaActual.tag = "MesaOcupada";
             //mesas = GameObject.FindGameObjectsWithTag("MesaLibre");
-            DebugConsultarArrayMesasLibres(mesas);
-            irCocina = true;
-            StartCoroutine(IrHacia(entradaCocina));
+            DebugConsultarArrayMesasLibres(_mesas);
+            _irCocina = true;
+            StartCoroutine(IrHacia(_entradaCocina));
 
         }
         
-        else if (Vector3.Distance(transform.position, entradaCocina.transform.position) < 1 && irCocina)
+        else if (Vector3.Distance(transform.position, _entradaCocina.transform.position) < 1 && _irCocina)
         {
             //Está cerca de la cocina, tiene que ir a una mesa
-            irCocina = false;
-            irMesas = true;
-            mesas = GameObject.FindGameObjectsWithTag("MesaLibre");
-            mesaActual = mesas[Random.Range(0, mesas.Length)];
-            StartCoroutine(IrHacia(mesaActual));
+            _irCocina = false;
+            _irMesas = true;
+            _mesas = GameObject.FindGameObjectsWithTag("MesaLibre");
+            _mesaActual = _mesas[Random.Range(0, _mesas.Length)];
+            StartCoroutine(IrHacia(_mesaActual));
         }
 
     }
@@ -92,21 +98,23 @@ public class CamareroController : MonoBehaviour
     }
     private void Perseguir()
     {
-        navMesh.destination = player.transform.position;
+        //navMesh.destination = _player.transform.position;
+        _pathfinder.StartPathfinding(transform, _player.transform, _speed, _stoppingNodeDistance);
     }
 
     IEnumerator IrHacia(GameObject objetivo)
     {
         yield return new WaitForSeconds(Random.Range(1, 3));
         
-        if (irCocina)
+        if (_irCocina)
         {
-            mesaActual.tag = "MesaLibre";
+            _mesaActual.tag = "MesaLibre";
             //mesas = GameObject.FindGameObjectsWithTag("MesaLibre");
             
             //mesaActual = mesas[Random.Range(0, mesas.Length)];
         }
-        navMesh.destination = objetivo.transform.position;
+        //navMesh.destination = objetivo.transform.position;
+        _pathfinder.StartPathfinding(transform, objetivo.transform, _speed, _stoppingNodeDistance);
     }
 
     private void DebugConsultarArrayMesasLibres(GameObject[] mesas)

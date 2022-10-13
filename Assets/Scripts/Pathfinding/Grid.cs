@@ -78,19 +78,20 @@ public class Grid
     // <sumamary>
     // Drawing visual elements on screen
     // </summary>
-    public void DrawGrid()
+    public void DrawGrid(bool drawForever = false)
     {
         for (int i = 0; i < _width; i++)
         {
             for (int j = 0; j < _height; j++)
             {
-                DrawNode(_nodes[i, j]);
+                DrawNode(_nodes[i, j], drawForever);
             }
         }
     }
-    private void DrawNode(Node node)
+    private void DrawNode(Node node, bool drawForever = false)
     {
         Color drawColor = node.IsWallNode() ? Color.red : Color.white;
+        float drawTime = drawForever ? Mathf.Infinity : Time.deltaTime;
 
         Vector3 nodePosition = node.GetPosition();
 
@@ -99,10 +100,10 @@ public class Grid
         Vector3 TLcorner = nodePosition + new Vector3(-_nodeSize / 2, 0, _nodeSize / 2);
         Vector3 TRcorner = nodePosition + new Vector3(_nodeSize / 2, 0, _nodeSize / 2);
 
-        Debug.DrawLine(BLcorner, BRcorner, drawColor, Time.deltaTime);
-        Debug.DrawLine(BRcorner, TRcorner, drawColor, Time.deltaTime);
-        Debug.DrawLine(TRcorner, TLcorner, drawColor, Time.deltaTime);
-        Debug.DrawLine(TLcorner, BLcorner, drawColor, Time.deltaTime);
+        Debug.DrawLine(BLcorner, BRcorner, drawColor, drawTime);
+        Debug.DrawLine(BRcorner, TRcorner, drawColor, drawTime);
+        Debug.DrawLine(TRcorner, TLcorner, drawColor, drawTime);
+        Debug.DrawLine(TLcorner, BLcorner, drawColor, drawTime);
     }
 
 }
