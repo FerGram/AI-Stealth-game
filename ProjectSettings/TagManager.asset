@@ -5,9 +5,12 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ground
-  - Waiter
   - Cake
   - Goal
+  - MesaLibre
+  - MesaOcupada
+  - Camarero
+  - Cliente
   layers:
   - Default
   - TransparentFX
