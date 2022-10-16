@@ -73,7 +73,7 @@ public class CamareroController : MonoBehaviour
         }
 
 
-        if (EstaJugadorEnRadio(radioDeteccion))
+        if (EstaJugadorEnRadio(radioDeteccion) && fsm.estadoActual != MaquinaDeEstados.Estado.persecucion)
         {
             audioSource.Play(); //STOP!!
             fsm.ActivarEstado(MaquinaDeEstados.Estado.persecucion);
