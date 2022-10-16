@@ -5,7 +5,7 @@ using UnityEngine;
 public class ClienteController : MonoBehaviour
 {
     public bool AlertaCliente = false;
-    public GameObject floatingText;
+    public GameObject textoFlotanteCliente;
     private AudioSource audiosource;
     void Start()
     {

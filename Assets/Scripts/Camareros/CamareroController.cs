@@ -9,10 +9,10 @@ public class CamareroController : MonoBehaviour
     private MaquinaDeEstados fsm;
     private AudioSource audioSource;
 
-    public GameObject player;
+    public GameObject jugador;
     public GameObject entradaCocina;
     private GameObject clienteAlertado;
-    public GameObject FloatingText;
+    public GameObject textoFlotante;
 
 
     //Patrulla
@@ -30,7 +30,6 @@ public class CamareroController : MonoBehaviour
 
     void Start()
     {
-        //targetLocation = GameObject.FindGameObjectWithTag("Cliente").transform.position;
         mesas = GameObject.FindGameObjectsWithTag("MesaLibre");
         camareros = GameObject.FindGameObjectsWithTag("Camarero");
         clientes = GameObject.FindGameObjectsWithTag("Cliente");
@@ -64,10 +63,10 @@ public class CamareroController : MonoBehaviour
             {
                 clienteAlertado = cliente;
                 fsm.ActivarEstado(MaquinaDeEstados.Estado.alerta);
-                MostrarFloatingText("?");
+                MostrarTextoFlotante("?");
                 TimerGlobal.globalTime = 0;
                 TimerGlobal.timerActivado = true;
-                clienteController.floatingText.SetActive(true);
+                clienteController.textoFlotanteCliente.SetActive(true);
                 clienteController.AlertaCliente = false;
             }
         }
@@ -75,7 +74,7 @@ public class CamareroController : MonoBehaviour
 
         if (EstaJugadorEnRadio(radioDeteccion) && fsm.estadoActual != MaquinaDeEstados.Estado.persecucion)
         {
-            audioSource.Play(); //STOP!!
+            audioSource.Play();
             fsm.ActivarEstado(MaquinaDeEstados.Estado.persecucion);
         }
 
@@ -96,16 +95,15 @@ public class CamareroController : MonoBehaviour
         }
     }
 
-    private void MostrarFloatingText(string text)
+    private void MostrarTextoFlotante(string text)
     {
-        FloatingText.GetComponent<TextMesh>().text = text;
-        FloatingText.SetActive(true);
-        //Instantiate(FloatingText, transform.position, Quaternion.identity, transform);
+        textoFlotante.GetComponent<TextMesh>().text = text;
+        textoFlotante.SetActive(true);
     }
 
-    private void OcultarFloatingText()
+    private void OcultarTextoFlotante()
     {
-        FloatingText.SetActive(false);
+        textoFlotante.SetActive(false);
     }
 
     private void Patrullar()
@@ -118,8 +116,6 @@ public class CamareroController : MonoBehaviour
             //Está cerca de mesa, tiene que ir a cocina
             irMesas = false;
             mesaActual.tag = "MesaOcupada";
-            //mesas = GameObject.FindGameObjectsWithTag("MesaLibre");
-            //DebugConsultarArrayMesasLibres(mesas);
             irCocina = true;
             StartCoroutine(SeekObjectWithRetard(entradaCocina));
 
@@ -132,7 +128,6 @@ public class CamareroController : MonoBehaviour
             irMesas = true;
             mesas = GameObject.FindGameObjectsWithTag("MesaLibre");
             mesaActual = mesas[Random.Range(0, mesas.Length)];
-            //StartCoroutine(SeekObjectWithRetard(mesaActual));
             Seek(mesaActual.transform.position);
         }
 
@@ -147,7 +142,7 @@ public class CamareroController : MonoBehaviour
         foreach (GameObject camarero in camarerosCercanos)
         {
             camarero.GetComponent<CamareroController>().fsm.ActivarEstado(MaquinaDeEstados.Estado.alerta);
-            camarero.GetComponent<CamareroController>().MostrarFloatingText("?");
+            camarero.GetComponent<CamareroController>().MostrarTextoFlotante("?");
             camarero.GetComponent<CamareroController>().clienteAlertado = clienteAlertado;
         }
         Seek(clienteAlertado.transform.position);
@@ -164,7 +159,7 @@ public class CamareroController : MonoBehaviour
             fsm.ActivarEstado(MaquinaDeEstados.Estado.patrulla);
             TimerGlobal.globalTime = 0;
             TimerGlobal.timerActivado = false;
-            clienteAlertado.GetComponent<ClienteController>().floatingText.SetActive(false);
+            clienteAlertado.GetComponent<ClienteController>().textoFlotanteCliente.SetActive(false);
 
             foreach (GameObject camarero in camareros)
             {
@@ -183,7 +178,7 @@ public class CamareroController : MonoBehaviour
                     camcontrol.irCocina = false;
                     camcontrol.navMesh.SetDestination(mesaActual.transform.position);
                 }
-                camcontrol.OcultarFloatingText();
+                camcontrol.OcultarTextoFlotante();
 
                 camcontrol.fsm.ActivarEstado(MaquinaDeEstados.Estado.patrulla);
             }
@@ -195,8 +190,8 @@ public class CamareroController : MonoBehaviour
 
     private void Perseguir()
     {
-        MostrarFloatingText("!");
-        navMesh.SetDestination(player.transform.position);
+        MostrarTextoFlotante("!");
+        navMesh.SetDestination(jugador.transform.position);
     }
 
     IEnumerator SeekObjectWithRetard(GameObject objetivo)
@@ -243,8 +238,8 @@ public class CamareroController : MonoBehaviour
     private bool EstaJugadorEnRadio(int radio)
     {
         float x, y, a, b;
-        x = player.transform.position.x;
-        y = player.transform.position.y;
+        x = jugador.transform.position.x;
+        y = jugador.transform.position.y;
         a = transform.position.x;
         b = transform.position.y;
         if ((x - a) * (x - a) + (y - b) * (y - b) <= radio * radio)
@@ -252,15 +247,5 @@ public class CamareroController : MonoBehaviour
             return true;
         }
         return false;
-    }
-
-    private void DebugConsultarArrayMesasLibres(GameObject[] mesas)
-    {
-        string mesasLibres = "Mesas libres: ";
-        for(int i = 0; i<mesas.Length; i++)
-        {
-            mesasLibres += mesas[i].name + ", ";
-        }
-        Debug.Log(mesasLibres);
     }
 }
