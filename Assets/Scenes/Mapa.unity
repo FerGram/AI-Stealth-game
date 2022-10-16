@@ -139,6 +139,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 975443806907494526, guid: 939acb25a987d4cd8b7f54c754182316,
         type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
+    - target: {fileID: 975443806907494526, guid: 939acb25a987d4cd8b7f54c754182316,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 126
       objectReference: {fileID: 0}
@@ -216,6 +221,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SquareTable (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 60e892bc26a066649ab14df704128623, type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 60e892bc26a066649ab14df704128623, type: 3}
       propertyPath: m_RootOrder
       value: 60
@@ -279,6 +288,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: toilet (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 984192088256995731, guid: 3f3c34eac948f41b39745bf3d1ce5f60,
+        type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 984192088256995731, guid: 3f3c34eac948f41b39745bf3d1ce5f60,
         type: 3}
@@ -358,6 +372,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 63fca6f7605661246ba17828e535919e, type: 3}
       propertyPath: m_Name
       value: TallRoundTable (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 63fca6f7605661246ba17828e535919e, type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 63fca6f7605661246ba17828e535919e, type: 3}
       propertyPath: m_RootOrder
@@ -514,7 +532,7 @@ GameObject:
   - component: {fileID: 25881465}
   m_Layer: 0
   m_Name: Plane (3)
-  m_TagString: Untagged
+  m_TagString: Map
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -612,6 +630,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 692763433524296401, guid: 47b5a1a0c32394a349c905d5a453b35f,
         type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
+    - target: {fileID: 692763433524296401, guid: 47b5a1a0c32394a349c905d5a453b35f,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -689,6 +712,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: OldSchoolBarstoolNoBack
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 8bde7a2dfc7335041bcd7c5e2b0e257b, type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 8bde7a2dfc7335041bcd7c5e2b0e257b, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -745,6 +772,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: e5f6c578761bc4e41a03985bf01ba61b, type: 3}
       propertyPath: m_Name
       value: WoodenSeatBacked (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: e5f6c578761bc4e41a03985bf01ba61b, type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: e5f6c578761bc4e41a03985bf01ba61b, type: 3}
       propertyPath: m_RootOrder
@@ -803,6 +834,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: wall_white (36)
+      objectReference: {fileID: 0}
+    - target: {fileID: 692763433524296401, guid: 47b5a1a0c32394a349c905d5a453b35f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 692763433524296401, guid: 47b5a1a0c32394a349c905d5a453b35f,
         type: 3}
@@ -882,6 +918,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: e5f6c578761bc4e41a03985bf01ba61b, type: 3}
       propertyPath: m_Name
       value: WoodenSeatBacked (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: e5f6c578761bc4e41a03985bf01ba61b, type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: e5f6c578761bc4e41a03985bf01ba61b, type: 3}
       propertyPath: m_RootOrder
@@ -1070,6 +1110,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SquareTable (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 60e892bc26a066649ab14df704128623, type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 60e892bc26a066649ab14df704128623, type: 3}
       propertyPath: m_RootOrder
       value: 41
@@ -1133,6 +1177,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: wall_white (25)
+      objectReference: {fileID: 0}
+    - target: {fileID: 692763433524296401, guid: 47b5a1a0c32394a349c905d5a453b35f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 692763433524296401, guid: 47b5a1a0c32394a349c905d5a453b35f,
         type: 3}
@@ -1214,7 +1263,7 @@ GameObject:
   - component: {fileID: 72623391}
   m_Layer: 0
   m_Name: Spot Light (5)
-  m_TagString: Untagged
+  m_TagString: Map
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 126
@@ -1415,6 +1464,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 25344551876930730, guid: 5d3e6100cc8b848ddb892a9a44bd7deb,
         type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
+    - target: {fileID: 25344551876930730, guid: 5d3e6100cc8b848ddb892a9a44bd7deb,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 126
       objectReference: {fileID: 0}
@@ -1492,6 +1546,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: wall_white (29)
+      objectReference: {fileID: 0}
+    - target: {fileID: 692763433524296401, guid: 47b5a1a0c32394a349c905d5a453b35f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 692763433524296401, guid: 47b5a1a0c32394a349c905d5a453b35f,
         type: 3}
@@ -1734,6 +1793,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5228339355055160166, guid: 885cb0e42003c4618a318191717e9622,
         type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
+    - target: {fileID: 5228339355055160166, guid: 885cb0e42003c4618a318191717e9622,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -1750,6 +1814,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: wall_white (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 692763433524296401, guid: 47b5a1a0c32394a349c905d5a453b35f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 692763433524296401, guid: 47b5a1a0c32394a349c905d5a453b35f,
         type: 3}
@@ -1831,7 +1900,7 @@ GameObject:
   - component: {fileID: 94139699}
   m_Layer: 0
   m_Name: Spot Light (5)
-  m_TagString: Untagged
+  m_TagString: Map
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 126
@@ -1928,6 +1997,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 692763433524296401, guid: 47b5a1a0c32394a349c905d5a453b35f,
         type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
+    - target: {fileID: 692763433524296401, guid: 47b5a1a0c32394a349c905d5a453b35f,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -2008,6 +2082,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2235791115066207536, guid: 8fd8a57a30bb14c5b955916c92840436,
         type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
+    - target: {fileID: 2235791115066207536, guid: 8fd8a57a30bb14c5b955916c92840436,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -2085,6 +2164,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WoodenSeatBacked (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: e5f6c578761bc4e41a03985bf01ba61b, type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: e5f6c578761bc4e41a03985bf01ba61b, type: 3}
       propertyPath: m_RootOrder
       value: 23
@@ -2148,6 +2231,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: wall_white (35)
+      objectReference: {fileID: 0}
+    - target: {fileID: 692763433524296401, guid: 47b5a1a0c32394a349c905d5a453b35f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 692763433524296401, guid: 47b5a1a0c32394a349c905d5a453b35f,
         type: 3}
@@ -2228,6 +2316,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: trash (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1736589073939979976, guid: 8cf587075220a4e8aa8f649518c732f2,
+        type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 1736589073939979976, guid: 8cf587075220a4e8aa8f649518c732f2,
         type: 3}
@@ -2539,6 +2632,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6168159591701234031, guid: cdbef1beb6c7f4f48b4532fbd79f08e1,
         type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
+    - target: {fileID: 6168159591701234031, guid: cdbef1beb6c7f4f48b4532fbd79f08e1,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 126
       objectReference: {fileID: 0}
@@ -2561,6 +2659,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: furniture (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 975443806907494526, guid: 939acb25a987d4cd8b7f54c754182316,
+        type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 975443806907494526, guid: 939acb25a987d4cd8b7f54c754182316,
         type: 3}
@@ -2717,7 +2820,7 @@ GameObject:
   - component: {fileID: 172678927}
   m_Layer: 0
   m_Name: Spot Light (5)
-  m_TagString: Untagged
+  m_TagString: Map
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 126
@@ -2813,6 +2916,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 692763433524296401, guid: 47b5a1a0c32394a349c905d5a453b35f,
         type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
+    - target: {fileID: 692763433524296401, guid: 47b5a1a0c32394a349c905d5a453b35f,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -2899,7 +3007,7 @@ GameObject:
   - component: {fileID: 193723070}
   m_Layer: 0
   m_Name: Plane (1)
-  m_TagString: Untagged
+  m_TagString: Map
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2994,6 +3102,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: wall_white (26)
+      objectReference: {fileID: 0}
+    - target: {fileID: 692763433524296401, guid: 47b5a1a0c32394a349c905d5a453b35f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 692763433524296401, guid: 47b5a1a0c32394a349c905d5a453b35f,
         type: 3}
@@ -3300,7 +3413,7 @@ GameObject:
   - component: {fileID: 237743036}
   m_Layer: 0
   m_Name: Spot Light (5)
-  m_TagString: Untagged
+  m_TagString: Map
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 126
@@ -3393,6 +3506,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WoodenSeatBacked (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: e5f6c578761bc4e41a03985bf01ba61b, type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: e5f6c578761bc4e41a03985bf01ba61b, type: 3}
       propertyPath: m_RootOrder
       value: 37
@@ -3461,6 +3578,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: e5f6c578761bc4e41a03985bf01ba61b, type: 3}
       propertyPath: m_Name
       value: WoodenSeatBacked (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: e5f6c578761bc4e41a03985bf01ba61b, type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: e5f6c578761bc4e41a03985bf01ba61b, type: 3}
       propertyPath: m_RootOrder
@@ -3637,7 +3758,7 @@ GameObject:
   - component: {fileID: 257477440}
   m_Layer: 0
   m_Name: Spot Light (5)
-  m_TagString: Untagged
+  m_TagString: Map
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 126
@@ -3885,6 +4006,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 61682325839585899, guid: 017116cb4280b48eca9d618e6bb8a86c,
         type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
+    - target: {fileID: 61682325839585899, guid: 017116cb4280b48eca9d618e6bb8a86c,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 126
       objectReference: {fileID: 0}
@@ -3964,6 +4090,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 984192088256995731, guid: 3f3c34eac948f41b39745bf3d1ce5f60,
         type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
+    - target: {fileID: 984192088256995731, guid: 3f3c34eac948f41b39745bf3d1ce5f60,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 126
       objectReference: {fileID: 0}
@@ -4035,6 +4166,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: lamp_2 (15)
+      objectReference: {fileID: 0}
+    - target: {fileID: 61682325839585899, guid: 017116cb4280b48eca9d618e6bb8a86c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 61682325839585899, guid: 017116cb4280b48eca9d618e6bb8a86c,
         type: 3}
@@ -4194,6 +4330,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WoodenSeatBacked (24)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: e5f6c578761bc4e41a03985bf01ba61b, type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: e5f6c578761bc4e41a03985bf01ba61b, type: 3}
       propertyPath: m_RootOrder
       value: 79
@@ -4256,6 +4396,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 60e892bc26a066649ab14df704128623, type: 3}
       propertyPath: m_Name
       value: SquareTable (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 60e892bc26a066649ab14df704128623, type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 60e892bc26a066649ab14df704128623, type: 3}
       propertyPath: m_RootOrder
@@ -4320,6 +4464,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SquareTable (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 60e892bc26a066649ab14df704128623, type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 60e892bc26a066649ab14df704128623, type: 3}
       propertyPath: m_RootOrder
       value: 19
@@ -4382,6 +4530,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: e5f6c578761bc4e41a03985bf01ba61b, type: 3}
       propertyPath: m_Name
       value: WoodenSeatBacked (28)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: e5f6c578761bc4e41a03985bf01ba61b, type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: e5f6c578761bc4e41a03985bf01ba61b, type: 3}
       propertyPath: m_RootOrder
@@ -4510,6 +4662,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4725176478485993063, guid: 516587c299f6d4743ae00f19f7f91418,
         type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
+    - target: {fileID: 4725176478485993063, guid: 516587c299f6d4743ae00f19f7f91418,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 126
       objectReference: {fileID: 0}
@@ -4531,6 +4688,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 60e892bc26a066649ab14df704128623, type: 3}
       propertyPath: m_Name
       value: SquareTable (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 60e892bc26a066649ab14df704128623, type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 60e892bc26a066649ab14df704128623, type: 3}
       propertyPath: m_RootOrder
@@ -4595,6 +4756,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WoodenSeatBacked (19)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: e5f6c578761bc4e41a03985bf01ba61b, type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: e5f6c578761bc4e41a03985bf01ba61b, type: 3}
       propertyPath: m_RootOrder
       value: 64
@@ -4658,6 +4823,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: lamp_2 (16)
+      objectReference: {fileID: 0}
+    - target: {fileID: 61682325839585899, guid: 017116cb4280b48eca9d618e6bb8a86c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 61682325839585899, guid: 017116cb4280b48eca9d618e6bb8a86c,
         type: 3}
@@ -4744,7 +4914,7 @@ GameObject:
   - component: {fileID: 302376206}
   m_Layer: 0
   m_Name: Spot Light (5)
-  m_TagString: Untagged
+  m_TagString: Map
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 126
@@ -4838,7 +5008,7 @@ GameObject:
   - component: {fileID: 306595055}
   m_Layer: 0
   m_Name: Spot Light
-  m_TagString: Untagged
+  m_TagString: Map
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 126
@@ -5141,7 +5311,7 @@ GameObject:
   - component: {fileID: 314612618}
   m_Layer: 0
   m_Name: Spot Light (5)
-  m_TagString: Untagged
+  m_TagString: Map
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 126
@@ -5234,6 +5404,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: wall_white (28)
+      objectReference: {fileID: 0}
+    - target: {fileID: 692763433524296401, guid: 47b5a1a0c32394a349c905d5a453b35f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 692763433524296401, guid: 47b5a1a0c32394a349c905d5a453b35f,
         type: 3}
@@ -5379,6 +5554,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SquareTable (14)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 60e892bc26a066649ab14df704128623, type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 60e892bc26a066649ab14df704128623, type: 3}
       propertyPath: m_RootOrder
       value: 61
@@ -5442,6 +5621,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: toilet_wall (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3917288515387945643, guid: 2c2c7358c3e3d400aadd2d3b391c6ee3,
+        type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 3917288515387945643, guid: 2c2c7358c3e3d400aadd2d3b391c6ee3,
         type: 3}
@@ -5586,6 +5770,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5228339355055160166, guid: 885cb0e42003c4618a318191717e9622,
         type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
+    - target: {fileID: 5228339355055160166, guid: 885cb0e42003c4618a318191717e9622,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -5666,6 +5855,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4725176478485993063, guid: 516587c299f6d4743ae00f19f7f91418,
         type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
+    - target: {fileID: 4725176478485993063, guid: 516587c299f6d4743ae00f19f7f91418,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 126
       objectReference: {fileID: 0}
@@ -5683,7 +5877,7 @@ GameObject:
   - component: {fileID: 365955630}
   m_Layer: 0
   m_Name: Spot Light (9)
-  m_TagString: Untagged
+  m_TagString: Map
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 126
@@ -5834,6 +6028,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5228339355055160166, guid: 885cb0e42003c4618a318191717e9622,
         type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
+    - target: {fileID: 5228339355055160166, guid: 885cb0e42003c4618a318191717e9622,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -5914,6 +6113,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5228339355055160166, guid: 885cb0e42003c4618a318191717e9622,
         type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
+    - target: {fileID: 5228339355055160166, guid: 885cb0e42003c4618a318191717e9622,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -5936,6 +6140,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: lamp_2 (20)
+      objectReference: {fileID: 0}
+    - target: {fileID: 61682325839585899, guid: 017116cb4280b48eca9d618e6bb8a86c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 61682325839585899, guid: 017116cb4280b48eca9d618e6bb8a86c,
         type: 3}
@@ -6030,6 +6239,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 692763433524296401, guid: 47b5a1a0c32394a349c905d5a453b35f,
         type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
+    - target: {fileID: 692763433524296401, guid: 47b5a1a0c32394a349c905d5a453b35f,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -6107,6 +6321,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: lamp_2 (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 61682325839585899, guid: 017116cb4280b48eca9d618e6bb8a86c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 61682325839585899, guid: 017116cb4280b48eca9d618e6bb8a86c,
         type: 3}
@@ -6244,6 +6463,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5228339355055160166, guid: 885cb0e42003c4618a318191717e9622,
         type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
+    - target: {fileID: 5228339355055160166, guid: 885cb0e42003c4618a318191717e9622,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -6340,6 +6564,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WoodenSeatBacked (25)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: e5f6c578761bc4e41a03985bf01ba61b, type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: e5f6c578761bc4e41a03985bf01ba61b, type: 3}
       propertyPath: m_RootOrder
       value: 80
@@ -6403,6 +6631,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: wall_white (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 692763433524296401, guid: 47b5a1a0c32394a349c905d5a453b35f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 692763433524296401, guid: 47b5a1a0c32394a349c905d5a453b35f,
         type: 3}
@@ -6478,7 +6711,7 @@ GameObject:
   - component: {fileID: 463368260}
   m_Layer: 0
   m_Name: Spot Light (5)
-  m_TagString: Untagged
+  m_TagString: Map
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 126
@@ -6646,6 +6879,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: wall_white (34)
+      objectReference: {fileID: 0}
+    - target: {fileID: 692763433524296401, guid: 47b5a1a0c32394a349c905d5a453b35f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 692763433524296401, guid: 47b5a1a0c32394a349c905d5a453b35f,
         type: 3}
@@ -7085,6 +7323,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5228339355055160166, guid: 885cb0e42003c4618a318191717e9622,
         type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
+    - target: {fileID: 5228339355055160166, guid: 885cb0e42003c4618a318191717e9622,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -7183,7 +7426,7 @@ GameObject:
   - component: {fileID: 496058210}
   m_Layer: 0
   m_Name: Spot Light (5)
-  m_TagString: Untagged
+  m_TagString: Map
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 126
@@ -7335,6 +7578,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5228339355055160166, guid: 885cb0e42003c4618a318191717e9622,
         type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
+    - target: {fileID: 5228339355055160166, guid: 885cb0e42003c4618a318191717e9622,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -7357,6 +7605,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: furniture (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 975443806907494526, guid: 939acb25a987d4cd8b7f54c754182316,
+        type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 975443806907494526, guid: 939acb25a987d4cd8b7f54c754182316,
         type: 3}
@@ -7437,6 +7690,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WoodenSeatBacked (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: e5f6c578761bc4e41a03985bf01ba61b, type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: e5f6c578761bc4e41a03985bf01ba61b, type: 3}
       propertyPath: m_RootOrder
       value: 44
@@ -7506,6 +7763,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: walll_window_green (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2235791115066207536, guid: 8fd8a57a30bb14c5b955916c92840436,
+        type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 2235791115066207536, guid: 8fd8a57a30bb14c5b955916c92840436,
         type: 3}
@@ -7585,6 +7847,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: e5f6c578761bc4e41a03985bf01ba61b, type: 3}
       propertyPath: m_Name
       value: WoodenSeatBacked (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: e5f6c578761bc4e41a03985bf01ba61b, type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: e5f6c578761bc4e41a03985bf01ba61b, type: 3}
       propertyPath: m_RootOrder
@@ -7784,6 +8050,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 692763433524296401, guid: 47b5a1a0c32394a349c905d5a453b35f,
         type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
+    - target: {fileID: 692763433524296401, guid: 47b5a1a0c32394a349c905d5a453b35f,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -7866,6 +8137,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 60e892bc26a066649ab14df704128623, type: 3}
       propertyPath: m_Name
       value: SquareTable (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 60e892bc26a066649ab14df704128623, type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 60e892bc26a066649ab14df704128623, type: 3}
       propertyPath: m_RootOrder
@@ -7982,6 +8257,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6910267483286908662, guid: e413ad08bc08c4e999e800d4695f6172,
         type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
+    - target: {fileID: 6910267483286908662, guid: e413ad08bc08c4e999e800d4695f6172,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 126
       objectReference: {fileID: 0}
@@ -8003,6 +8283,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: e5f6c578761bc4e41a03985bf01ba61b, type: 3}
       propertyPath: m_Name
       value: WoodenSeatBacked (17)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: e5f6c578761bc4e41a03985bf01ba61b, type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: e5f6c578761bc4e41a03985bf01ba61b, type: 3}
       propertyPath: m_RootOrder
@@ -8125,6 +8409,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5228339355055160166, guid: 885cb0e42003c4618a318191717e9622,
         type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
+    - target: {fileID: 5228339355055160166, guid: 885cb0e42003c4618a318191717e9622,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -8148,7 +8437,7 @@ GameObject:
   - component: {fileID: 567814783}
   m_Layer: 0
   m_Name: Spot Light (9)
-  m_TagString: Untagged
+  m_TagString: Map
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 126
@@ -8296,6 +8585,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: partition_wall (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5228339355055160166, guid: 885cb0e42003c4618a318191717e9622,
+        type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 5228339355055160166, guid: 885cb0e42003c4618a318191717e9622,
         type: 3}
@@ -8454,6 +8748,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6168159591701234031, guid: cdbef1beb6c7f4f48b4532fbd79f08e1,
         type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
+    - target: {fileID: 6168159591701234031, guid: cdbef1beb6c7f4f48b4532fbd79f08e1,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 126
       objectReference: {fileID: 0}
@@ -8564,6 +8863,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9105380069092299073, guid: b42569332bdc146949eaab7e55cfa260,
         type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
+    - target: {fileID: 9105380069092299073, guid: b42569332bdc146949eaab7e55cfa260,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 126
       objectReference: {fileID: 0}
@@ -8579,6 +8883,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: e5f6c578761bc4e41a03985bf01ba61b, type: 3}
       propertyPath: m_Name
       value: WoodenSeatBacked (16)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: e5f6c578761bc4e41a03985bf01ba61b, type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: e5f6c578761bc4e41a03985bf01ba61b, type: 3}
       propertyPath: m_RootOrder
@@ -8644,7 +8952,7 @@ GameObject:
   - component: {fileID: 601546009}
   m_Layer: 0
   m_Name: Spot Light (5)
-  m_TagString: Untagged
+  m_TagString: Map
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 126
@@ -8737,6 +9045,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SquareTable (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 60e892bc26a066649ab14df704128623, type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 60e892bc26a066649ab14df704128623, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -8794,6 +9106,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: lamp_2 (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 61682325839585899, guid: 017116cb4280b48eca9d618e6bb8a86c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 61682325839585899, guid: 017116cb4280b48eca9d618e6bb8a86c,
         type: 3}
@@ -8879,6 +9196,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SquareTable (17)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 60e892bc26a066649ab14df704128623, type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 60e892bc26a066649ab14df704128623, type: 3}
       propertyPath: m_RootOrder
       value: 89
@@ -8942,6 +9263,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: wall_white (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 692763433524296401, guid: 47b5a1a0c32394a349c905d5a453b35f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 692763433524296401, guid: 47b5a1a0c32394a349c905d5a453b35f,
         type: 3}
@@ -9126,6 +9452,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TallRoundTable (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 63fca6f7605661246ba17828e535919e, type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 63fca6f7605661246ba17828e535919e, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -9184,7 +9514,7 @@ GameObject:
   - component: {fileID: 623029336}
   m_Layer: 0
   m_Name: Spot Light
-  m_TagString: Untagged
+  m_TagString: Map
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 126
@@ -9276,6 +9606,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: e5f6c578761bc4e41a03985bf01ba61b, type: 3}
       propertyPath: m_Name
       value: WoodenSeatBacked (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: e5f6c578761bc4e41a03985bf01ba61b, type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: e5f6c578761bc4e41a03985bf01ba61b, type: 3}
       propertyPath: m_RootOrder
@@ -9392,6 +9726,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6417914843153325289, guid: ebcdbc32ab7854e84a4595a87a000376,
         type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
+    - target: {fileID: 6417914843153325289, guid: ebcdbc32ab7854e84a4595a87a000376,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 126
       objectReference: {fileID: 0}
@@ -9414,6 +9753,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: lamp_2 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 61682325839585899, guid: 017116cb4280b48eca9d618e6bb8a86c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 61682325839585899, guid: 017116cb4280b48eca9d618e6bb8a86c,
         type: 3}
@@ -9571,6 +9915,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 692763433524296401, guid: 47b5a1a0c32394a349c905d5a453b35f,
         type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
+    - target: {fileID: 692763433524296401, guid: 47b5a1a0c32394a349c905d5a453b35f,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -9647,6 +9996,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: wall_white (48)
+      objectReference: {fileID: 0}
+    - target: {fileID: 692763433524296401, guid: 47b5a1a0c32394a349c905d5a453b35f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 692763433524296401, guid: 47b5a1a0c32394a349c905d5a453b35f,
         type: 3}
@@ -9785,6 +10139,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5228339355055160166, guid: 885cb0e42003c4618a318191717e9622,
         type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
+    - target: {fileID: 5228339355055160166, guid: 885cb0e42003c4618a318191717e9622,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -9806,6 +10165,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: e5f6c578761bc4e41a03985bf01ba61b, type: 3}
       propertyPath: m_Name
       value: WoodenSeatBacked (21)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: e5f6c578761bc4e41a03985bf01ba61b, type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: e5f6c578761bc4e41a03985bf01ba61b, type: 3}
       propertyPath: m_RootOrder
@@ -9870,6 +10233,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: lamp_2 (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 61682325839585899, guid: 017116cb4280b48eca9d618e6bb8a86c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 61682325839585899, guid: 017116cb4280b48eca9d618e6bb8a86c,
         type: 3}
@@ -9958,6 +10326,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 692763433524296401, guid: 47b5a1a0c32394a349c905d5a453b35f,
         type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
+    - target: {fileID: 692763433524296401, guid: 47b5a1a0c32394a349c905d5a453b35f,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -10036,7 +10409,7 @@ GameObject:
   - component: {fileID: 705507994}
   m_Layer: 0
   m_Name: Directional Light
-  m_TagString: Untagged
+  m_TagString: Map
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10187,6 +10560,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6168159591701234031, guid: cdbef1beb6c7f4f48b4532fbd79f08e1,
         type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
+    - target: {fileID: 6168159591701234031, guid: cdbef1beb6c7f4f48b4532fbd79f08e1,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 126
       objectReference: {fileID: 0}
@@ -10203,6 +10581,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: walll_window_green (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2235791115066207536, guid: 8fd8a57a30bb14c5b955916c92840436,
+        type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 2235791115066207536, guid: 8fd8a57a30bb14c5b955916c92840436,
         type: 3}
@@ -10283,6 +10666,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: walll_window_green (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2235791115066207536, guid: 8fd8a57a30bb14c5b955916c92840436,
+        type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 2235791115066207536, guid: 8fd8a57a30bb14c5b955916c92840436,
         type: 3}
@@ -10372,7 +10760,7 @@ GameObject:
   - component: {fileID: 727684952}
   m_Layer: 0
   m_Name: Plane
-  m_TagString: Untagged
+  m_TagString: Map
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10476,6 +10864,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 692763433524296401, guid: 47b5a1a0c32394a349c905d5a453b35f,
         type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
+    - target: {fileID: 692763433524296401, guid: 47b5a1a0c32394a349c905d5a453b35f,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -10552,6 +10945,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: e5f6c578761bc4e41a03985bf01ba61b, type: 3}
       propertyPath: m_Name
       value: WoodenSeatBacked (31)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: e5f6c578761bc4e41a03985bf01ba61b, type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: e5f6c578761bc4e41a03985bf01ba61b, type: 3}
       propertyPath: m_RootOrder
@@ -10674,6 +11071,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5228339355055160166, guid: 885cb0e42003c4618a318191717e9622,
         type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
+    - target: {fileID: 5228339355055160166, guid: 885cb0e42003c4618a318191717e9622,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -10697,7 +11099,7 @@ GameObject:
   - component: {fileID: 749915151}
   m_Layer: 0
   m_Name: Spot Light (5)
-  m_TagString: Untagged
+  m_TagString: Map
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 126
@@ -10860,6 +11262,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5228339355055160166, guid: 885cb0e42003c4618a318191717e9622,
         type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
+    - target: {fileID: 5228339355055160166, guid: 885cb0e42003c4618a318191717e9622,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -10882,6 +11289,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: furniture (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 975443806907494526, guid: 939acb25a987d4cd8b7f54c754182316,
+        type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 975443806907494526, guid: 939acb25a987d4cd8b7f54c754182316,
         type: 3}
@@ -10962,6 +11374,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: lamp_2 (17)
+      objectReference: {fileID: 0}
+    - target: {fileID: 61682325839585899, guid: 017116cb4280b48eca9d618e6bb8a86c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 61682325839585899, guid: 017116cb4280b48eca9d618e6bb8a86c,
         type: 3}
@@ -11050,6 +11467,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2235791115066207536, guid: 8fd8a57a30bb14c5b955916c92840436,
         type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
+    - target: {fileID: 2235791115066207536, guid: 8fd8a57a30bb14c5b955916c92840436,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -11126,6 +11548,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 63fca6f7605661246ba17828e535919e, type: 3}
       propertyPath: m_Name
       value: TallRoundTable (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 63fca6f7605661246ba17828e535919e, type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 63fca6f7605661246ba17828e535919e, type: 3}
       propertyPath: m_RootOrder
@@ -11392,6 +11818,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3739559890875550835, guid: 05aae47b2350c4201b91b86b5dde5e20,
         type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
+    - target: {fileID: 3739559890875550835, guid: 05aae47b2350c4201b91b86b5dde5e20,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 126
       objectReference: {fileID: 0}
@@ -11506,6 +11937,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5228339355055160166, guid: 885cb0e42003c4618a318191717e9622,
         type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
+    - target: {fileID: 5228339355055160166, guid: 885cb0e42003c4618a318191717e9622,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -11586,6 +12022,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5228339355055160166, guid: 885cb0e42003c4618a318191717e9622,
         type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
+    - target: {fileID: 5228339355055160166, guid: 885cb0e42003c4618a318191717e9622,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -11609,7 +12050,7 @@ GameObject:
   - component: {fileID: 810007093}
   m_Layer: 0
   m_Name: Spot Light (5)
-  m_TagString: Untagged
+  m_TagString: Map
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 126
@@ -11761,6 +12202,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5228339355055160166, guid: 885cb0e42003c4618a318191717e9622,
         type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
+    - target: {fileID: 5228339355055160166, guid: 885cb0e42003c4618a318191717e9622,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -11891,6 +12337,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 692763433524296401, guid: 47b5a1a0c32394a349c905d5a453b35f,
         type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
+    - target: {fileID: 692763433524296401, guid: 47b5a1a0c32394a349c905d5a453b35f,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -11968,6 +12419,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: wall_white (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 692763433524296401, guid: 47b5a1a0c32394a349c905d5a453b35f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 692763433524296401, guid: 47b5a1a0c32394a349c905d5a453b35f,
         type: 3}
@@ -12175,6 +12631,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5228339355055160166, guid: 885cb0e42003c4618a318191717e9622,
         type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
+    - target: {fileID: 5228339355055160166, guid: 885cb0e42003c4618a318191717e9622,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -12329,6 +12790,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5228339355055160166, guid: 885cb0e42003c4618a318191717e9622,
         type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
+    - target: {fileID: 5228339355055160166, guid: 885cb0e42003c4618a318191717e9622,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -12351,6 +12817,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: lamp_2 (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 61682325839585899, guid: 017116cb4280b48eca9d618e6bb8a86c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 61682325839585899, guid: 017116cb4280b48eca9d618e6bb8a86c,
         type: 3}
@@ -12429,6 +12900,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: e5f6c578761bc4e41a03985bf01ba61b, type: 3}
       propertyPath: m_Name
       value: WoodenSeatBacked (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: e5f6c578761bc4e41a03985bf01ba61b, type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: e5f6c578761bc4e41a03985bf01ba61b, type: 3}
       propertyPath: m_RootOrder
@@ -12646,6 +13121,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 61682325839585899, guid: 017116cb4280b48eca9d618e6bb8a86c,
         type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
+    - target: {fileID: 61682325839585899, guid: 017116cb4280b48eca9d618e6bb8a86c,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 126
       objectReference: {fileID: 0}
@@ -12723,7 +13203,7 @@ GameObject:
   - component: {fileID: 920947304}
   m_Layer: 0
   m_Name: Spot Light
-  m_TagString: Untagged
+  m_TagString: Map
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 126
@@ -13059,6 +13539,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5228339355055160166, guid: 885cb0e42003c4618a318191717e9622,
         type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
+    - target: {fileID: 5228339355055160166, guid: 885cb0e42003c4618a318191717e9622,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -13080,6 +13565,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: e5f6c578761bc4e41a03985bf01ba61b, type: 3}
       propertyPath: m_Name
       value: WoodenSeatBacked (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: e5f6c578761bc4e41a03985bf01ba61b, type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: e5f6c578761bc4e41a03985bf01ba61b, type: 3}
       propertyPath: m_RootOrder
@@ -13348,6 +13837,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 692763433524296401, guid: 47b5a1a0c32394a349c905d5a453b35f,
         type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
+    - target: {fileID: 692763433524296401, guid: 47b5a1a0c32394a349c905d5a453b35f,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -13487,6 +13981,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SquareTable (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 60e892bc26a066649ab14df704128623, type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 60e892bc26a066649ab14df704128623, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -13605,6 +14103,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: monitor (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6168159591701234031, guid: cdbef1beb6c7f4f48b4532fbd79f08e1,
+        type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 6168159591701234031, guid: cdbef1beb6c7f4f48b4532fbd79f08e1,
         type: 3}
@@ -13762,6 +14265,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8453105780477417625, guid: fc2fd77dfdf7b4fad9ae2f8470766b07,
         type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453105780477417625, guid: fc2fd77dfdf7b4fad9ae2f8470766b07,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 126
       objectReference: {fileID: 0}
@@ -13836,6 +14344,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6168159591701234031, guid: cdbef1beb6c7f4f48b4532fbd79f08e1,
         type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
+    - target: {fileID: 6168159591701234031, guid: cdbef1beb6c7f4f48b4532fbd79f08e1,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 126
       objectReference: {fileID: 0}
@@ -13907,6 +14420,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: fridge (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453105780477417625, guid: fc2fd77dfdf7b4fad9ae2f8470766b07,
+        type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 8453105780477417625, guid: fc2fd77dfdf7b4fad9ae2f8470766b07,
         type: 3}
@@ -13996,6 +14514,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6168159591701234031, guid: cdbef1beb6c7f4f48b4532fbd79f08e1,
         type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
+    - target: {fileID: 6168159591701234031, guid: cdbef1beb6c7f4f48b4532fbd79f08e1,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 126
       objectReference: {fileID: 0}
@@ -14073,6 +14596,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: partition_wall (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5228339355055160166, guid: 885cb0e42003c4618a318191717e9622,
+        type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 5228339355055160166, guid: 885cb0e42003c4618a318191717e9622,
         type: 3}
@@ -14162,6 +14690,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4725176478485993063, guid: 516587c299f6d4743ae00f19f7f91418,
         type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
+    - target: {fileID: 4725176478485993063, guid: 516587c299f6d4743ae00f19f7f91418,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 126
       objectReference: {fileID: 0}
@@ -14190,6 +14723,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: walll_window_green (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2235791115066207536, guid: 8fd8a57a30bb14c5b955916c92840436,
+        type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 2235791115066207536, guid: 8fd8a57a30bb14c5b955916c92840436,
         type: 3}
@@ -14275,6 +14813,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: e5f6c578761bc4e41a03985bf01ba61b, type: 3}
       propertyPath: m_Name
       value: WoodenSeatBacked (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: e5f6c578761bc4e41a03985bf01ba61b, type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: e5f6c578761bc4e41a03985bf01ba61b, type: 3}
       propertyPath: m_RootOrder
@@ -14437,6 +14979,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 61682325839585899, guid: 017116cb4280b48eca9d618e6bb8a86c,
         type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
+    - target: {fileID: 61682325839585899, guid: 017116cb4280b48eca9d618e6bb8a86c,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 126
       objectReference: {fileID: 0}
@@ -14513,6 +15060,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SquareTable (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 60e892bc26a066649ab14df704128623, type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 60e892bc26a066649ab14df704128623, type: 3}
       propertyPath: m_RootOrder
       value: 38
@@ -14565,6 +15116,103 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1059075378}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1071446223
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1071446227}
+  - component: {fileID: 1071446226}
+  - component: {fileID: 1071446225}
+  - component: {fileID: 1071446224}
+  m_Layer: 3
+  m_Name: Cube
+  m_TagString: Player
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &1071446224
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1071446223}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &1071446225
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1071446223}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1071446226
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1071446223}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1071446227
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1071446223}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -6.11, y: 0.953, z: -5.16656}
+  m_LocalScale: {x: 0.20599233, y: 0.20599233, z: 0.20599233}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 25
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1088561576
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14576,6 +15224,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: walll_window_green (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2235791115066207536, guid: 8fd8a57a30bb14c5b955916c92840436,
+        type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 2235791115066207536, guid: 8fd8a57a30bb14c5b955916c92840436,
         type: 3}
@@ -14734,6 +15387,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 61682325839585899, guid: 017116cb4280b48eca9d618e6bb8a86c,
         type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
+    - target: {fileID: 61682325839585899, guid: 017116cb4280b48eca9d618e6bb8a86c,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 126
       objectReference: {fileID: 0}
@@ -14819,6 +15477,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 692763433524296401, guid: 47b5a1a0c32394a349c905d5a453b35f,
         type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
+    - target: {fileID: 692763433524296401, guid: 47b5a1a0c32394a349c905d5a453b35f,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -14897,7 +15560,7 @@ GameObject:
   - component: {fileID: 1113970934}
   m_Layer: 0
   m_Name: Spot Light (5)
-  m_TagString: Untagged
+  m_TagString: Map
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 126
@@ -15048,6 +15711,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5228339355055160166, guid: 885cb0e42003c4618a318191717e9622,
         type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
+    - target: {fileID: 5228339355055160166, guid: 885cb0e42003c4618a318191717e9622,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -15070,6 +15738,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: wall_white (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 692763433524296401, guid: 47b5a1a0c32394a349c905d5a453b35f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 692763433524296401, guid: 47b5a1a0c32394a349c905d5a453b35f,
         type: 3}
@@ -15150,6 +15823,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WoodenSeatBacked (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: e5f6c578761bc4e41a03985bf01ba61b, type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: e5f6c578761bc4e41a03985bf01ba61b, type: 3}
       propertyPath: m_RootOrder
       value: 43
@@ -15219,6 +15896,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: wall_white (37)
+      objectReference: {fileID: 0}
+    - target: {fileID: 692763433524296401, guid: 47b5a1a0c32394a349c905d5a453b35f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 692763433524296401, guid: 47b5a1a0c32394a349c905d5a453b35f,
         type: 3}
@@ -15308,6 +15990,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 25344551876930730, guid: 5d3e6100cc8b848ddb892a9a44bd7deb,
         type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
+    - target: {fileID: 25344551876930730, guid: 5d3e6100cc8b848ddb892a9a44bd7deb,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 126
       objectReference: {fileID: 0}
@@ -15379,6 +16066,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WoodenSeatBacked (18)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: e5f6c578761bc4e41a03985bf01ba61b, type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: e5f6c578761bc4e41a03985bf01ba61b, type: 3}
       propertyPath: m_RootOrder
       value: 63
@@ -15443,7 +16134,7 @@ GameObject:
   - component: {fileID: 1158508301}
   m_Layer: 0
   m_Name: Spot Light (5)
-  m_TagString: Untagged
+  m_TagString: Map
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 126
@@ -15540,6 +16231,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 692763433524296401, guid: 47b5a1a0c32394a349c905d5a453b35f,
         type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
+    - target: {fileID: 692763433524296401, guid: 47b5a1a0c32394a349c905d5a453b35f,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -15617,6 +16313,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: trash (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1736589073939979976, guid: 8cf587075220a4e8aa8f649518c732f2,
+        type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 1736589073939979976, guid: 8cf587075220a4e8aa8f649518c732f2,
         type: 3}
@@ -15755,6 +16456,146 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1161492157}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1163597916
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1163597921}
+  - component: {fileID: 1163597920}
+  - component: {fileID: 1163597919}
+  - component: {fileID: 1163597918}
+  - component: {fileID: 1163597917}
+  - component: {fileID: 1163597922}
+  m_Layer: 0
+  m_Name: Sphere
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1163597917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1163597916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e7f8f66e56043b448f3028d71905f66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  viewRadius: 90
+  viewAngle: 90
+  targetMask:
+    serializedVersion: 2
+    m_Bits: 8
+  obstacleMask:
+    serializedVersion: 2
+    m_Bits: 1
+  visibleTargets: []
+--- !u!135 &1163597918
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1163597916}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &1163597919
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1163597916}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1163597920
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1163597916}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1163597921
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1163597916}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -6.839, y: 0.948, z: -3.76}
+  m_LocalScale: {x: 0.4626069, y: 0.33709, z: 0.33709}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 24
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1163597922
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1163597916}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 468ebcac25836924ab822f2cdbe6e75c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &1164978240
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15821,6 +16662,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: fridge (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453105780477417625, guid: fc2fd77dfdf7b4fad9ae2f8470766b07,
+        type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 8453105780477417625, guid: fc2fd77dfdf7b4fad9ae2f8470766b07,
         type: 3}
@@ -15915,6 +16761,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WoodenSeatBacked (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: e5f6c578761bc4e41a03985bf01ba61b, type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: e5f6c578761bc4e41a03985bf01ba61b, type: 3}
       propertyPath: m_RootOrder
       value: 19
@@ -15971,6 +16821,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 60e892bc26a066649ab14df704128623, type: 3}
       propertyPath: m_Name
       value: SquareTable (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 60e892bc26a066649ab14df704128623, type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 60e892bc26a066649ab14df704128623, type: 3}
       propertyPath: m_RootOrder
@@ -16034,6 +16888,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: e5f6c578761bc4e41a03985bf01ba61b, type: 3}
       propertyPath: m_Name
       value: WoodenSeatBacked (30)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: e5f6c578761bc4e41a03985bf01ba61b, type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: e5f6c578761bc4e41a03985bf01ba61b, type: 3}
       propertyPath: m_RootOrder
@@ -16230,6 +17088,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3739559890875550835, guid: 05aae47b2350c4201b91b86b5dde5e20,
         type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
+    - target: {fileID: 3739559890875550835, guid: 05aae47b2350c4201b91b86b5dde5e20,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 126
       objectReference: {fileID: 0}
@@ -16338,6 +17201,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 975443806907494526, guid: 939acb25a987d4cd8b7f54c754182316,
         type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
+    - target: {fileID: 975443806907494526, guid: 939acb25a987d4cd8b7f54c754182316,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 126
       objectReference: {fileID: 0}
@@ -16414,6 +17282,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: e5f6c578761bc4e41a03985bf01ba61b, type: 3}
       propertyPath: m_Name
       value: WoodenSeatBacked (22)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: e5f6c578761bc4e41a03985bf01ba61b, type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: e5f6c578761bc4e41a03985bf01ba61b, type: 3}
       propertyPath: m_RootOrder
@@ -16569,6 +17441,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5228339355055160166, guid: 885cb0e42003c4618a318191717e9622,
         type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
+    - target: {fileID: 5228339355055160166, guid: 885cb0e42003c4618a318191717e9622,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -16649,6 +17526,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5228339355055160166, guid: 885cb0e42003c4618a318191717e9622,
         type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
+    - target: {fileID: 5228339355055160166, guid: 885cb0e42003c4618a318191717e9622,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -16672,7 +17554,7 @@ GameObject:
   - component: {fileID: 1250190563}
   m_Layer: 0
   m_Name: Spot Light (5)
-  m_TagString: Untagged
+  m_TagString: Map
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 126
@@ -16769,6 +17651,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 692763433524296401, guid: 47b5a1a0c32394a349c905d5a453b35f,
         type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
+    - target: {fileID: 692763433524296401, guid: 47b5a1a0c32394a349c905d5a453b35f,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -16846,6 +17733,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: lamp_2 (21)
+      objectReference: {fileID: 0}
+    - target: {fileID: 61682325839585899, guid: 017116cb4280b48eca9d618e6bb8a86c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 61682325839585899, guid: 017116cb4280b48eca9d618e6bb8a86c,
         type: 3}
@@ -16952,6 +17844,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 692763433524296401, guid: 47b5a1a0c32394a349c905d5a453b35f,
         type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
+    - target: {fileID: 692763433524296401, guid: 47b5a1a0c32394a349c905d5a453b35f,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -17035,6 +17932,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SquareTable (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 60e892bc26a066649ab14df704128623, type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 60e892bc26a066649ab14df704128623, type: 3}
       propertyPath: m_RootOrder
       value: 39
@@ -17098,6 +17999,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: wall_white (40)
+      objectReference: {fileID: 0}
+    - target: {fileID: 692763433524296401, guid: 47b5a1a0c32394a349c905d5a453b35f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 692763433524296401, guid: 47b5a1a0c32394a349c905d5a453b35f,
         type: 3}
@@ -17181,6 +18087,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 692763433524296401, guid: 47b5a1a0c32394a349c905d5a453b35f,
         type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
+    - target: {fileID: 692763433524296401, guid: 47b5a1a0c32394a349c905d5a453b35f,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -17258,6 +18169,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: wall_white (49)
+      objectReference: {fileID: 0}
+    - target: {fileID: 692763433524296401, guid: 47b5a1a0c32394a349c905d5a453b35f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 692763433524296401, guid: 47b5a1a0c32394a349c905d5a453b35f,
         type: 3}
@@ -17396,6 +18312,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5228339355055160166, guid: 885cb0e42003c4618a318191717e9622,
         type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
+    - target: {fileID: 5228339355055160166, guid: 885cb0e42003c4618a318191717e9622,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -17412,6 +18333,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: wall_white (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 692763433524296401, guid: 47b5a1a0c32394a349c905d5a453b35f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 692763433524296401, guid: 47b5a1a0c32394a349c905d5a453b35f,
         type: 3}
@@ -17574,6 +18500,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 60e892bc26a066649ab14df704128623, type: 3}
       propertyPath: m_Name
       value: SquareTable (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 60e892bc26a066649ab14df704128623, type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 60e892bc26a066649ab14df704128623, type: 3}
       propertyPath: m_RootOrder
@@ -17748,6 +18678,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WoodenSeatBacked (23)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: e5f6c578761bc4e41a03985bf01ba61b, type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: e5f6c578761bc4e41a03985bf01ba61b, type: 3}
       propertyPath: m_RootOrder
       value: 73
@@ -17811,6 +18745,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: wall_white (41)
+      objectReference: {fileID: 0}
+    - target: {fileID: 692763433524296401, guid: 47b5a1a0c32394a349c905d5a453b35f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 692763433524296401, guid: 47b5a1a0c32394a349c905d5a453b35f,
         type: 3}
@@ -17896,6 +18835,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: lamp_2 (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 61682325839585899, guid: 017116cb4280b48eca9d618e6bb8a86c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 61682325839585899, guid: 017116cb4280b48eca9d618e6bb8a86c,
         type: 3}
@@ -18319,6 +19263,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SquareTable
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 60e892bc26a066649ab14df704128623, type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 60e892bc26a066649ab14df704128623, type: 3}
       propertyPath: m_RootOrder
       value: 10
@@ -18376,6 +19324,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: lamp_2 (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 61682325839585899, guid: 017116cb4280b48eca9d618e6bb8a86c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 61682325839585899, guid: 017116cb4280b48eca9d618e6bb8a86c,
         type: 3}
@@ -18467,6 +19420,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WoodenSeatBacked (20)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: e5f6c578761bc4e41a03985bf01ba61b, type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: e5f6c578761bc4e41a03985bf01ba61b, type: 3}
       propertyPath: m_RootOrder
       value: 65
@@ -18530,6 +19487,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: lamp_2 (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 61682325839585899, guid: 017116cb4280b48eca9d618e6bb8a86c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 61682325839585899, guid: 017116cb4280b48eca9d618e6bb8a86c,
         type: 3}
@@ -18615,6 +19577,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: wall_white (43)
+      objectReference: {fileID: 0}
+    - target: {fileID: 692763433524296401, guid: 47b5a1a0c32394a349c905d5a453b35f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 692763433524296401, guid: 47b5a1a0c32394a349c905d5a453b35f,
         type: 3}
@@ -18753,6 +19720,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8453105780477417625, guid: fc2fd77dfdf7b4fad9ae2f8470766b07,
         type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453105780477417625, guid: fc2fd77dfdf7b4fad9ae2f8470766b07,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 126
       objectReference: {fileID: 0}
@@ -18769,6 +19741,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: wall_white (44)
+      objectReference: {fileID: 0}
+    - target: {fileID: 692763433524296401, guid: 47b5a1a0c32394a349c905d5a453b35f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 692763433524296401, guid: 47b5a1a0c32394a349c905d5a453b35f,
         type: 3}
@@ -18907,6 +19884,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9105380069092299073, guid: b42569332bdc146949eaab7e55cfa260,
         type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
+    - target: {fileID: 9105380069092299073, guid: b42569332bdc146949eaab7e55cfa260,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 126
       objectReference: {fileID: 0}
@@ -19034,6 +20016,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: wall_white (38)
+      objectReference: {fileID: 0}
+    - target: {fileID: 692763433524296401, guid: 47b5a1a0c32394a349c905d5a453b35f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 692763433524296401, guid: 47b5a1a0c32394a349c905d5a453b35f,
         type: 3}
@@ -19189,6 +20176,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WoodenSeatBacked (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: e5f6c578761bc4e41a03985bf01ba61b, type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: e5f6c578761bc4e41a03985bf01ba61b, type: 3}
       propertyPath: m_RootOrder
       value: 21
@@ -19246,6 +20237,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: lamp_2 (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 61682325839585899, guid: 017116cb4280b48eca9d618e6bb8a86c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 61682325839585899, guid: 017116cb4280b48eca9d618e6bb8a86c,
         type: 3}
@@ -19326,7 +20322,7 @@ GameObject:
   - component: {fileID: 1463908198}
   m_Layer: 0
   m_Name: Spot Light (5)
-  m_TagString: Untagged
+  m_TagString: Map
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 126
@@ -19477,6 +20473,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6168159591701234031, guid: cdbef1beb6c7f4f48b4532fbd79f08e1,
         type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
+    - target: {fileID: 6168159591701234031, guid: cdbef1beb6c7f4f48b4532fbd79f08e1,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 126
       objectReference: {fileID: 0}
@@ -19499,6 +20500,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: walll_window_green (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2235791115066207536, guid: 8fd8a57a30bb14c5b955916c92840436,
+        type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 2235791115066207536, guid: 8fd8a57a30bb14c5b955916c92840436,
         type: 3}
@@ -19578,6 +20584,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 63fca6f7605661246ba17828e535919e, type: 3}
       propertyPath: m_Name
       value: TallRoundTable
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 63fca6f7605661246ba17828e535919e, type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 63fca6f7605661246ba17828e535919e, type: 3}
       propertyPath: m_RootOrder
@@ -19694,6 +20704,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5228339355055160166, guid: 885cb0e42003c4618a318191717e9622,
         type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
+    - target: {fileID: 5228339355055160166, guid: 885cb0e42003c4618a318191717e9622,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -19774,6 +20789,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6168159591701234031, guid: cdbef1beb6c7f4f48b4532fbd79f08e1,
         type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
+    - target: {fileID: 6168159591701234031, guid: cdbef1beb6c7f4f48b4532fbd79f08e1,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 126
       objectReference: {fileID: 0}
@@ -19795,6 +20815,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 63fca6f7605661246ba17828e535919e, type: 3}
       propertyPath: m_Name
       value: TallRoundTable (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 63fca6f7605661246ba17828e535919e, type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 63fca6f7605661246ba17828e535919e, type: 3}
       propertyPath: m_RootOrder
@@ -19853,6 +20877,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: trash (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1736589073939979976, guid: 8cf587075220a4e8aa8f649518c732f2,
+        type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 1736589073939979976, guid: 8cf587075220a4e8aa8f649518c732f2,
         type: 3}
@@ -20115,6 +21144,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 692763433524296401, guid: 47b5a1a0c32394a349c905d5a453b35f,
         type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
+    - target: {fileID: 692763433524296401, guid: 47b5a1a0c32394a349c905d5a453b35f,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -20253,6 +21287,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: partition_wall (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5228339355055160166, guid: 885cb0e42003c4618a318191717e9622,
+        type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 5228339355055160166, guid: 885cb0e42003c4618a318191717e9622,
         type: 3}
@@ -20411,6 +21450,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6168159591701234031, guid: cdbef1beb6c7f4f48b4532fbd79f08e1,
         type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
+    - target: {fileID: 6168159591701234031, guid: cdbef1beb6c7f4f48b4532fbd79f08e1,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 126
       objectReference: {fileID: 0}
@@ -20491,6 +21535,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6910267483286908662, guid: e413ad08bc08c4e999e800d4695f6172,
         type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
+    - target: {fileID: 6910267483286908662, guid: e413ad08bc08c4e999e800d4695f6172,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 126
       objectReference: {fileID: 0}
@@ -20508,7 +21557,7 @@ GameObject:
   - component: {fileID: 1549256231}
   m_Layer: 0
   m_Name: Spot Light (5)
-  m_TagString: Untagged
+  m_TagString: Map
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 126
@@ -20601,6 +21650,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: lamp_2 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 61682325839585899, guid: 017116cb4280b48eca9d618e6bb8a86c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 61682325839585899, guid: 017116cb4280b48eca9d618e6bb8a86c,
         type: 3}
@@ -20738,6 +21792,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4725176478485993063, guid: 516587c299f6d4743ae00f19f7f91418,
         type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
+    - target: {fileID: 4725176478485993063, guid: 516587c299f6d4743ae00f19f7f91418,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 126
       objectReference: {fileID: 0}
@@ -20754,6 +21813,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: furniture (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 975443806907494526, guid: 939acb25a987d4cd8b7f54c754182316,
+        type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 975443806907494526, guid: 939acb25a987d4cd8b7f54c754182316,
         type: 3}
@@ -20829,7 +21893,7 @@ GameObject:
   - component: {fileID: 1561772471}
   m_Layer: 0
   m_Name: Spot Light (9)
-  m_TagString: Untagged
+  m_TagString: Map
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 126
@@ -20922,6 +21986,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: furniture (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 975443806907494526, guid: 939acb25a987d4cd8b7f54c754182316,
+        type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 975443806907494526, guid: 939acb25a987d4cd8b7f54c754182316,
         type: 3}
@@ -21148,7 +22217,7 @@ GameObject:
   - component: {fileID: 1589421158}
   m_Layer: 0
   m_Name: Plane (4)
-  m_TagString: Untagged
+  m_TagString: Map
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21376,6 +22445,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5228339355055160166, guid: 885cb0e42003c4618a318191717e9622,
         type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
+    - target: {fileID: 5228339355055160166, guid: 885cb0e42003c4618a318191717e9622,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -21503,6 +22577,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: toilet_wall (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3917288515387945643, guid: 2c2c7358c3e3d400aadd2d3b391c6ee3,
+        type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 3917288515387945643, guid: 2c2c7358c3e3d400aadd2d3b391c6ee3,
         type: 3}
@@ -21653,7 +22732,7 @@ GameObject:
   - component: {fileID: 1623395312}
   m_Layer: 0
   m_Name: Spot Light (9)
-  m_TagString: Untagged
+  m_TagString: Map
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 126
@@ -21749,6 +22828,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 692763433524296401, guid: 47b5a1a0c32394a349c905d5a453b35f,
         type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
+    - target: {fileID: 692763433524296401, guid: 47b5a1a0c32394a349c905d5a453b35f,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -21835,6 +22919,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 692763433524296401, guid: 47b5a1a0c32394a349c905d5a453b35f,
         type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
+    - target: {fileID: 692763433524296401, guid: 47b5a1a0c32394a349c905d5a453b35f,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -21905,6 +22994,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 60e892bc26a066649ab14df704128623, type: 3}
       propertyPath: m_Name
       value: SquareTable (15)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 60e892bc26a066649ab14df704128623, type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 60e892bc26a066649ab14df704128623, type: 3}
       propertyPath: m_RootOrder
@@ -22060,6 +23153,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9105380069092299073, guid: b42569332bdc146949eaab7e55cfa260,
         type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
+    - target: {fileID: 9105380069092299073, guid: b42569332bdc146949eaab7e55cfa260,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 126
       objectReference: {fileID: 0}
@@ -22076,6 +23174,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: walll_window_green (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2235791115066207536, guid: 8fd8a57a30bb14c5b955916c92840436,
+        type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 2235791115066207536, guid: 8fd8a57a30bb14c5b955916c92840436,
         type: 3}
@@ -22157,7 +23260,7 @@ GameObject:
   - component: {fileID: 1651042024}
   m_Layer: 0
   m_Name: Spot Light (5)
-  m_TagString: Untagged
+  m_TagString: Map
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 126
@@ -22324,6 +23427,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 60e892bc26a066649ab14df704128623, type: 3}
       propertyPath: m_Name
       value: SquareTable (18)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 60e892bc26a066649ab14df704128623, type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 60e892bc26a066649ab14df704128623, type: 3}
       propertyPath: m_RootOrder
@@ -22551,6 +23658,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5228339355055160166, guid: 885cb0e42003c4618a318191717e9622,
         type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
+    - target: {fileID: 5228339355055160166, guid: 885cb0e42003c4618a318191717e9622,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -22704,6 +23816,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: set_1
       objectReference: {fileID: 0}
+    - target: {fileID: 4454985305207390839, guid: eb1533f5e2f2d4372a7806fcbea5a463,
+        type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb1533f5e2f2d4372a7806fcbea5a463, type: 3}
 --- !u!4 &1676456667 stripped
@@ -22722,6 +23839,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: e5f6c578761bc4e41a03985bf01ba61b, type: 3}
       propertyPath: m_Name
       value: WoodenSeatBacked (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: e5f6c578761bc4e41a03985bf01ba61b, type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: e5f6c578761bc4e41a03985bf01ba61b, type: 3}
       propertyPath: m_RootOrder
@@ -22844,6 +23965,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5228339355055160166, guid: 885cb0e42003c4618a318191717e9622,
         type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
+    - target: {fileID: 5228339355055160166, guid: 885cb0e42003c4618a318191717e9622,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -22924,6 +24050,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5228339355055160166, guid: 885cb0e42003c4618a318191717e9622,
         type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
+    - target: {fileID: 5228339355055160166, guid: 885cb0e42003c4618a318191717e9622,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -22940,6 +24071,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: lamp_2 (26)
+      objectReference: {fileID: 0}
+    - target: {fileID: 61682325839585899, guid: 017116cb4280b48eca9d618e6bb8a86c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 61682325839585899, guid: 017116cb4280b48eca9d618e6bb8a86c,
         type: 3}
@@ -23083,6 +24219,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3739559890875550835, guid: 05aae47b2350c4201b91b86b5dde5e20,
         type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
+    - target: {fileID: 3739559890875550835, guid: 05aae47b2350c4201b91b86b5dde5e20,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 126
       objectReference: {fileID: 0}
@@ -23099,6 +24240,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: lamp_2 (19)
+      objectReference: {fileID: 0}
+    - target: {fileID: 61682325839585899, guid: 017116cb4280b48eca9d618e6bb8a86c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 61682325839585899, guid: 017116cb4280b48eca9d618e6bb8a86c,
         type: 3}
@@ -23259,6 +24405,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WoodenSeatBacked
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: e5f6c578761bc4e41a03985bf01ba61b, type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: e5f6c578761bc4e41a03985bf01ba61b, type: 3}
       propertyPath: m_RootOrder
       value: 17
@@ -23377,6 +24527,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: monitor (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6168159591701234031, guid: cdbef1beb6c7f4f48b4532fbd79f08e1,
+        type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 6168159591701234031, guid: cdbef1beb6c7f4f48b4532fbd79f08e1,
         type: 3}
@@ -23525,7 +24680,7 @@ GameObject:
   - component: {fileID: 1712018542}
   m_Layer: 0
   m_Name: Spot Light (5)
-  m_TagString: Untagged
+  m_TagString: Map
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 126
@@ -23618,6 +24773,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: walll_window_green (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2235791115066207536, guid: 8fd8a57a30bb14c5b955916c92840436,
+        type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 2235791115066207536, guid: 8fd8a57a30bb14c5b955916c92840436,
         type: 3}
@@ -23812,6 +24972,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 61682325839585899, guid: 017116cb4280b48eca9d618e6bb8a86c,
         type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
+    - target: {fileID: 61682325839585899, guid: 017116cb4280b48eca9d618e6bb8a86c,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 126
       objectReference: {fileID: 0}
@@ -23894,6 +25059,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WoodenSeatBacked (27)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: e5f6c578761bc4e41a03985bf01ba61b, type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: e5f6c578761bc4e41a03985bf01ba61b, type: 3}
       propertyPath: m_RootOrder
       value: 86
@@ -23963,6 +25132,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: toilet_wall (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3917288515387945643, guid: 2c2c7358c3e3d400aadd2d3b391c6ee3,
+        type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 3917288515387945643, guid: 2c2c7358c3e3d400aadd2d3b391c6ee3,
         type: 3}
@@ -24037,6 +25211,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TallRoundTable (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 63fca6f7605661246ba17828e535919e, type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 63fca6f7605661246ba17828e535919e, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -24094,6 +25272,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: walll_window_green (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2235791115066207536, guid: 8fd8a57a30bb14c5b955916c92840436,
+        type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 2235791115066207536, guid: 8fd8a57a30bb14c5b955916c92840436,
         type: 3}
@@ -24232,6 +25415,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5228339355055160166, guid: 885cb0e42003c4618a318191717e9622,
         type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
+    - target: {fileID: 5228339355055160166, guid: 885cb0e42003c4618a318191717e9622,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -24254,6 +25442,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: furniture (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 975443806907494526, guid: 939acb25a987d4cd8b7f54c754182316,
+        type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 975443806907494526, guid: 939acb25a987d4cd8b7f54c754182316,
         type: 3}
@@ -24347,7 +25540,7 @@ GameObject:
   - component: {fileID: 1774865254}
   m_Layer: 0
   m_Name: Spot Light (5)
-  m_TagString: Untagged
+  m_TagString: Map
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 126
@@ -24441,7 +25634,7 @@ GameObject:
   - component: {fileID: 1786506631}
   m_Layer: 0
   m_Name: Spot Light (5)
-  m_TagString: Untagged
+  m_TagString: Map
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 126
@@ -24535,7 +25728,7 @@ GameObject:
   - component: {fileID: 1786968683}
   m_Layer: 0
   m_Name: Spot Light
-  m_TagString: Untagged
+  m_TagString: Map
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 126
@@ -24629,7 +25822,7 @@ GameObject:
   - component: {fileID: 1801908326}
   m_Layer: 0
   m_Name: Spot Light
-  m_TagString: Untagged
+  m_TagString: Map
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 126
@@ -24828,7 +26021,7 @@ GameObject:
   - component: {fileID: 1820394423}
   m_Layer: 0
   m_Name: Spot Light (5)
-  m_TagString: Untagged
+  m_TagString: Map
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 126
@@ -24924,6 +26117,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 61682325839585899, guid: 017116cb4280b48eca9d618e6bb8a86c,
         type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
+    - target: {fileID: 61682325839585899, guid: 017116cb4280b48eca9d618e6bb8a86c,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 126
       objectReference: {fileID: 0}
@@ -25006,6 +26204,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: lamp_2 (18)
+      objectReference: {fileID: 0}
+    - target: {fileID: 61682325839585899, guid: 017116cb4280b48eca9d618e6bb8a86c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 61682325839585899, guid: 017116cb4280b48eca9d618e6bb8a86c,
         type: 3}
@@ -25149,6 +26352,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5228339355055160166, guid: 885cb0e42003c4618a318191717e9622,
         type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
+    - target: {fileID: 5228339355055160166, guid: 885cb0e42003c4618a318191717e9622,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -25217,6 +26425,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WoodenSeatBacked (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: e5f6c578761bc4e41a03985bf01ba61b, type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: e5f6c578761bc4e41a03985bf01ba61b, type: 3}
       propertyPath: m_RootOrder
       value: 28
@@ -25280,6 +26492,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: wall_white (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 692763433524296401, guid: 47b5a1a0c32394a349c905d5a453b35f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 692763433524296401, guid: 47b5a1a0c32394a349c905d5a453b35f,
         type: 3}
@@ -25361,7 +26578,7 @@ GameObject:
   - component: {fileID: 1861000393}
   m_Layer: 0
   m_Name: Spot Light (5)
-  m_TagString: Untagged
+  m_TagString: Map
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 126
@@ -25457,6 +26674,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 61682325839585899, guid: 017116cb4280b48eca9d618e6bb8a86c,
         type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
+    - target: {fileID: 61682325839585899, guid: 017116cb4280b48eca9d618e6bb8a86c,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 126
       objectReference: {fileID: 0}
@@ -25548,6 +26770,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3699694465470506649, guid: 061d8433180ee410c876e592b338cc0b,
         type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
+    - target: {fileID: 3699694465470506649, guid: 061d8433180ee410c876e592b338cc0b,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 126
       objectReference: {fileID: 0}
@@ -25618,6 +26845,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: e5f6c578761bc4e41a03985bf01ba61b, type: 3}
       propertyPath: m_Name
       value: WoodenSeatBacked (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: e5f6c578761bc4e41a03985bf01ba61b, type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: e5f6c578761bc4e41a03985bf01ba61b, type: 3}
       propertyPath: m_RootOrder
@@ -25734,6 +26965,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5228339355055160166, guid: 885cb0e42003c4618a318191717e9622,
         type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
+    - target: {fileID: 5228339355055160166, guid: 885cb0e42003c4618a318191717e9622,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -25756,6 +26992,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: wall_white (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 692763433524296401, guid: 47b5a1a0c32394a349c905d5a453b35f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 692763433524296401, guid: 47b5a1a0c32394a349c905d5a453b35f,
         type: 3}
@@ -26069,6 +27310,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2235791115066207536, guid: 8fd8a57a30bb14c5b955916c92840436,
         type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
+    - target: {fileID: 2235791115066207536, guid: 8fd8a57a30bb14c5b955916c92840436,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -26146,6 +27392,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: lamp_2 (22)
+      objectReference: {fileID: 0}
+    - target: {fileID: 61682325839585899, guid: 017116cb4280b48eca9d618e6bb8a86c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 61682325839585899, guid: 017116cb4280b48eca9d618e6bb8a86c,
         type: 3}
@@ -26231,6 +27482,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WoodenSeatBacked (26)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: e5f6c578761bc4e41a03985bf01ba61b, type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: e5f6c578761bc4e41a03985bf01ba61b, type: 3}
       propertyPath: m_RootOrder
       value: 82
@@ -26294,6 +27549,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: lamp_2 (23)
+      objectReference: {fileID: 0}
+    - target: {fileID: 61682325839585899, guid: 017116cb4280b48eca9d618e6bb8a86c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 61682325839585899, guid: 017116cb4280b48eca9d618e6bb8a86c,
         type: 3}
@@ -26454,6 +27714,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WoodenSeatBacked (29)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: e5f6c578761bc4e41a03985bf01ba61b, type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: e5f6c578761bc4e41a03985bf01ba61b, type: 3}
       propertyPath: m_RootOrder
       value: 92
@@ -26575,6 +27839,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3739559890875550835, guid: 05aae47b2350c4201b91b86b5dde5e20,
         type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
+    - target: {fileID: 3739559890875550835, guid: 05aae47b2350c4201b91b86b5dde5e20,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 126
       objectReference: {fileID: 0}
@@ -26665,6 +27934,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: e5f6c578761bc4e41a03985bf01ba61b, type: 3}
       propertyPath: m_Name
       value: WoodenSeatBacked (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: e5f6c578761bc4e41a03985bf01ba61b, type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: e5f6c578761bc4e41a03985bf01ba61b, type: 3}
       propertyPath: m_RootOrder
@@ -26799,6 +28072,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5228339355055160166, guid: 885cb0e42003c4618a318191717e9622,
         type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
+    - target: {fileID: 5228339355055160166, guid: 885cb0e42003c4618a318191717e9622,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -26820,6 +28098,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 60e892bc26a066649ab14df704128623, type: 3}
       propertyPath: m_Name
       value: SquareTable (16)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 60e892bc26a066649ab14df704128623, type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 60e892bc26a066649ab14df704128623, type: 3}
       propertyPath: m_RootOrder
@@ -26883,6 +28165,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: e5f6c578761bc4e41a03985bf01ba61b, type: 3}
       propertyPath: m_Name
       value: WoodenSeatBacked
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: e5f6c578761bc4e41a03985bf01ba61b, type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: e5f6c578761bc4e41a03985bf01ba61b, type: 3}
       propertyPath: m_RootOrder
@@ -26976,6 +28262,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: furniture (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 975443806907494526, guid: 939acb25a987d4cd8b7f54c754182316,
+        type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 975443806907494526, guid: 939acb25a987d4cd8b7f54c754182316,
         type: 3}
@@ -27208,6 +28499,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 692763433524296401, guid: 47b5a1a0c32394a349c905d5a453b35f,
         type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
+    - target: {fileID: 692763433524296401, guid: 47b5a1a0c32394a349c905d5a453b35f,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -27293,6 +28589,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 984192088256995731, guid: 3f3c34eac948f41b39745bf3d1ce5f60,
         type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
+    - target: {fileID: 984192088256995731, guid: 3f3c34eac948f41b39745bf3d1ce5f60,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 126
       objectReference: {fileID: 0}
@@ -27364,6 +28665,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WoodenSeatBacked (15)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: e5f6c578761bc4e41a03985bf01ba61b, type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: e5f6c578761bc4e41a03985bf01ba61b, type: 3}
       propertyPath: m_RootOrder
       value: 53
@@ -27427,6 +28732,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: wall_white (31)
+      objectReference: {fileID: 0}
+    - target: {fileID: 692763433524296401, guid: 47b5a1a0c32394a349c905d5a453b35f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 692763433524296401, guid: 47b5a1a0c32394a349c905d5a453b35f,
         type: 3}
@@ -27507,6 +28817,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SquareTable (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 60e892bc26a066649ab14df704128623, type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 60e892bc26a066649ab14df704128623, type: 3}
       propertyPath: m_RootOrder
       value: 20
@@ -27575,6 +28889,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 60e892bc26a066649ab14df704128623, type: 3}
       propertyPath: m_Name
       value: SquareTable (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 60e892bc26a066649ab14df704128623, type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 60e892bc26a066649ab14df704128623, type: 3}
       propertyPath: m_RootOrder
@@ -27700,6 +29018,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: fridge (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453105780477417625, guid: fc2fd77dfdf7b4fad9ae2f8470766b07,
+        type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 8453105780477417625, guid: fc2fd77dfdf7b4fad9ae2f8470766b07,
         type: 3}
@@ -27888,6 +29211,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6417914843153325289, guid: ebcdbc32ab7854e84a4595a87a000376,
         type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
+    - target: {fileID: 6417914843153325289, guid: ebcdbc32ab7854e84a4595a87a000376,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 126
       objectReference: {fileID: 0}
@@ -27910,6 +29238,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: wall_white (27)
+      objectReference: {fileID: 0}
+    - target: {fileID: 692763433524296401, guid: 47b5a1a0c32394a349c905d5a453b35f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 692763433524296401, guid: 47b5a1a0c32394a349c905d5a453b35f,
         type: 3}
@@ -27991,7 +29324,7 @@ GameObject:
   - component: {fileID: 2064606031}
   m_Layer: 0
   m_Name: Spot Light (5)
-  m_TagString: Untagged
+  m_TagString: Map
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 126
@@ -28084,6 +29417,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WoodenSeatBacked (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: e5f6c578761bc4e41a03985bf01ba61b, type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: e5f6c578761bc4e41a03985bf01ba61b, type: 3}
       propertyPath: m_RootOrder
       value: 15
@@ -28141,6 +29478,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: furniture (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 975443806907494526, guid: 939acb25a987d4cd8b7f54c754182316,
+        type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 975443806907494526, guid: 939acb25a987d4cd8b7f54c754182316,
         type: 3}
@@ -28395,6 +29737,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6910267483286908662, guid: e413ad08bc08c4e999e800d4695f6172,
         type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
+    - target: {fileID: 6910267483286908662, guid: e413ad08bc08c4e999e800d4695f6172,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 126
       objectReference: {fileID: 0}
@@ -28490,6 +29837,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: lamp_1 (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4725176478485993063, guid: 516587c299f6d4743ae00f19f7f91418,
+        type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 4725176478485993063, guid: 516587c299f6d4743ae00f19f7f91418,
         type: 3}
@@ -28729,6 +30081,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6417914843153325289, guid: ebcdbc32ab7854e84a4595a87a000376,
         type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
+    - target: {fileID: 6417914843153325289, guid: ebcdbc32ab7854e84a4595a87a000376,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 126
       objectReference: {fileID: 0}
@@ -28744,6 +30101,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: e5f6c578761bc4e41a03985bf01ba61b, type: 3}
       propertyPath: m_Name
       value: WoodenSeatBacked (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: e5f6c578761bc4e41a03985bf01ba61b, type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: e5f6c578761bc4e41a03985bf01ba61b, type: 3}
       propertyPath: m_RootOrder
@@ -28861,6 +30222,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: e5f6c578761bc4e41a03985bf01ba61b, type: 3}
       propertyPath: m_Name
       value: WoodenSeatBacked (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: e5f6c578761bc4e41a03985bf01ba61b, type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: e5f6c578761bc4e41a03985bf01ba61b, type: 3}
       propertyPath: m_RootOrder
@@ -28983,6 +30348,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6417914843153325289, guid: ebcdbc32ab7854e84a4595a87a000376,
         type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
+    - target: {fileID: 6417914843153325289, guid: ebcdbc32ab7854e84a4595a87a000376,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 126
       objectReference: {fileID: 0}
@@ -29054,6 +30424,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: cooker
+      objectReference: {fileID: 0}
+    - target: {fileID: 9105380069092299073, guid: b42569332bdc146949eaab7e55cfa260,
+        type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 9105380069092299073, guid: b42569332bdc146949eaab7e55cfa260,
         type: 3}
@@ -29131,6 +30506,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3739559890875550835, guid: 05aae47b2350c4201b91b86b5dde5e20,
         type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
+    - target: {fileID: 3739559890875550835, guid: 05aae47b2350c4201b91b86b5dde5e20,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 126
       objectReference: {fileID: 0}
@@ -29205,6 +30585,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6168159591701234031, guid: cdbef1beb6c7f4f48b4532fbd79f08e1,
         type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
+    - target: {fileID: 6168159591701234031, guid: cdbef1beb6c7f4f48b4532fbd79f08e1,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 126
       objectReference: {fileID: 0}
@@ -29276,6 +30661,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: fridge
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453105780477417625, guid: fc2fd77dfdf7b4fad9ae2f8470766b07,
+        type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 8453105780477417625, guid: fc2fd77dfdf7b4fad9ae2f8470766b07,
         type: 3}
@@ -29369,6 +30759,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: toilet
+      objectReference: {fileID: 0}
+    - target: {fileID: 984192088256995731, guid: 3f3c34eac948f41b39745bf3d1ce5f60,
+        type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 984192088256995731, guid: 3f3c34eac948f41b39745bf3d1ce5f60,
         type: 3}
@@ -29513,6 +30908,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6910267483286908662, guid: e413ad08bc08c4e999e800d4695f6172,
         type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
+    - target: {fileID: 6910267483286908662, guid: e413ad08bc08c4e999e800d4695f6172,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 126
       objectReference: {fileID: 0}
@@ -29541,6 +30941,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: toilet_wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 3917288515387945643, guid: 2c2c7358c3e3d400aadd2d3b391c6ee3,
+        type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 3917288515387945643, guid: 2c2c7358c3e3d400aadd2d3b391c6ee3,
         type: 3}
@@ -29621,6 +31026,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: cash_register
+      objectReference: {fileID: 0}
+    - target: {fileID: 3699694465470506649, guid: 061d8433180ee410c876e592b338cc0b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 3699694465470506649, guid: 061d8433180ee410c876e592b338cc0b,
         type: 3}
@@ -29753,6 +31163,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8839047781394469558, guid: a84a166e037c44cd7b6a04d9dcde0a33,
         type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
+    - target: {fileID: 8839047781394469558, guid: a84a166e037c44cd7b6a04d9dcde0a33,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -29775,6 +31190,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: trash
+      objectReference: {fileID: 0}
+    - target: {fileID: 1736589073939979976, guid: 8cf587075220a4e8aa8f649518c732f2,
+        type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 1736589073939979976, guid: 8cf587075220a4e8aa8f649518c732f2,
         type: 3}
@@ -29849,6 +31269,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: lamp_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 61682325839585899, guid: 017116cb4280b48eca9d618e6bb8a86c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 61682325839585899, guid: 017116cb4280b48eca9d618e6bb8a86c,
         type: 3}
@@ -29928,6 +31353,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: wall_white
+      objectReference: {fileID: 0}
+    - target: {fileID: 692763433524296401, guid: 47b5a1a0c32394a349c905d5a453b35f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 692763433524296401, guid: 47b5a1a0c32394a349c905d5a453b35f,
         type: 3}
@@ -30011,6 +31441,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 975443806907494526, guid: 939acb25a987d4cd8b7f54c754182316,
         type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
+    - target: {fileID: 975443806907494526, guid: 939acb25a987d4cd8b7f54c754182316,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 126
       objectReference: {fileID: 0}
@@ -30088,6 +31523,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: washbasin
+      objectReference: {fileID: 0}
+    - target: {fileID: 25344551876930730, guid: 5d3e6100cc8b848ddb892a9a44bd7deb,
+        type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 25344551876930730, guid: 5d3e6100cc8b848ddb892a9a44bd7deb,
         type: 3}

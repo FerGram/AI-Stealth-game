@@ -4,12 +4,12 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Obstacle
+  - Map
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - 1
   - Water
   - UI
   - 
