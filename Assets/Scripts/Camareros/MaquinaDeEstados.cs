@@ -11,7 +11,7 @@ public class MaquinaDeEstados : MonoBehaviour
     }
 
     public Estado estadoInicial;
-    public static Estado estadoActual;
+    public Estado estadoActual;
 
     // Start is called before the first frame update
     void Start()
@@ -19,8 +19,9 @@ public class MaquinaDeEstados : MonoBehaviour
         ActivarEstado(estadoInicial);
     }
 
-    private void ActivarEstado(Estado estado)
+    public void ActivarEstado(Estado estado)
     {
         /*if (estadoActual != null)*/ estadoActual = estado;
+       // Debug.Log("Estado " + estadoActual + " activado");
     }
 }
