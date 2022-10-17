@@ -343,10 +343,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   navMesh: {fileID: 3154817556386868971}
-  player: {fileID: 0}
+  jugador: {fileID: 0}
   entradaCocina: {fileID: 0}
-  FloatingText: {fileID: 0}
-  radioDeteccion: 1
+  textoFlotante: {fileID: 0}
+  radioDeteccion: 3
   segundosDeAlerta: 10
 --- !u!195 &3154817556386868971
 NavMeshAgent:

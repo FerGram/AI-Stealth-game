@@ -219,17 +219,19 @@ public class CamareroController : MonoBehaviour
         //Para determinar si un punto (x, y) pertenece a una
         //circunferencia con centro (a, b) y radio r, se prueba que
         //la distancia entre (x, y) y el centro (a, b) es ( x - a ) 2 + ( y - b ) 2 = r2 .
-        float x, y, a, b;
+        //float x, y, a, b;
         for (int i = 0; i < arrayNpc.Length; i++)
         {
-            x = arrayNpc[i].transform.position.x;
+            /*x = arrayNpc[i].transform.position.x;
             y = arrayNpc[i].transform.position.y;
             a = transform.position.x;
             b = transform.position.y;
             if ((x - a)* (x - a) + (y - b) * (y - b) <= radio*radio)
             {
                 Cercanos.Add(arrayNpc[i]);
-            }
+            }*/
+
+            if (Vector3.Distance(arrayNpc[i].transform.position, transform.position) < radio) Cercanos.Add(arrayNpc[i]);
         }
 
         return Cercanos;
@@ -237,15 +239,18 @@ public class CamareroController : MonoBehaviour
 
     private bool EstaJugadorEnRadio(int radio)
     {
-        float x, y, a, b;
-        x = jugador.transform.position.x;
-        y = jugador.transform.position.y;
-        a = transform.position.x;
-        b = transform.position.y;
+        /*float x, y, a, b;
+        a = jugador.transform.position.x;
+        b = jugador.transform.position.y;
+        x = transform.position.x;
+        y = transform.position.y;
         if ((x - a) * (x - a) + (y - b) * (y - b) <= radio * radio)
         {
             return true;
         }
-        return false;
+        return false;*/
+
+        if (Vector3.Distance(jugador.transform.position, transform.position) < radio) return true;
+        else return false;
     }
 }
