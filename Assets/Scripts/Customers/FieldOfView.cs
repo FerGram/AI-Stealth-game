@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
-public class FieldOfView : MonoBehaviour
+public class ConoDeVision : MonoBehaviour
 {
 	
 	public float viewRadius;
