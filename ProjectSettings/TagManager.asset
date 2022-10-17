@@ -11,6 +11,9 @@ TagManager:
   - MesaOcupada
   - Camarero
   - Cliente
+  - FogonOcupado
+  - FogonLibre
+  - Cocinero
   layers:
   - Default
   - TransparentFX

@@ -16,12 +16,17 @@ public class PlayerModification : MonoBehaviour
     private void Awake()
     {
         initialPos = transform.position;
+       
     }
     void Update()
     {
+        if(cake == null)
+        {
+            cake = GameObject.FindGameObjectWithTag("Cake");
+        }
         if (transportingCake)
         {
-            cake.transform.position = new Vector3(transform.position.x, transform.position.y + 1.5f, transform.position.z);
+            cake.transform.position = new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z);
         }
         Collider[] objectsDetected = Physics.OverlapSphere(transform.position, detectCakeRadius, cakeMask);
 
@@ -32,7 +37,7 @@ public class PlayerModification : MonoBehaviour
             
         }
         else
-        {
+        {            
             cakeDetected = false;
             cake.GetComponent<RemarkableObject>().objectSelected = false;
         }

@@ -16,16 +16,16 @@ public class FieldOfView : MonoBehaviour
 	[SerializeField]
 	public LayerMask obstacleMask;
 
-	[HideInInspector]
+	
 	public List<Transform> visibleTargets = new List<Transform>();
 
-	void Start()
-	{
-		StartCoroutine("FindTargetsWithDelay", .2f);
-	}
+	public Collider[] targetsInViewRadius;
 
-
-	IEnumerator FindTargetsWithDelay(float delay)
+    private void Update()
+    {
+		FindVisibleTargets();
+    }
+    IEnumerator FindTargetsWithDelay(float delay)
 	{
 		while (true)
 		{
@@ -38,17 +38,17 @@ public class FieldOfView : MonoBehaviour
 	{
 
 		visibleTargets.Clear();
-		
-		Collider[] targetsInViewRadius = Physics.OverlapSphere(transform.position, viewRadius, targetMask);
+
+		targetsInViewRadius = Physics.OverlapSphere(transform.position, viewRadius, targetMask);
 
 		
 		for (int i = 0; i < targetsInViewRadius.Length; i++)
 		{
-
+			
 			Transform target = targetsInViewRadius[i].transform;
 			Vector3 dirToTarget = (target.position - transform.position).normalized;
 
-			if (Vector3.Angle(transform.right, dirToTarget) < viewAngle / 2)
+			if (Vector3.Angle(transform.forward, dirToTarget) < viewAngle / 2)
 			{
 
 				float dstToTarget = Vector3.Distance(transform.position, target.position);
@@ -60,15 +60,25 @@ public class FieldOfView : MonoBehaviour
 					if (visibleTargets.Count == 0)
 					{
 						visibleTargets.Add(target);
-						//print("Detectado");
+                        print("Detectado");
+						if (TryGetComponent(out CocineroController controller))
+                        {
+							controller.canSeePlayer = false;
+                        }
+
 						
+                        
 					}					
 				}
 				else
 				{
 					visibleTargets.Clear();
-					//print("No detectado");
 					
+					if (TryGetComponent(out CocineroController controller))
+					{
+						controller.canSeePlayer = true;
+					}
+
 				}
 			}
 		}
@@ -86,7 +96,16 @@ public class FieldOfView : MonoBehaviour
 
 	private void OnDrawGizmos()
 	{
-		Gizmos.DrawRay(transform.position, transform.right);
+		float totalFOV = viewAngle;
+		float rayRange = viewRadius;
+		float halfFOV = totalFOV / 2.0f;
+		Quaternion leftRayRotation = Quaternion.AngleAxis(-halfFOV, Vector3.up);
+		Quaternion rightRayRotation = Quaternion.AngleAxis(halfFOV, Vector3.up);
+		Vector3 leftRayDirection = leftRayRotation * transform.forward;
+		Vector3 rightRayDirection = rightRayRotation * transform.forward;
+		Gizmos.DrawRay(transform.position, leftRayDirection * rayRange);
+		Gizmos.DrawRay(transform.position, rightRayDirection * rayRange);
+		Gizmos.DrawWireSphere(transform.position, rayRange);
 	}
 
 	

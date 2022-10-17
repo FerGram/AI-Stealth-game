@@ -11,11 +11,16 @@ public class ManageTime : MonoBehaviour
     public float timer;
     [SerializeField] GameObject textTimer;
     
-    public bool isTimer = true; 
+    public bool isTimer = true;
+    [SerializeField] GameObject cakePrefab;
 
     private void Awake()
     {
         timer = 0.0f;        
+        GameObject[] fogones = GameObject.FindGameObjectsWithTag("FogonLibre");
+        int randomNumber = UnityEngine.Random.Range(0, fogones.Length);
+        GameObject fogonActual = fogones[randomNumber];
+        Instantiate(cakePrefab, fogonActual.transform.position, Quaternion.identity);
     }
     void Update()
     {
@@ -25,7 +30,6 @@ public class ManageTime : MonoBehaviour
             timer += Time.deltaTime;
             
         }
-
         DisplayTime();
     }
 
@@ -35,18 +39,13 @@ public class ManageTime : MonoBehaviour
     {
         int minutes = Mathf.FloorToInt(timer / 60.0f);
         int seconds = Mathf.FloorToInt(timer - minutes * 60);
-
         if(textTimer != null)
         {
             textTimer.GetComponent<TextMeshProUGUI>().text = string.Format("Time: {0:00}:{1:00}", minutes, seconds);
             
-        }
-        
-        
-
-
+        }        
     }
 
    
-
+    
 }
