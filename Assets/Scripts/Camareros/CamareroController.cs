@@ -1,7 +1,7 @@
+//#define DEBUG_INFO
+
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
 
 public class CamareroController : MonoBehaviour
 {
@@ -12,35 +12,39 @@ public class CamareroController : MonoBehaviour
     [Space]
     [Header("Navigation")]
     [SerializeField] Pathfinder _pathfinder;
-    [SerializeField] float _speed = 3f;
-    [SerializeField] float _stoppingNodeDistance = 0.3f;
+    [SerializeField] float _movementSpeed = 100f;     
+    [SerializeField] float _rotationSpeed = 180f;    //Translates to degrees per second
+    [SerializeField] float _stoppingNodeDistance = 0.01f;
 
     //Patrulla
     private bool _irMesas;
     private bool _irCocina;
     private GameObject[] _mesas;
     private GameObject _mesaActual;
+    private Rigidbody _rb;
 
+    private void Awake()
+    {
+        _rb = GetComponent<Rigidbody>();
+    }
 
     void Start()
     {
         _mesas = GameObject.FindGameObjectsWithTag("MesaLibre");
         int randomNumber = Random.Range(0, _mesas.Length);
         _mesaActual = _mesas[randomNumber];
-        Debug.Log(randomNumber);
+
         if(randomNumber == 0 || randomNumber == 1)
         {
             _irMesas = false;
             _irCocina = true;
-            //navMesh.destination = _entradaCocina.transform.position;
-            _pathfinder.StartPathfinding(transform, _entradaCocina.transform, _speed, _stoppingNodeDistance);
+            _pathfinder.StartPathfinding(_rb, _entradaCocina.transform, _movementSpeed, _stoppingNodeDistance, _rotationSpeed);
         }
         else
         {
             _irMesas = true;
             _irCocina = false;
-            //navMesh.destination = _mesaActual.transform.position;
-            _pathfinder.StartPathfinding(transform, _mesaActual.transform, _speed, _stoppingNodeDistance);
+            _pathfinder.StartPathfinding(_rb, _mesaActual.transform, _movementSpeed, _stoppingNodeDistance, _rotationSpeed);
         }
 
         
@@ -74,8 +78,10 @@ public class CamareroController : MonoBehaviour
             //Está cerca de mesa, tiene que ir a cocina
             _irMesas = false;
             _mesaActual.tag = "MesaOcupada";
-            //mesas = GameObject.FindGameObjectsWithTag("MesaLibre");
+
+#if DEBUG_INFO
             DebugConsultarArrayMesasLibres(_mesas);
+#endif
             _irCocina = true;
             StartCoroutine(IrHacia(_entradaCocina));
 
@@ -98,8 +104,8 @@ public class CamareroController : MonoBehaviour
     }
     private void Perseguir()
     {
-        //navMesh.destination = _player.transform.position;
-        _pathfinder.StartPathfinding(transform, _player.transform, _speed, _stoppingNodeDistance);
+        //WARNING: THIS IS IN UPDATE, WE DON'T WANT TO CONSTANTLY CALL THIS FUNCTION
+        _pathfinder.StartPathfinding(_rb, _player.transform, _movementSpeed, _stoppingNodeDistance, _rotationSpeed);
     }
 
     IEnumerator IrHacia(GameObject objetivo)
@@ -109,12 +115,8 @@ public class CamareroController : MonoBehaviour
         if (_irCocina)
         {
             _mesaActual.tag = "MesaLibre";
-            //mesas = GameObject.FindGameObjectsWithTag("MesaLibre");
-            
-            //mesaActual = mesas[Random.Range(0, mesas.Length)];
         }
-        //navMesh.destination = objetivo.transform.position;
-        _pathfinder.StartPathfinding(transform, objetivo.transform, _speed, _stoppingNodeDistance);
+        _pathfinder.StartPathfinding(_rb, objetivo.transform, _movementSpeed, _stoppingNodeDistance, _rotationSpeed);
     }
 
     private void DebugConsultarArrayMesasLibres(GameObject[] mesas)

@@ -1100,7 +1100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _gridWidthResolution: 60
   _gridHeightResolution: 60
-  _gridNodeSize: 0.25
+  _gridNodeSize: 0.5
 --- !u!4 &866497815
 Transform:
   m_ObjectHideFlags: 0
@@ -1607,6 +1607,11 @@ PrefabInstance:
       propertyPath: _entradaCocina
       value: 
       objectReference: {fileID: 1929939363}
+    - target: {fileID: 3295859420509451940, guid: 1de1feebedc95764eb923f3e55c81dd0,
+        type: 3}
+      propertyPath: _rotationSpeed
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 3295859421404057130, guid: 1de1feebedc95764eb923f3e55c81dd0,
         type: 3}
       propertyPath: m_RootOrder
@@ -1661,6 +1666,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Cocinero (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3295859421404353034, guid: 1de1feebedc95764eb923f3e55c81dd0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1de1feebedc95764eb923f3e55c81dd0, type: 3}
@@ -2262,6 +2272,11 @@ PrefabInstance:
       propertyPath: _entradaCocina
       value: 
       objectReference: {fileID: 1929939363}
+    - target: {fileID: 3295859420509451940, guid: 1de1feebedc95764eb923f3e55c81dd0,
+        type: 3}
+      propertyPath: _rotationSpeed
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 3295859421404057130, guid: 1de1feebedc95764eb923f3e55c81dd0,
         type: 3}
       propertyPath: m_RootOrder
@@ -2317,6 +2332,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cocinero (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3295859421404353034, guid: 1de1feebedc95764eb923f3e55c81dd0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1de1feebedc95764eb923f3e55c81dd0, type: 3}
 --- !u!1001 &3295859420721287294
@@ -2341,6 +2361,11 @@ PrefabInstance:
       propertyPath: _entradaCocina
       value: 
       objectReference: {fileID: 1929939363}
+    - target: {fileID: 3295859420509451940, guid: 1de1feebedc95764eb923f3e55c81dd0,
+        type: 3}
+      propertyPath: _movementSpeed
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 3295859421404057130, guid: 1de1feebedc95764eb923f3e55c81dd0,
         type: 3}
       propertyPath: m_RootOrder

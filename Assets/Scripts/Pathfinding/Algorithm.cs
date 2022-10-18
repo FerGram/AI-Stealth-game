@@ -1,7 +1,7 @@
-﻿using System;
+﻿//#define DEBUG_INFO
+
 using System.Diagnostics;
 using System.Collections.Generic;
-using UnityEngine;
 
 static class Algorithm
 {
@@ -12,8 +12,10 @@ static class Algorithm
         List<Node> visited = new List<Node>();
         Queue<Node> nodeQueue = new Queue<Node>();
 
+#if DEBUG_INFO
         UnityEngine.Debug.Log("Start node position at: " + start.GetPosition());
         UnityEngine.Debug.Log("End node position at: " + end.GetPosition());
+#endif
 
         Node currentNode = null;
         nodeQueue.Enqueue(start);
@@ -40,8 +42,9 @@ static class Algorithm
             }
         }
         watch.Stop();
+#if DEBUG_INFO
         UnityEngine.Debug.Log("Main loop took: " + watch.ElapsedMilliseconds + " ms");
-
+#endif
         if (currentNode == end) return GetPath(currentNode);
         else
         {
@@ -69,4 +72,3 @@ static class Algorithm
         return path;
     }
 }
-
