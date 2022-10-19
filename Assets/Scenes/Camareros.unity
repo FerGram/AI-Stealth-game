@@ -2361,11 +2361,6 @@ PrefabInstance:
       propertyPath: _entradaCocina
       value: 
       objectReference: {fileID: 1929939363}
-    - target: {fileID: 3295859420509451940, guid: 1de1feebedc95764eb923f3e55c81dd0,
-        type: 3}
-      propertyPath: _movementSpeed
-      value: 1.5
-      objectReference: {fileID: 0}
     - target: {fileID: 3295859421404057130, guid: 1de1feebedc95764eb923f3e55c81dd0,
         type: 3}
       propertyPath: m_RootOrder
