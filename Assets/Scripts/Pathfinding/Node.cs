@@ -22,7 +22,7 @@ public class Node
     private void DetermineWallNode(float size)
     {
         //Check if it's a wall node
-        if (Physics.CheckBox(_nodePosition, new Vector3(size / 2, size / 2, size / 2), Quaternion.identity, -1, QueryTriggerInteraction.Ignore))
+        if (Physics.CheckBox(_nodePosition, new Vector3(size / 2, 0.1f, size /  2), Quaternion.identity, -1, QueryTriggerInteraction.Ignore))
         {
             _isWallNode = true;
         }

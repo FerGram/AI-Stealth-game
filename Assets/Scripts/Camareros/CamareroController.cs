@@ -9,8 +9,9 @@ public class CamareroController : MonoBehaviour
     private MaquinaDeEstados fsm;
     private AudioSource audioSource;
 
-    [SerializeField] GameObject _player;
     [SerializeField] GameObject _entradaCocina;
+    [SerializeField] GameObject jugador;
+    [SerializeField] GameObject textoFlotante;
     [Space]
     [Header("Navigation")]
     [SerializeField] Pathfinder _pathfinder;
@@ -18,10 +19,7 @@ public class CamareroController : MonoBehaviour
     [SerializeField] float _rotationSpeed = 180f;    //Translates to degrees per second
     [SerializeField] float _stoppingNodeDistance = 0.01f;
 
-    public GameObject jugador;
-    public GameObject entradaCocina;
     private GameObject clienteAlertado;
-    public GameObject textoFlotante;
 
     //Patrulla
     private bool _irMesas;
@@ -31,6 +29,8 @@ public class CamareroController : MonoBehaviour
     private Rigidbody _rb;
 
     //Alerta
+    [Space]
+    [Header("Alerta")]
     public int radioDeteccion;
     public float segundosDeAlerta = 5;
     private GameObject[] camareros;
@@ -51,6 +51,7 @@ public class CamareroController : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
 
         int randomNumber = Random.Range(0, _mesas.Length);
+        Debug.Log(randomNumber);
         _mesaActual = _mesas[randomNumber];
         if(randomNumber == 0 || randomNumber == 1)
         {
@@ -131,7 +132,7 @@ public class CamareroController : MonoBehaviour
             _irMesas = false;
             _mesaActual.tag = "MesaOcupada";
             _irCocina = true;
-            StartCoroutine(SeekObjectWithRetard(entradaCocina));
+            StartCoroutine(SeekObjectWithRetard(_entradaCocina));
 
         }
         
@@ -185,7 +186,7 @@ public class CamareroController : MonoBehaviour
                     camcontrol._irMesas = false;
                     camcontrol._irCocina = true;
                     Rigidbody camRb = camcontrol.gameObject.GetComponent<Rigidbody>();
-                    _pathfinder.StartPathfinding(camRb, entradaCocina.transform, _movementSpeed, _stoppingNodeDistance, _rotationSpeed);
+                    _pathfinder.StartPathfinding(camRb, _entradaCocina.transform, _movementSpeed, _stoppingNodeDistance, _rotationSpeed);
                 }
                 else
                 {

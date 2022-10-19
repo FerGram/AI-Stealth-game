@@ -19,7 +19,7 @@ public class Pathfinder : MonoBehaviour
 
     void Awake()
     {
-        _grid = new Grid(_gridWidthResolution, _gridHeightResolution, _gridNodeSize, _showGrid);
+        _grid = new Grid(_gridWidthResolution, _gridHeightResolution, transform.position.y, _gridNodeSize, _showGrid);
     }
     public void StartPathfinding(Rigidbody agent, Vector3 endPos, float speed, float stoppingNodeDistance, float rotationSpeed)
     {

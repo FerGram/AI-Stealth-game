@@ -9,14 +9,14 @@ public class Grid
 
     private Node[,] _nodes;
 
-    public Grid(int gridWidth, int gridHeight, float gridNodeSize, bool drawGrid)
+    public Grid(int gridWidthSize, int gridHeightSize, float gridHeight, float gridNodeSize, bool drawGrid)
     {
-        _width = gridWidth;
-        _height = gridHeight;
+        _width = gridWidthSize;
+        _height = gridHeightSize;
         _nodeSize = gridNodeSize;
         _nodes = new Node[_width, _height];
 
-        PopulateGrid();
+        PopulateGrid(gridHeight);
         SetNodesNeighbours();
 
         if (drawGrid) DrawGrid(true);
@@ -30,14 +30,14 @@ public class Grid
     // <sumamary>
     // Populate Grid array with nodes
     // </summary>
-    private void PopulateGrid()
+    private void PopulateGrid(float gridHeight)
     {
         for (int i = 0; i < _width; i++)
         {
             for (int j = 0; j < _height; j++)
             {
                 //The extra _nodeSize/2 sets the position to the center instead of corner
-                Vector3 nodePos = new Vector3(i * _nodeSize + _nodeSize / 2, 0, j * _nodeSize + _nodeSize / 2);
+                Vector3 nodePos = new Vector3(i * _nodeSize + _nodeSize / 2, gridHeight, j * _nodeSize + _nodeSize / 2);
                 _nodes[i, j] = new Node(nodePos, _nodeSize);
             }
         }
