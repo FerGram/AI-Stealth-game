@@ -1,7 +1,7 @@
+//#define DEBUG_INFO
+
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
 
 public class CamareroController : MonoBehaviour
 {
@@ -9,23 +9,37 @@ public class CamareroController : MonoBehaviour
     private MaquinaDeEstados fsm;
     private AudioSource audioSource;
 
+    [SerializeField] GameObject _player;
+    [SerializeField] GameObject _entradaCocina;
+    [Space]
+    [Header("Navigation")]
+    [SerializeField] Pathfinder _pathfinder;
+    [SerializeField] float _movementSpeed = 100f;     
+    [SerializeField] float _rotationSpeed = 180f;    //Translates to degrees per second
+    [SerializeField] float _stoppingNodeDistance = 0.01f;
+
     public GameObject jugador;
     public GameObject entradaCocina;
     private GameObject clienteAlertado;
     public GameObject textoFlotante;
 
-
     //Patrulla
-    private bool irMesas;
-    private bool irCocina;
-    private GameObject[] mesas;
-    private GameObject mesaActual;
+    private bool _irMesas;
+    private bool _irCocina;
+    private GameObject[] _mesas;
+    private GameObject _mesaActual;
+    private Rigidbody _rb;
 
     //Alerta
     public int radioDeteccion;
     public float segundosDeAlerta = 5;
     private GameObject[] camareros;
     private GameObject[] clientes;
+
+    private void Awake()
+    {
+        _rb = GetComponent<Rigidbody>();
+    }
 
 
     void Start()
@@ -40,15 +54,15 @@ public class CamareroController : MonoBehaviour
         mesaActual = mesas[randomNumber];
         if(randomNumber == 0 || randomNumber == 1)
         {
-            irMesas = false;
-            irCocina = true;
-            navMesh.SetDestination(entradaCocina.transform.position);
+            _irMesas = false;
+            _irCocina = true;
+            _pathfinder.StartPathfinding(_rb, _entradaCocina.transform, _movementSpeed, _stoppingNodeDistance, _rotationSpeed);
         }
         else
         {
-            irMesas = true;
-            irCocina = false;
-            navMesh.SetDestination(mesaActual.transform.position);
+            _irMesas = true;
+            _irCocina = false;
+            _pathfinder.StartPathfinding(_rb, _mesaActual.transform, _movementSpeed, _stoppingNodeDistance, _rotationSpeed);
         }
 
         
@@ -111,7 +125,7 @@ public class CamareroController : MonoBehaviour
         //Tiene que ir de la entrada de la cocina a la mesa que esté disponible (sin camareros)
 
 
-        if (Vector3.Distance(transform.position, mesaActual.transform.position) < 1 && irMesas)
+        if (Vector3.Distance(transform.position, _mesaActual.transform.position) < 1 && _irMesas)
         {
             //Está cerca de mesa, tiene que ir a cocina
             irMesas = false;
@@ -121,7 +135,7 @@ public class CamareroController : MonoBehaviour
 
         }
         
-        else if (Vector3.Distance(transform.position, entradaCocina.transform.position) < 1 && irCocina)
+        else if (Vector3.Distance(transform.position, _entradaCocina.transform.position) < 1 && _irCocina)
         {
             //Está cerca de la cocina, tiene que ir a una mesa
             irCocina = false;
@@ -198,14 +212,11 @@ public class CamareroController : MonoBehaviour
     {
         yield return new WaitForSeconds(Random.Range(1, 3));
         
-        if (irCocina)
+        if (_irCocina)
         {
-            mesaActual.tag = "MesaLibre";
-            //mesas = GameObject.FindGameObjectsWithTag("MesaLibre");
-            
-            //mesaActual = mesas[Random.Range(0, mesas.Length)];
+            _mesaActual.tag = "MesaLibre";
         }
-        navMesh.SetDestination(objetivo.transform.position);
+        _pathfinder.StartPathfinding(_rb, objetivo.transform, _movementSpeed, _stoppingNodeDistance, _rotationSpeed);
     }
 
     public void Seek(Vector3 location)
