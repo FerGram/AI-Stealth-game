@@ -9,7 +9,7 @@ public class Grid
 
     private Node[,] _nodes;
 
-    public Grid(int gridWidth, int gridHeight, float gridNodeSize)
+    public Grid(int gridWidth, int gridHeight, float gridNodeSize, bool drawGrid)
     {
         _width = gridWidth;
         _height = gridHeight;
@@ -18,6 +18,8 @@ public class Grid
 
         PopulateGrid();
         SetNodesNeighbours();
+
+        if (drawGrid) DrawGrid(true);
     }
 
     public Node GetNodeAt(int i, int j)
@@ -78,7 +80,7 @@ public class Grid
     // <sumamary>
     // Drawing visual elements on screen
     // </summary>
-    public void DrawGrid(bool drawForever = false)
+    private void DrawGrid(bool drawForever = false)
     {
         for (int i = 0; i < _width; i++)
         {

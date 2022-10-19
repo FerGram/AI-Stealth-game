@@ -10,6 +10,8 @@ public class Pathfinder : MonoBehaviour
     [SerializeField] int _gridWidthResolution = 5;
     [SerializeField] int _gridHeightResolution = 5;
     [SerializeField] float _gridNodeSize = 1;
+    [Space]
+    [SerializeField] bool _showGrid = true;
 
     private Grid _grid;
     private Node _startNode;
@@ -17,13 +19,12 @@ public class Pathfinder : MonoBehaviour
 
     void Awake()
     {
-        _grid = new Grid(_gridWidthResolution, _gridHeightResolution, _gridNodeSize);
+        _grid = new Grid(_gridWidthResolution, _gridHeightResolution, _gridNodeSize, _showGrid);
     }
-
-    public void StartPathfinding(Rigidbody agent, Transform endPos, float speed, float stoppingNodeDistance, float rotationSpeed)
+    public void StartPathfinding(Rigidbody agent, Vector3 endPos, float speed, float stoppingNodeDistance, float rotationSpeed)
     {
         _startNode = GetClosestNodeToPosition(agent.position);
-        _endNode = GetClosestNodeToPosition(endPos.position);
+        _endNode = GetClosestNodeToPosition(endPos);
 
         List<Node> path = Algorithm.BFSAlgorithm(_grid, _startNode, _endNode);
 
@@ -66,6 +67,11 @@ public class Pathfinder : MonoBehaviour
             }
         }
         return closest;
+    }
+
+    public void StartPathfinding(Rigidbody agent, Transform endPos, float speed, float stoppingNodeDistance, float rotationSpeed)
+    {
+        StartPathfinding(agent, endPos.position, speed, stoppingNodeDistance, rotationSpeed);
     }
 
     IEnumerator StartNavigation(Rigidbody agent, List<Node> path, float speed, float stoppingNodeDistance, float rotationSpeed)

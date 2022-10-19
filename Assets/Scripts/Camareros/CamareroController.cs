@@ -1,11 +1,11 @@
 //#define DEBUG_INFO
 
+using System.Collections.Generic;
 using System.Collections;
 using UnityEngine;
 
 public class CamareroController : MonoBehaviour
 {
-    public NavMeshAgent navMesh;
     private MaquinaDeEstados fsm;
     private AudioSource audioSource;
 
@@ -44,14 +44,14 @@ public class CamareroController : MonoBehaviour
 
     void Start()
     {
-        mesas = GameObject.FindGameObjectsWithTag("MesaLibre");
+        _mesas = GameObject.FindGameObjectsWithTag("MesaLibre");
         camareros = GameObject.FindGameObjectsWithTag("Camarero");
         clientes = GameObject.FindGameObjectsWithTag("Cliente");
         fsm = GetComponent<MaquinaDeEstados>();
         audioSource = GetComponent<AudioSource>();
 
-        int randomNumber = Random.Range(0, mesas.Length);
-        mesaActual = mesas[randomNumber];
+        int randomNumber = Random.Range(0, _mesas.Length);
+        _mesaActual = _mesas[randomNumber];
         if(randomNumber == 0 || randomNumber == 1)
         {
             _irMesas = false;
@@ -128,9 +128,9 @@ public class CamareroController : MonoBehaviour
         if (Vector3.Distance(transform.position, _mesaActual.transform.position) < 1 && _irMesas)
         {
             //Está cerca de mesa, tiene que ir a cocina
-            irMesas = false;
-            mesaActual.tag = "MesaOcupada";
-            irCocina = true;
+            _irMesas = false;
+            _mesaActual.tag = "MesaOcupada";
+            _irCocina = true;
             StartCoroutine(SeekObjectWithRetard(entradaCocina));
 
         }
@@ -138,11 +138,11 @@ public class CamareroController : MonoBehaviour
         else if (Vector3.Distance(transform.position, _entradaCocina.transform.position) < 1 && _irCocina)
         {
             //Está cerca de la cocina, tiene que ir a una mesa
-            irCocina = false;
-            irMesas = true;
-            mesas = GameObject.FindGameObjectsWithTag("MesaLibre");
-            mesaActual = mesas[Random.Range(0, mesas.Length)];
-            Seek(mesaActual.transform.position);
+            _irCocina = false;
+            _irMesas = true;
+            _mesas = GameObject.FindGameObjectsWithTag("MesaLibre");
+            _mesaActual = _mesas[Random.Range(0, _mesas.Length)];
+            Seek(_mesaActual.transform.position);
         }
 
     }
@@ -178,19 +178,22 @@ public class CamareroController : MonoBehaviour
             foreach (GameObject camarero in camareros)
             {
                 CamareroController camcontrol = camarero.GetComponent<CamareroController>();
-                int randomNumber = Random.Range(0, camcontrol.mesas.Length);
-                camcontrol.mesaActual = camcontrol.mesas[randomNumber];
+                int randomNumber = Random.Range(0, camcontrol._mesas.Length);
+                camcontrol._mesaActual = camcontrol._mesas[randomNumber];
                 if (randomNumber == 0 || randomNumber == 1)
                 {
-                    camcontrol.irMesas = false;
-                    camcontrol.irCocina = true;
-                    camcontrol.navMesh.SetDestination(entradaCocina.transform.position);
+                    camcontrol._irMesas = false;
+                    camcontrol._irCocina = true;
+                    Rigidbody camRb = camcontrol.gameObject.GetComponent<Rigidbody>();
+                    _pathfinder.StartPathfinding(camRb, entradaCocina.transform, _movementSpeed, _stoppingNodeDistance, _rotationSpeed);
                 }
                 else
                 {
-                    camcontrol.irMesas = true;
-                    camcontrol.irCocina = false;
-                    camcontrol.navMesh.SetDestination(mesaActual.transform.position);
+                    camcontrol._irMesas = true;
+                    camcontrol._irCocina = false;
+                    Rigidbody camRb = camcontrol.GetComponent<Rigidbody>();
+                    _pathfinder.StartPathfinding(camRb, _mesaActual.transform, _movementSpeed, _stoppingNodeDistance, _rotationSpeed);
+
                 }
                 camcontrol.OcultarTextoFlotante();
 
@@ -205,7 +208,7 @@ public class CamareroController : MonoBehaviour
     private void Perseguir()
     {
         MostrarTextoFlotante("!");
-        navMesh.SetDestination(jugador.transform.position);
+        _pathfinder.StartPathfinding(_rb, jugador.transform, _movementSpeed, _stoppingNodeDistance, _rotationSpeed);
     }
 
     IEnumerator SeekObjectWithRetard(GameObject objetivo)
@@ -221,7 +224,7 @@ public class CamareroController : MonoBehaviour
 
     public void Seek(Vector3 location)
     {
-        navMesh.SetDestination(location);
+        _pathfinder.StartPathfinding(_rb, location, _movementSpeed, _stoppingNodeDistance, _rotationSpeed);
     }
 
     private List<GameObject> BuscarNPCSEnRadio(int radio, GameObject[] arrayNpc)
