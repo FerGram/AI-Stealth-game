@@ -64,6 +64,7 @@ public class PlayerModification : MonoBehaviour
             print("Meta");
             GameObject.Find("GameManager").GetComponent<ManageTime>().isTimer = false;
             GameObject.Find("GameManager").GetComponent<SaveScore>().CheckTime();
+
         }
     }
 
