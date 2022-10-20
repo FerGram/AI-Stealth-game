@@ -242,7 +242,7 @@ GameObject:
   - component: {fileID: 5939774788255627528}
   - component: {fileID: 1817356711}
   m_Layer: 0
-  m_Name: Cocinero
+  m_Name: Camarero
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
