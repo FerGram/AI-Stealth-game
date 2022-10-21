@@ -11035,16 +11035,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: SaveScore, Assembly-CSharp
-        m_MethodName: CheckTime
-        m_Mode: 1
+      - m_Target: {fileID: 1232182123}
+        m_TargetAssemblyTypeName: ScenesFunctions, Assembly-CSharp
+        m_MethodName: ReloadScene
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Mapa
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1030226255
@@ -13065,7 +13065,7 @@ PrefabInstance:
     - target: {fileID: 3295859421404353034, guid: 1de1feebedc95764eb923f3e55c81dd0,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1de1feebedc95764eb923f3e55c81dd0, type: 3}
@@ -13266,6 +13266,7 @@ GameObject:
   - component: {fileID: 1232182122}
   - component: {fileID: 1232182121}
   - component: {fileID: 1232182120}
+  - component: {fileID: 1232182123}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -13321,6 +13322,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1232182123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1232182119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 237a53386d501a04291c71018ea6bde8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  winText: {fileID: 52565349}
+  gameOverText: {fileID: 2128896011}
+  retryButton: {fileID: 0}
 --- !u!4 &1233723308 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6173584134865579127, guid: e413ad08bc08c4e999e800d4695f6172,

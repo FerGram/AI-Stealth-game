@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor.UI;
+using TMPro;
 
 public class PlayerModification : MonoBehaviour
 {
@@ -66,9 +67,13 @@ public class PlayerModification : MonoBehaviour
         if(other.CompareTag("Goal") && transportingCake)
         {
             print("Meta");
-            GameObject.Find("GameManager").GetComponent<ManageTime>().isTimer = false;
-            GameObject.Find("GameManager").GetComponent<SaveScore>().CheckTime();
+            ManageTime timeManager = GameObject.Find("GameManager").GetComponent<ManageTime>();
 
+            int minutes = Mathf.FloorToInt(timeManager.timer / 60.0f);
+            int seconds = Mathf.FloorToInt(timeManager.timer - minutes * 60);
+            string score = string.Format("Time: {0:00}:{1:00}", minutes, seconds);
+            timeManager.isTimer = false;
+            winText.GetComponent<TextMeshProUGUI>().text = "Lo conseguiste!\n" + score;
             winText.SetActive(true);
             retryButton.SetActive(true);
 
@@ -86,6 +91,5 @@ public class PlayerModification : MonoBehaviour
 
         }
     }
-
 
 }
