@@ -79,28 +79,30 @@ public class Pathfinder : MonoBehaviour
         Quaternion targetRotation = agent.transform.localRotation;
         while (path.Count > 0)
         {
-            while (Vector3.Distance(agent.position, path[0].GetPosition()) > stoppingNodeDistance)
+            Vector3 agentPos = agent.position;
+            Vector3 nodePos = path[0].GetPosition();
+            nodePos.y = agentPos.y;
+
+            while (Vector3.Distance(agentPos, nodePos) > stoppingNodeDistance)
             {
                 //Move towards next node
                 Vector3 movementDir = path[0].GetPosition() - agent.position;
+                Debug.Log(movementDir);
                 agent.velocity = movementDir.normalized * speed;
 
                 //Finished rotation
                 if (Quaternion.Angle(agent.rotation, targetRotation) < 0.01f)
                 {
-                    Vector3 nodePos = path[0].GetPosition();
-                    Vector3 agentPos = agent.position;
-                    nodePos.y = 0;
-                    agentPos.y = 0;
+                    agentPos = agent.position;
+                    nodePos = path[0].GetPosition();
+                    nodePos.y = agentPos.y;
 
                     Vector3 targetLook = (nodePos - agentPos);
-                    Debug.Log(targetLook);
 
                     if (Mathf.Abs(targetLook.x) > Mathf.Abs(targetLook.z)) targetLook.z = 0;
                     else targetLook.x = 0;
 
                     targetLook = targetLook.normalized;
-                    Debug.Log(targetLook);
 
                     targetRotation = Quaternion.LookRotation(targetLook, Vector3.up);
                     
@@ -113,6 +115,7 @@ public class Pathfinder : MonoBehaviour
             path.RemoveAt(0);
             yield return null;
         }
+        Debug.Log("YOOOO");
         agent.velocity = Vector3.zero;
     }
 }
