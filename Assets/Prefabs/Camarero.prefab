@@ -243,7 +243,7 @@ GameObject:
   - component: {fileID: 1817356711}
   m_Layer: 0
   m_Name: Camarero
-  m_TagString: Untagged
+  m_TagString: Camarero
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1043,7 +1043,7 @@ PrefabInstance:
     - target: {fileID: 3624312007380868612, guid: 73c9f2e72cb09a7429bf77095dceef50,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3786704514938892562, guid: 73c9f2e72cb09a7429bf77095dceef50,
         type: 3}
