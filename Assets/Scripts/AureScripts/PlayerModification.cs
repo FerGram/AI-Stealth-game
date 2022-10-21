@@ -73,11 +73,8 @@ public class PlayerModification : MonoBehaviour
             retryButton.SetActive(true);
 
         }
-    }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if(collision.gameObject.tag == "Camarero")
+        else if (other.gameObject.tag == "Camarero")
         {
             print("Has perdido");
             GameObject.Find("GameManager").GetComponent<ManageTime>().isTimer = false;
@@ -86,6 +83,5 @@ public class PlayerModification : MonoBehaviour
 
         }
     }
-
 
 }

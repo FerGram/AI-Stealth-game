@@ -90,6 +90,7 @@ public class CamareroController : MonoBehaviour
         if (EstaJugadorEnRadio(radioDeteccion) && fsm.estadoActual != MaquinaDeEstados.Estado.persecucion)
         {
             audioSource.Play();
+            _pathfinder.StartPathfinding(_rb, jugador.transform, _movementSpeed, _stoppingNodeDistance, _rotationSpeed);
             fsm.ActivarEstado(MaquinaDeEstados.Estado.persecucion);
         }
 
@@ -209,7 +210,10 @@ public class CamareroController : MonoBehaviour
     private void Perseguir()
     {
         MostrarTextoFlotante("!");
-        _pathfinder.StartPathfinding(_rb, jugador.transform, _movementSpeed, _stoppingNodeDistance, _rotationSpeed);
+        if (EstaJugadorEnRadio(radioDeteccion))
+        {
+            _pathfinder.StartPathfinding(_rb, jugador.transform, _movementSpeed, _stoppingNodeDistance, _rotationSpeed);
+        }
     }
 
     IEnumerator SeekObjectWithRetard(GameObject objetivo)
@@ -231,36 +235,23 @@ public class CamareroController : MonoBehaviour
     private List<GameObject> BuscarNPCSEnRadio(int radio, GameObject[] arrayNpc)
     {
         List<GameObject> Cercanos = new List<GameObject>();
-        //Para determinar si un punto (x, y) pertenece a una
-        //circunferencia con centro (a, b) y radio r, se prueba que
-        //la distancia entre (x, y) y el centro (a, b) es ( x - a ) 2 + ( y - b ) 2 = r2 .
-        float x, y, a, b;
         for (int i = 0; i < arrayNpc.Length; i++)
         {
-            x = arrayNpc[i].transform.position.x;
-            y = arrayNpc[i].transform.position.y;
-            a = transform.position.x;
-            b = transform.position.y;
-            if ((x - a)* (x - a) + (y - b) * (y - b) <= radio*radio)
+            if (Vector3.Distance(arrayNpc[i].transform.position, transform.position) <= radio)
             {
                 Cercanos.Add(arrayNpc[i]);
             }
         }
-
         return Cercanos;
+
     }
 
     private bool EstaJugadorEnRadio(int radio)
     {
-        float x, y, a, b;
-        x = jugador.transform.position.x;
-        y = jugador.transform.position.y;
-        a = transform.position.x;
-        b = transform.position.y;
-        if ((x - a) * (x - a) + (y - b) * (y - b) <= radio * radio)
+        if (Vector3.Distance(jugador.transform.position, transform.position) <= radio)
         {
             return true;
         }
-        return false;
+        else return false;
     }
 }

@@ -318,7 +318,7 @@ MonoBehaviour:
   jugador: {fileID: 0}
   textoFlotante: {fileID: 0}
   _pathfinder: {fileID: 0}
-  _movementSpeed: 1.5
+  _movementSpeed: 10
   _rotationSpeed: 10
   _stoppingNodeDistance: 0.1
   radioDeteccion: 2
@@ -443,7 +443,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3295859421404353034}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.70935035, y: 0.98909146, z: 0.79108715}
