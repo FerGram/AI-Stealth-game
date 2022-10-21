@@ -241,6 +241,7 @@ GameObject:
   - component: {fileID: 3295859420509451940}
   - component: {fileID: 5939774788255627528}
   - component: {fileID: 1817356711}
+  - component: {fileID: 3035827889103882876}
   m_Layer: 0
   m_Name: Camarero
   m_TagString: Camarero
@@ -434,6 +435,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!65 &3035827889103882876
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3295859421404353034}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.70935035, y: 0.98909146, z: 0.79108715}
+  m_Center: {x: -0.0073293447, y: 0.38283953, z: 0.092888355}
 --- !u!1 &3295859421404353036
 GameObject:
   m_ObjectHideFlags: 0

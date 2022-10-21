@@ -11,6 +11,8 @@ TagManager:
   - MesaOcupada
   - Camarero
   - Cliente
+  - Map
+  - Waiter
   layers:
   - Default
   - TransparentFX
