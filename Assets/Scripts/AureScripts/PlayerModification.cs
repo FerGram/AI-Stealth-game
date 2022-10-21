@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor.UI;
 
 public class PlayerModification : MonoBehaviour
 {
@@ -12,6 +13,9 @@ public class PlayerModification : MonoBehaviour
     [SerializeField] GameObject cake;
 
     public Vector3 initialPos;
+    public GameObject winText;
+    public GameObject gameOverText;
+    public GameObject retryButton;
 
     private void Awake()
     {
@@ -65,8 +69,23 @@ public class PlayerModification : MonoBehaviour
             GameObject.Find("GameManager").GetComponent<ManageTime>().isTimer = false;
             GameObject.Find("GameManager").GetComponent<SaveScore>().CheckTime();
 
+            winText.SetActive(true);
+            retryButton.SetActive(true);
+
         }
     }
 
-    
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag == "Camarero")
+        {
+            print("Has perdido");
+            GameObject.Find("GameManager").GetComponent<ManageTime>().isTimer = false;
+            gameOverText.SetActive(true);
+            retryButton.SetActive(true);
+
+        }
+    }
+
+
 }
