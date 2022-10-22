@@ -81,7 +81,6 @@ public class CamareroController : MonoBehaviour
                 TimerGlobal.globalTime = 0;
                 TimerGlobal.timerActivado = true;
                 clienteController.textoFlotanteCliente.SetActive(true);
-                //clienteController.AlertaCliente = false;
             }
         }
 
