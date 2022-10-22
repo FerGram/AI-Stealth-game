@@ -51,7 +51,6 @@ public class CamareroController : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
 
         int randomNumber = Random.Range(0, _mesas.Length);
-        Debug.Log(randomNumber);
         _mesaActual = _mesas[randomNumber];
         if(randomNumber == 0 || randomNumber == 1)
         {
@@ -74,7 +73,7 @@ public class CamareroController : MonoBehaviour
         foreach (GameObject cliente in clientes)
         {
             ClienteController clienteController = cliente.GetComponent<ClienteController>();
-            if (clienteController.AlertaCliente && fsm.estadoActual != MaquinaDeEstados.Estado.persecucion)
+            if (clienteController.AlertaCliente && fsm.estadoActual == MaquinaDeEstados.Estado.patrulla)
             {
                 clienteAlertado = cliente;
                 fsm.ActivarEstado(MaquinaDeEstados.Estado.alerta);
@@ -82,7 +81,7 @@ public class CamareroController : MonoBehaviour
                 TimerGlobal.globalTime = 0;
                 TimerGlobal.timerActivado = true;
                 clienteController.textoFlotanteCliente.SetActive(true);
-                clienteController.AlertaCliente = false;
+                //clienteController.AlertaCliente = false;
             }
         }
 
@@ -172,10 +171,12 @@ public class CamareroController : MonoBehaviour
 
         if (TimerGlobal.globalTime >= segundosDeAlerta)
         {
+            clienteAlertado.GetComponent<ClienteController>().textoFlotanteCliente.SetActive(false);
+            clienteAlertado.GetComponent<ClienteController>().AlertaCliente = false;
             fsm.ActivarEstado(MaquinaDeEstados.Estado.patrulla);
             TimerGlobal.globalTime = 0;
             TimerGlobal.timerActivado = false;
-            clienteAlertado.GetComponent<ClienteController>().textoFlotanteCliente.SetActive(false);
+            
 
             foreach (GameObject camarero in camareros)
             {

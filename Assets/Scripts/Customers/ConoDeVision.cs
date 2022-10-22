@@ -61,6 +61,7 @@ public class ConoDeVision : MonoBehaviour
 					{
 						visibleTargets.Add(target);
 						print("Detectado");
+						GetComponentInParent<ClienteController>().AlertaCliente = true;
 						
 					}					
 				}
