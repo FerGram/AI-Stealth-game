@@ -88,7 +88,7 @@ public class CamareroController : MonoBehaviour
         if (EstaJugadorEnRadio(radioDeteccion) && fsm.estadoActual != MaquinaDeEstados.Estado.persecucion)
         {
             audioSource.Play();
-            _pathfinder.StartPathfinding(_rb, jugador.transform, _movementSpeed, _stoppingNodeDistance, _rotationSpeed);
+            //_pathfinder.StartPathfinding(_rb, jugador.transform, _movementSpeed, _stoppingNodeDistance, _rotationSpeed);
             fsm.ActivarEstado(MaquinaDeEstados.Estado.persecucion);
         }
 
@@ -132,7 +132,7 @@ public class CamareroController : MonoBehaviour
             _mesaActual.tag = "MesaOcupada";
             _irCocina = true;
             StartCoroutine(SeekObjectWithRetard(_entradaCocina));
-
+            //SeekObjectWithRetard(_entradaCocina);
         }
         
         else if (Vector3.Distance(transform.position, _entradaCocina.transform.position) < 1 && _irCocina)
@@ -142,7 +142,9 @@ public class CamareroController : MonoBehaviour
             _irMesas = true;
             _mesas = GameObject.FindGameObjectsWithTag("MesaLibre");
             _mesaActual = _mesas[Random.Range(0, _mesas.Length)];
-            Seek(_mesaActual.transform.position);
+            Debug.Log("Voy a la mesa");
+            StartCoroutine(SeekObjectWithRetard(_mesaActual));
+            //SeekObjectWithRetard(_mesaActual);
         }
 
     }
@@ -159,7 +161,7 @@ public class CamareroController : MonoBehaviour
             camarero.GetComponent<CamareroController>().MostrarTextoFlotante("?");
             camarero.GetComponent<CamareroController>().clienteAlertado = clienteAlertado;
         }
-        Seek(clienteAlertado.transform.position);
+        StartCoroutine(SeekObjectWithRetard(clienteAlertado));
 
 
         if (EstaJugadorEnRadio(radioDeteccion))
@@ -227,9 +229,9 @@ public class CamareroController : MonoBehaviour
         _pathfinder.StartPathfinding(_rb, objetivo.transform, _movementSpeed, _stoppingNodeDistance, _rotationSpeed);
     }
 
-    public void Seek(Vector3 location)
+    public void Seek(GameObject location)
     {
-        _pathfinder.StartPathfinding(_rb, location, _movementSpeed, _stoppingNodeDistance, _rotationSpeed);
+        _pathfinder.StartPathfinding(_rb, location.transform, _movementSpeed, _stoppingNodeDistance, _rotationSpeed);
     }
 
     private List<GameObject> BuscarNPCSEnRadio(int radio, GameObject[] arrayNpc)
