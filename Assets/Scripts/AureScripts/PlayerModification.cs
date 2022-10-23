@@ -9,7 +9,7 @@ public class PlayerModification : MonoBehaviour
     
     [SerializeField] float detectCakeRadius;
     bool cakeDetected = false;
-    bool transportingCake = false;
+    public bool transportingCake = false;
     [SerializeField] LayerMask cakeMask;
     [SerializeField] GameObject cake;
 
@@ -21,13 +21,27 @@ public class PlayerModification : MonoBehaviour
     private void Awake()
     {
         initialPos = transform.position;
+       
     }
     void Update()
     {
+        if(cake == null)
+        {
+            cake = GameObject.FindGameObjectWithTag("Cake");
+        }
         if (transportingCake)
         {
-            cake.transform.position = new Vector3(transform.position.x, transform.position.y + 1.5f, transform.position.z);
+            GetComponent<PlayerController>().speed = 0.04f;
+            cake.transform.position = new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z);
         }
+        else
+        {
+            if (GetComponent<PlayerController>().speed == 0.04f)
+            {
+                GetComponent<PlayerController>().speed = 0.07f;
+            }
+        }
+
         Collider[] objectsDetected = Physics.OverlapSphere(transform.position, detectCakeRadius, cakeMask);
 
         if(objectsDetected.Length > 0)
@@ -37,7 +51,7 @@ public class PlayerModification : MonoBehaviour
             
         }
         else
-        {
+        {            
             cakeDetected = false;
             cake.GetComponent<RemarkableObject>().objectSelected = false;
         }
@@ -48,6 +62,7 @@ public class PlayerModification : MonoBehaviour
             //cake.transform.parent = gameObject.transform;
             cake.GetComponent<Rigidbody>().isKinematic = true;
             transportingCake = true;
+            GameObject.Find("GameManager").GetComponent<ManageTime>().cakeInPlace = false;
         }
 
         else if(Input.GetKeyDown(KeyCode.E) && transportingCake)

@@ -11,6 +11,9 @@ TagManager:
   - MesaOcupada
   - Camarero
   - Cliente
+  - FogonOcupado
+  - FogonLibre
+  - Cocinero
   - Map
   - Waiter
   layers:
@@ -22,7 +25,7 @@ TagManager:
   - UI
   - Cake
   - Player
-  - 
+  - Cooker
   - 
   - 
   - 

@@ -16,77 +16,126 @@ public class FieldOfView : MonoBehaviour
 	[SerializeField]
 	public LayerMask obstacleMask;
 
-	[HideInInspector]
+	[SerializeField]
+	public LayerMask cakeMask;
+
 	public List<Transform> visibleTargets = new List<Transform>();
 
-	void Start()
-	{
-		StartCoroutine("FindTargetsWithDelay", .2f);
-	}
+	public Collider[] targetsInViewRadius;
 
+	private Collider[] cakeInRadius;
 
-	IEnumerator FindTargetsWithDelay(float delay)
-	{
-		while (true)
-		{
-			yield return new WaitForSeconds(delay);
-			FindVisibleTargets();
-		}
-	}
-
+    private void Update()
+    {
+		FindVisibleTargets();
+    }
+   
 	void FindVisibleTargets()
 	{
+		cakeInRadius = Physics.OverlapSphere(transform.position, viewRadius, cakeMask);
+
+
+
+
+		if (cakeInRadius.Length != 0)
+		{
+			Transform target = cakeInRadius[0].transform;
+			
+			if (GameObject.Find("GameManager").GetComponent<ManageTime>().cakeInPlace == false && !GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerModification>().transportingCake)
+            {
+				if (TryGetComponent(out CocineroController controller))
+				{
+					controller.gameObject.GetComponent<CocineroController>().putingCake = true;
+				}
+				
+			}
+	
+
+
+			
+		}
+
 
 		visibleTargets.Clear();
-		
-		Collider[] targetsInViewRadius = Physics.OverlapSphere(transform.position, viewRadius, targetMask);
 
-		
+		targetsInViewRadius = Physics.OverlapSphere(transform.position, viewRadius, targetMask);
+
 		for (int i = 0; i < targetsInViewRadius.Length; i++)
 		{
-
 			Transform target = targetsInViewRadius[i].transform;
 			Vector3 dirToTarget = (target.position - transform.position).normalized;
 
-			if (Vector3.Angle(transform.right, dirToTarget) < viewAngle / 2)
+			if (Vector3.Angle(transform.forward, dirToTarget) < viewAngle / 2)
 			{
+				float dstToTarget = Vector3.Distance(transform.position, target.position);		
+				Vector3 raycastPosition = new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z);				
+				RaycastHit hit;
+				Debug.DrawLine(raycastPosition, target.position);		
 
-				float dstToTarget = Vector3.Distance(transform.position, target.position);
-
-
-
-				if (!Physics.Raycast(transform.position, dirToTarget, dstToTarget, obstacleMask))
+				if (Physics.Raycast(raycastPosition, dirToTarget, out hit, dstToTarget))
 				{
-					if (visibleTargets.Count == 0)
-					{
-						visibleTargets.Add(target);
-						//print("Detectado");
-						
-					}					
+					//Debug.Log(hit.collider.gameObject.name);
+					if (hit.collider.gameObject.name == targetsInViewRadius[0].name || hit.collider.gameObject.tag == "Cake")
+                    {
+						CanSeePlayer();
+					}
+                    else
+                    {
+						CannotSeePlayer();
+					}
 				}
 				else
 				{
-					visibleTargets.Clear();
-					//print("No detectado");
-					
+					CannotSeePlayer();
 				}
 			}
+            else
+            {
+				CannotSeePlayer();
+			}
+
+
 		}
+
+		if(targetsInViewRadius.Length == 0)
+        {
+			CannotSeePlayer();
+		}
+
+
+
+		
 	}
 
-
-	public Vector3 DirFromAngle(float angleInDegrees, bool angleIsGlobal)
-	{
-		if (!angleIsGlobal)
+	private void CanSeePlayer()
+    {
+		if (TryGetComponent(out CocineroController controller))
 		{
-			angleInDegrees += transform.eulerAngles.y;
-		}
-		return new Vector3(Mathf.Sin(angleInDegrees * Mathf.Deg2Rad), 0, Mathf.Cos(angleInDegrees * Mathf.Deg2Rad));
-	}
+			controller.canSeePlayer = true;
 
+		}
+	}
+	private void CannotSeePlayer()
+    {
+		if (TryGetComponent(out CocineroController controller))
+		{
+			controller.canSeePlayer = false;
+
+		}
+	}
 	private void OnDrawGizmos()
 	{
-		Gizmos.DrawRay(transform.position, transform.right);
+		float totalFOV = viewAngle;
+		float rayRange = viewRadius;
+		float halfFOV = totalFOV / 2.0f;
+		Quaternion leftRayRotation = Quaternion.AngleAxis(-halfFOV, Vector3.up);
+		Quaternion rightRayRotation = Quaternion.AngleAxis(halfFOV, Vector3.up);
+		Vector3 leftRayDirection = leftRayRotation * transform.forward;
+		Vector3 rightRayDirection = rightRayRotation * transform.forward;
+		Gizmos.DrawRay(transform.position, leftRayDirection * rayRange);
+		Gizmos.DrawRay(transform.position, rightRayDirection * rayRange);
+		Gizmos.DrawWireSphere(transform.position, rayRange);
+		
 	}
 
 	
