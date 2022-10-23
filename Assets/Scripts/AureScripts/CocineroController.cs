@@ -26,14 +26,27 @@ public class CocineroController : MonoBehaviour
     public float segundosDeAlerta = 5;
     private GameObject[] cocineros;
     public bool canSeePlayer = false;
+    public bool canSeeCake = false;
     private bool coroutineStarted = false;
     private Vector3 lastPlayerPosition;
     [SerializeField] private GameObject knifeSpawn;
     [SerializeField] private GameObject knifePrefab;
     private bool knifeReady = true;
     [SerializeField] private float knifeOffset = 0.1f;
- 
-    
+
+
+    [SerializeField] float cantSeeTime = 3.0f;
+    [SerializeField] float cantSeeTimer = 0.0f;
+
+    [SerializeField] float lookDamping = 5.0f;
+    [SerializeField] bool firstTimePatroling = true;
+
+    Vector3 lastPlaceSeen;
+    float distanceToPursuit = 2.0f;
+
+    public bool putingCake = false;
+    private bool transportingCake = false;
+
     void Start()
     {
         fogones = GameObject.FindGameObjectsWithTag("FogonLibre");
@@ -50,14 +63,17 @@ public class CocineroController : MonoBehaviour
         
     }
 
-    void Update()
+    void FixedUpdate()
     {
-       
+        
 
 
         if (canSeePlayer && fsm.estadoActual != MaquinaDeEstados.Estado.persecucion)
         {
             audioSource.Play();
+            StopAllCoroutines();
+            Seek(transform.position);
+            knifeReady = true;
             fsm.ActivarEstado(MaquinaDeEstados.Estado.persecucion);
         }
 
@@ -65,16 +81,11 @@ public class CocineroController : MonoBehaviour
         if (fsm.estadoActual == MaquinaDeEstados.Estado.patrulla)
         {          
             Patrullar();
-        }
-        else if (fsm.estadoActual == MaquinaDeEstados.Estado.alerta)
-        {
-            
-            //Alerta();
-        }
-
+        }        
         else
         {
             Perseguir();
+           
         }
     }
 
@@ -89,33 +100,94 @@ public class CocineroController : MonoBehaviour
         textoFlotante.SetActive(false);
     }
 
+    private void MostrarTextoRojo()
+    {
+        textoFlotante.GetComponent<TextMesh>().color = Color.red;
+    }
+
+    private void MostrarTextoBlanco()
+    {
+        textoFlotante.GetComponent<TextMesh>().color = Color.white;
+    }
+
+
     private void Patrullar()
     {
-        //Tiene que ir de la entrada de la cocina a la mesa que esté disponible (sin camareros)
-
-
-
-        if (Vector3.Distance(transform.position, fogonActual.transform.position) < 1)
+        
+        GameObject cake = GameObject.FindGameObjectWithTag("Cake");
+        if (transportingCake)
         {
-            //Está cerca de fogon, tiene que ir a otro fogon
-            
-            fogonActual.tag = "FogonOcupado";
-            fogones = GameObject.FindGameObjectsWithTag("FogonLibre");
-            
-            GameObject nuevoFogon = fogones[Random.Range(0, fogones.Length)];
-            if (!coroutineStarted)
-            {
-                StartCoroutine(SeekObjectWithRetard(nuevoFogon));
-                coroutineStarted = true;
-            } 
-             
-
-
+            cake.transform.position = new Vector3(transform.position.x , transform.position.y + 0.5f, transform.position.z + 0.5f);
         }
+        if (putingCake)
+        {
+           
+
+            if(Vector3.Distance(transform.position, cake.transform.position) < 0.5f && !transportingCake)
+            {
+                transportingCake = true;
+                
+
+                Seek(GameObject.Find("GameManager").GetComponent<ManageTime>().fogonInicialCake.transform.position);
+
+                cake.GetComponent<Rigidbody>().isKinematic = true;
+
+               
+            }
+            else
+            {
+                if (!transportingCake)
+                {
+                    Seek(cake.transform.position);
+                    
+                }
+               
+               
+            }
+
+        
+
+            if (transportingCake && Vector3.Distance(transform.position, GameObject.Find("GameManager").GetComponent<ManageTime>().fogonInicialCake.transform.position) < 1.0f)
+            {
+                Debug.Log("Hola");
+                cake.GetComponent<Rigidbody>().isKinematic = false;
+                cake.transform.position = GameObject.Find("GameManager").GetComponent<ManageTime>().fogonInicialCake.transform.position;
+                transportingCake = false;
+                putingCake = false;
+                GameObject.Find("GameManager").GetComponent<ManageTime>().cakeInPlace = true;
+
+                firstTimePatroling = true;
+            }
+           
+        }
+
         else
         {
-            coroutineStarted = false;
+            if (Vector3.Distance(transform.position, fogonActual.transform.position) < 1 || firstTimePatroling)
+            {
+                //Está cerca de fogon, tiene que ir a otro fogon
+                firstTimePatroling = false;
+                fogonActual.tag = "FogonOcupado";
+                fogones = GameObject.FindGameObjectsWithTag("FogonLibre");
+
+                GameObject nuevoFogon = fogones[Random.Range(0, fogones.Length)];
+                if (!coroutineStarted)
+                {
+                    StartCoroutine(SeekObjectWithRetard(nuevoFogon));
+                    coroutineStarted = true;
+                }
+
+
+
+
+            }
+            else
+            {
+                coroutineStarted = false;
+            }
         }
+
+        
 
 
 
@@ -124,42 +196,89 @@ public class CocineroController : MonoBehaviour
 
     private void Perseguir()
     {
-        MostrarTextoFlotante("!");
-        lastPlayerPosition = jugador.transform.position;
+        
 
-        if (knifeReady)
+        MostrarTextoFlotante("!");
+
+       
+        if (knifeReady && canSeePlayer)
         {
             StartCoroutine("PrepareKnife");
             knifeReady = false;
         }
-       
+
+        if (canSeePlayer)
+        {
+            cantSeeTimer = 0.0f;
+            lastPlaceSeen = jugador.transform.position;
+
+            if(Vector3.Distance(transform.position, jugador.transform.position) > distanceToPursuit)
+            {
+                Seek(jugador.transform.position);
+            }
+            else
+            {
+                Seek(transform.position);
+            }
+            //Seek(lastPlaceSeen / 2);
+        }
+        else
+        {
+            cantSeeTimer += Time.deltaTime;
+
+            Vector3 lookPos = jugador.transform.position - transform.position;
+
+            Quaternion rotation = Quaternion.LookRotation(lookPos);
+            transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * lookDamping);
+
+            Seek(lastPlaceSeen);
+
+
+
+
+        }
+
+        if (cantSeeTimer >= cantSeeTime)
+        {
+            firstTimePatroling = true;
+            coroutineStarted = false;
+            fsm.ActivarEstado(MaquinaDeEstados.Estado.patrulla);
+            OcultarTextoFlotante();
+        }
+
     }
 
     IEnumerator PrepareKnife()
     {
+        MostrarTextoRojo();
         yield return new WaitForSeconds(2.0f);
         ThrowKnife();
     }
 
     IEnumerator KnifeCooldown()
     {
+        MostrarTextoBlanco();
         yield return new WaitForSeconds(1.0f);
         knifeReady = true;
     }
 
     private void ThrowKnife()
     {
-        GameObject knifeThrowed = Instantiate(knifePrefab, knifeSpawn.transform.position, Quaternion.identity);
         
-        Vector3 directionedForce =  lastPlayerPosition - transform.position;
-        directionedForce = new Vector3(directionedForce.x + Random.Range(-knifeOffset, knifeOffset), directionedForce.y + Random.Range(-knifeOffset, knifeOffset), directionedForce.z + Random.Range(-knifeOffset, knifeOffset));
-        knifeThrowed.GetComponent<Rigidbody>().AddForce(directionedForce * 4, ForceMode.Impulse);
-        knifeThrowed.GetComponent<Rigidbody>().AddTorque(Vector3.forward * 100);
-        StartCoroutine("KnifeCooldown");
+         GameObject knifeThrowed = Instantiate(knifePrefab, knifeSpawn.transform.position, knifePrefab.transform.rotation);
+
+         Vector3 predictedPoint = new Vector3(jugador.transform.position.x, jugador.transform.position.y, jugador.transform.position.z) + (jugador.GetComponent<Rigidbody>().velocity * Time.deltaTime * 250);
+         Vector3 directionedForce = predictedPoint - transform.position;
+         //directionedForce = new Vector3(directionedForce.x + Random.Range(-knifeOffset, knifeOffset), directionedForce.y + Random.Range(-knifeOffset, knifeOffset), directionedForce.z + Random.Range(-knifeOffset, knifeOffset)).normalized;
+         knifeThrowed.GetComponent<Rigidbody>().AddForce(directionedForce.normalized * 15, ForceMode.Impulse);
+         knifeThrowed.GetComponent<Rigidbody>().AddTorque(transform.forward * 10, ForceMode.Impulse);
+         StartCoroutine("KnifeCooldown");
+        
+        
     }
     IEnumerator SeekObjectWithRetard(GameObject objetivo)
     {
-        yield return new WaitForSeconds(Random.Range(5, 10));
+        yield return new WaitForSeconds(Random.Range(3, 8));
         
         fogonActual.tag = "FogonLibre";
 

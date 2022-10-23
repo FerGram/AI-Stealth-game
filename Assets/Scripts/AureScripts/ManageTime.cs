@@ -6,7 +6,8 @@ using System;
 
 public class ManageTime : MonoBehaviour
 {
-
+    public GameObject fogonInicialCake;
+    public bool cakeInPlace = true;
 
     public float timer;
     [SerializeField] GameObject textTimer;
@@ -14,13 +15,15 @@ public class ManageTime : MonoBehaviour
     public bool isTimer = true;
     [SerializeField] GameObject cakePrefab;
 
+    private GameObject cake;
+
     private void Awake()
     {
         timer = 0.0f;        
         GameObject[] fogones = GameObject.FindGameObjectsWithTag("FogonLibre");
         int randomNumber = UnityEngine.Random.Range(0, fogones.Length);
-        GameObject fogonActual = fogones[randomNumber];
-        Instantiate(cakePrefab, fogonActual.transform.position, Quaternion.identity);
+        fogonInicialCake = fogones[randomNumber];
+        cake = Instantiate(cakePrefab, fogonInicialCake.transform.position, Quaternion.identity);
     }
     void Update()
     {
@@ -31,6 +34,12 @@ public class ManageTime : MonoBehaviour
             
         }
         DisplayTime();
+
+        if(Vector3.Distance(cake.transform.position, fogonInicialCake.transform.position) > 0.5f)
+        {
+            cakeInPlace = false;
+        }
+        
     }
 
     

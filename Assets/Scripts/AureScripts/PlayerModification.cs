@@ -26,8 +26,17 @@ public class PlayerModification : MonoBehaviour
         }
         if (transportingCake)
         {
+            GetComponent<PlayerController>().speed = 0.04f;
             cake.transform.position = new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z);
         }
+        else
+        {
+            if (GetComponent<PlayerController>().speed == 0.04f)
+            {
+                GetComponent<PlayerController>().speed = 0.07f;
+            }
+        }
+
         Collider[] objectsDetected = Physics.OverlapSphere(transform.position, detectCakeRadius, cakeMask);
 
         if(objectsDetected.Length > 0)
@@ -48,6 +57,7 @@ public class PlayerModification : MonoBehaviour
             //cake.transform.parent = gameObject.transform;
             cake.GetComponent<Rigidbody>().isKinematic = true;
             transportingCake = true;
+            GameObject.Find("GameManager").GetComponent<ManageTime>().cakeInPlace = false;
         }
 
         else if(Input.GetKeyDown(KeyCode.E) && transportingCake)

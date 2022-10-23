@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5586779916514666742}
   - component: {fileID: 5586779916514666743}
   - component: {fileID: 5907521807705977726}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: satara
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28,14 +28,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6362521137512145085}
-  m_LocalRotation: {x: -0.040440477, y: -0.031115698, z: 0.70930994, w: 0.7030476}
+  m_LocalRotation: {x: -0.48218182, y: -0.48350114, z: 0.514765, w: 0.5184056}
   m_LocalPosition: {x: -2.641, y: 0.483, z: -2.84}
   m_LocalScale: {x: 2.9092007, y: 2.9092007, z: 2.9092}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -0.729, y: -5.804, z: 90.545}
+  m_LocalEulerAnglesHint: {x: -0.123, y: -86.132, z: 89.711}
 --- !u!33 &1508561075289805227
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -102,7 +102,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!65 &5586779916514666743
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -128,3 +128,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f29cfd665be44a843b8ce7b82dc9b629, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isMortal: 1

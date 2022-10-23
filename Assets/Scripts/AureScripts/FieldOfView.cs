@@ -16,10 +16,14 @@ public class FieldOfView : MonoBehaviour
 	[SerializeField]
 	public LayerMask obstacleMask;
 
-	
+	[SerializeField]
+	public LayerMask cakeMask;
+
 	public List<Transform> visibleTargets = new List<Transform>();
 
 	public Collider[] targetsInViewRadius;
+
+	private Collider[] cakeInRadius;
 
     private void Update()
     {
@@ -36,15 +40,36 @@ public class FieldOfView : MonoBehaviour
 
 	void FindVisibleTargets()
 	{
+		cakeInRadius = Physics.OverlapSphere(transform.position, viewRadius, cakeMask);
+
+
+
+
+		if (cakeInRadius.Length != 0)
+		{
+			Transform target = cakeInRadius[0].transform;
+			
+			if (GameObject.Find("GameManager").GetComponent<ManageTime>().cakeInPlace == false)
+            {
+				if (TryGetComponent(out CocineroController controller))
+				{
+					controller.gameObject.GetComponent<CocineroController>().putingCake = true;
+				}
+				
+			}
+	
+
+
+			
+		}
+
 
 		visibleTargets.Clear();
 
 		targetsInViewRadius = Physics.OverlapSphere(transform.position, viewRadius, targetMask);
 
-		
 		for (int i = 0; i < targetsInViewRadius.Length; i++)
 		{
-			
 			Transform target = targetsInViewRadius[i].transform;
 			Vector3 dirToTarget = (target.position - transform.position).normalized;
 
@@ -53,35 +78,67 @@ public class FieldOfView : MonoBehaviour
 
 				float dstToTarget = Vector3.Distance(transform.position, target.position);
 
+				
 
 
-				if (!Physics.Raycast(transform.position, dirToTarget, dstToTarget, obstacleMask))
+				Vector3 raycastPosition = new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z);
+				
+				RaycastHit hit;
+				Debug.DrawLine(raycastPosition, target.position);				
+
+				if (Physics.Raycast(raycastPosition, dirToTarget, out hit, dstToTarget))
 				{
-					if (visibleTargets.Count == 0)
-					{
-						visibleTargets.Add(target);
-                        print("Detectado");
+					//Debug.Log(hit.collider.gameObject.name);
+					if (hit.collider.gameObject.name == targetsInViewRadius[0].name || hit.collider.gameObject.tag == "Cake")
+                    {
 						if (TryGetComponent(out CocineroController controller))
-                        {
+						{
+							controller.canSeePlayer = true;
+							//print("Detectado");
+						}
+					}
+                    else
+                    {
+						if (TryGetComponent(out CocineroController controller))
+						{
 							controller.canSeePlayer = false;
-                        }
-
-						
-                        
-					}					
+							//print("No detectado");
+						}
+					}
 				}
 				else
 				{
-					visibleTargets.Clear();
-					
 					if (TryGetComponent(out CocineroController controller))
 					{
-						controller.canSeePlayer = true;
+						controller.canSeePlayer = false;
+						//print("No detectado");
 					}
-
 				}
 			}
+            else
+            {
+				if (TryGetComponent(out CocineroController controller))
+				{
+					controller.canSeePlayer = false;
+					//print("No detectado");
+				}
+			}
+
+
 		}
+
+		if(targetsInViewRadius.Length == 0)
+        {
+			if (TryGetComponent(out CocineroController controller))
+			{
+				controller.canSeePlayer = false;
+				//print("No detectado");
+			}
+		}
+
+
+
+		
 	}
 
 
@@ -106,6 +163,7 @@ public class FieldOfView : MonoBehaviour
 		Gizmos.DrawRay(transform.position, leftRayDirection * rayRange);
 		Gizmos.DrawRay(transform.position, rightRayDirection * rayRange);
 		Gizmos.DrawWireSphere(transform.position, rayRange);
+		
 	}
 
 	
