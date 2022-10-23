@@ -17,8 +17,8 @@ public class FallenObject : MonoBehaviour
         if (collision.collider.CompareTag("Ground"))
         {
             print("Alo");
-            Instantiate(noisePrefab);
-            //Destroy(gameObject);
+            Destroy(Instantiate(noisePrefab), 1f);
+            Destroy(gameObject);
         }
     }
 }

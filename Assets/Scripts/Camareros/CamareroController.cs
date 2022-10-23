@@ -1,54 +1,68 @@
-using System.Collections;
+//#define DEBUG_INFO
+
 using System.Collections.Generic;
+using System.Collections;
 using UnityEngine;
-using UnityEngine.AI;
 
 public class CamareroController : MonoBehaviour
 {
-    public NavMeshAgent navMesh;
     private MaquinaDeEstados fsm;
     private AudioSource audioSource;
 
-    public GameObject jugador;
-    public GameObject entradaCocina;
-    private GameObject clienteAlertado;
-    public GameObject textoFlotante;
+    [SerializeField] GameObject _entradaCocina;
+    [SerializeField] GameObject jugador;
+    [SerializeField] GameObject textoFlotante;
+    [Space]
+    [Header("Navigation")]
+    [SerializeField] Pathfinder _pathfinder;
+    [SerializeField] float _movementSpeed = 100f;     
+    [SerializeField] float _rotationSpeed = 180f;    //Translates to degrees per second
+    [SerializeField] float _stoppingNodeDistance = 0.01f;
 
+    private GameObject clienteAlertado;
 
     //Patrulla
-    private bool irMesas;
-    private bool irCocina;
-    private GameObject[] mesas;
-    private GameObject mesaActual;
+    private bool _irMesas;
+    private bool _irCocina;
+    private GameObject[] _mesas;
+    private GameObject _mesaActual;
+    private Rigidbody _rb;
 
     //Alerta
+    [Space]
+    [Header("Alerta")]
     public int radioDeteccion;
     public float segundosDeAlerta = 5;
     private GameObject[] camareros;
     private GameObject[] clientes;
 
+    private void Awake()
+    {
+        _rb = GetComponent<Rigidbody>();
+    }
+
 
     void Start()
     {
-        mesas = GameObject.FindGameObjectsWithTag("MesaLibre");
+        _mesas = GameObject.FindGameObjectsWithTag("MesaLibre");
         camareros = GameObject.FindGameObjectsWithTag("Camarero");
         clientes = GameObject.FindGameObjectsWithTag("Cliente");
         fsm = GetComponent<MaquinaDeEstados>();
         audioSource = GetComponent<AudioSource>();
 
-        int randomNumber = Random.Range(0, mesas.Length);
-        mesaActual = mesas[randomNumber];
+        int randomNumber = Random.Range(0, _mesas.Length);
+        _mesaActual = _mesas[randomNumber];
         if(randomNumber == 0 || randomNumber == 1)
         {
-            irMesas = false;
-            irCocina = true;
-            navMesh.SetDestination(entradaCocina.transform.position);
+            _irMesas = false;
+            _irCocina = true;
+            _pathfinder.StartPathfinding(_rb, _entradaCocina.transform, _movementSpeed, _stoppingNodeDistance, _rotationSpeed);
         }
         else
         {
-            irMesas = true;
-            irCocina = false;
-            navMesh.SetDestination(mesaActual.transform.position);
+            _irMesas = true;
+            _irCocina = false;
+            _pathfinder.StartPathfinding(_rb, _mesaActual.transform, _movementSpeed, _stoppingNodeDistance, _rotationSpeed);
         }
 
         
@@ -59,7 +73,7 @@ public class CamareroController : MonoBehaviour
         foreach (GameObject cliente in clientes)
         {
             ClienteController clienteController = cliente.GetComponent<ClienteController>();
-            if (clienteController.AlertaCliente && fsm.estadoActual != MaquinaDeEstados.Estado.persecucion)
+            if (clienteController.AlertaCliente && fsm.estadoActual == MaquinaDeEstados.Estado.patrulla)
             {
                 clienteAlertado = cliente;
                 fsm.ActivarEstado(MaquinaDeEstados.Estado.alerta);
@@ -67,7 +81,6 @@ public class CamareroController : MonoBehaviour
                 TimerGlobal.globalTime = 0;
                 TimerGlobal.timerActivado = true;
                 clienteController.textoFlotanteCliente.SetActive(true);
-                clienteController.AlertaCliente = false;
             }
         }
 
@@ -75,6 +88,7 @@ public class CamareroController : MonoBehaviour
         if (EstaJugadorEnRadio(radioDeteccion) && fsm.estadoActual != MaquinaDeEstados.Estado.persecucion)
         {
             audioSource.Play();
+            //_pathfinder.StartPathfinding(_rb, jugador.transform, _movementSpeed, _stoppingNodeDistance, _rotationSpeed);
             fsm.ActivarEstado(MaquinaDeEstados.Estado.persecucion);
         }
 
@@ -111,24 +125,26 @@ public class CamareroController : MonoBehaviour
         //Tiene que ir de la entrada de la cocina a la mesa que esté disponible (sin camareros)
 
 
-        if (Vector3.Distance(transform.position, mesaActual.transform.position) < 1 && irMesas)
+        if (Vector3.Distance(transform.position, _mesaActual.transform.position) < 1 && _irMesas)
         {
             //Está cerca de mesa, tiene que ir a cocina
-            irMesas = false;
-            mesaActual.tag = "MesaOcupada";
-            irCocina = true;
-            StartCoroutine(SeekObjectWithRetard(entradaCocina));
-
+            _irMesas = false;
+            _mesaActual.tag = "MesaOcupada";
+            _irCocina = true;
+            StartCoroutine(SeekObjectWithRetard(_entradaCocina));
+            //SeekObjectWithRetard(_entradaCocina);
         }
         
-        else if (Vector3.Distance(transform.position, entradaCocina.transform.position) < 1 && irCocina)
+        else if (Vector3.Distance(transform.position, _entradaCocina.transform.position) < 1 && _irCocina)
         {
             //Está cerca de la cocina, tiene que ir a una mesa
-            irCocina = false;
-            irMesas = true;
-            mesas = GameObject.FindGameObjectsWithTag("MesaLibre");
-            mesaActual = mesas[Random.Range(0, mesas.Length)];
-            Seek(mesaActual.transform.position);
+            _irCocina = false;
+            _irMesas = true;
+            _mesas = GameObject.FindGameObjectsWithTag("MesaLibre");
+            _mesaActual = _mesas[Random.Range(0, _mesas.Length)];
+            Debug.Log("Voy a la mesa");
+            StartCoroutine(SeekObjectWithRetard(_mesaActual));
+            //SeekObjectWithRetard(_mesaActual);
         }
 
     }
@@ -145,7 +161,7 @@ public class CamareroController : MonoBehaviour
             camarero.GetComponent<CamareroController>().MostrarTextoFlotante("?");
             camarero.GetComponent<CamareroController>().clienteAlertado = clienteAlertado;
         }
-        Seek(clienteAlertado.transform.position);
+        StartCoroutine(SeekObjectWithRetard(clienteAlertado));
 
 
         if (EstaJugadorEnRadio(radioDeteccion))
@@ -156,27 +172,32 @@ public class CamareroController : MonoBehaviour
 
         if (TimerGlobal.globalTime >= segundosDeAlerta)
         {
+            clienteAlertado.GetComponent<ClienteController>().textoFlotanteCliente.SetActive(false);
+            clienteAlertado.GetComponent<ClienteController>().AlertaCliente = false;
             fsm.ActivarEstado(MaquinaDeEstados.Estado.patrulla);
             TimerGlobal.globalTime = 0;
             TimerGlobal.timerActivado = false;
-            clienteAlertado.GetComponent<ClienteController>().textoFlotanteCliente.SetActive(false);
+            
 
             foreach (GameObject camarero in camareros)
             {
                 CamareroController camcontrol = camarero.GetComponent<CamareroController>();
-                int randomNumber = Random.Range(0, camcontrol.mesas.Length);
-                camcontrol.mesaActual = camcontrol.mesas[randomNumber];
+                int randomNumber = Random.Range(0, camcontrol._mesas.Length);
+                camcontrol._mesaActual = camcontrol._mesas[randomNumber];
                 if (randomNumber == 0 || randomNumber == 1)
                 {
-                    camcontrol.irMesas = false;
-                    camcontrol.irCocina = true;
-                    camcontrol.navMesh.SetDestination(entradaCocina.transform.position);
+                    camcontrol._irMesas = false;
+                    camcontrol._irCocina = true;
+                    Rigidbody camRb = camcontrol.gameObject.GetComponent<Rigidbody>();
+                    _pathfinder.StartPathfinding(camRb, _entradaCocina.transform, _movementSpeed, _stoppingNodeDistance, _rotationSpeed);
                 }
                 else
                 {
-                    camcontrol.irMesas = true;
-                    camcontrol.irCocina = false;
-                    camcontrol.navMesh.SetDestination(mesaActual.transform.position);
+                    camcontrol._irMesas = true;
+                    camcontrol._irCocina = false;
+                    Rigidbody camRb = camcontrol.GetComponent<Rigidbody>();
+                    _pathfinder.StartPathfinding(camRb, _mesaActual.transform, _movementSpeed, _stoppingNodeDistance, _rotationSpeed);
+
                 }
                 camcontrol.OcultarTextoFlotante();
 
@@ -191,61 +212,48 @@ public class CamareroController : MonoBehaviour
     private void Perseguir()
     {
         MostrarTextoFlotante("!");
-        navMesh.SetDestination(jugador.transform.position);
+        if (EstaJugadorEnRadio(radioDeteccion))
+        {
+            _pathfinder.StartPathfinding(_rb, jugador.transform, _movementSpeed, _stoppingNodeDistance, _rotationSpeed);
+        }
     }
 
     IEnumerator SeekObjectWithRetard(GameObject objetivo)
     {
         yield return new WaitForSeconds(Random.Range(1, 3));
         
-        if (irCocina)
+        if (_irCocina)
         {
-            mesaActual.tag = "MesaLibre";
-            //mesas = GameObject.FindGameObjectsWithTag("MesaLibre");
-            
-            //mesaActual = mesas[Random.Range(0, mesas.Length)];
+            _mesaActual.tag = "MesaLibre";
         }
-        navMesh.SetDestination(objetivo.transform.position);
+        _pathfinder.StartPathfinding(_rb, objetivo.transform, _movementSpeed, _stoppingNodeDistance, _rotationSpeed);
     }
 
-    public void Seek(Vector3 location)
+    public void Seek(GameObject location)
     {
-        navMesh.SetDestination(location);
+        _pathfinder.StartPathfinding(_rb, location.transform, _movementSpeed, _stoppingNodeDistance, _rotationSpeed);
     }
 
     private List<GameObject> BuscarNPCSEnRadio(int radio, GameObject[] arrayNpc)
     {
         List<GameObject> Cercanos = new List<GameObject>();
-        //Para determinar si un punto (x, y) pertenece a una
-        //circunferencia con centro (a, b) y radio r, se prueba que
-        //la distancia entre (x, y) y el centro (a, b) es ( x - a ) 2 + ( y - b ) 2 = r2 .
-        float x, y, a, b;
         for (int i = 0; i < arrayNpc.Length; i++)
         {
-            x = arrayNpc[i].transform.position.x;
-            y = arrayNpc[i].transform.position.y;
-            a = transform.position.x;
-            b = transform.position.y;
-            if ((x - a)* (x - a) + (y - b) * (y - b) <= radio*radio)
+            if (Vector3.Distance(arrayNpc[i].transform.position, transform.position) <= radio)
             {
                 Cercanos.Add(arrayNpc[i]);
             }
         }
-
         return Cercanos;
+
     }
 
     private bool EstaJugadorEnRadio(int radio)
     {
-        float x, y, a, b;
-        x = jugador.transform.position.x;
-        y = jugador.transform.position.y;
-        a = transform.position.x;
-        b = transform.position.y;
-        if ((x - a) * (x - a) + (y - b) * (y - b) <= radio * radio)
+        if (Vector3.Distance(jugador.transform.position, transform.position) <= radio)
         {
             return true;
         }
-        return false;
+        else return false;
     }
 }

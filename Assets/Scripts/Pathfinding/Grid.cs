@@ -9,15 +9,17 @@ public class Grid
 
     private Node[,] _nodes;
 
-    public Grid(int gridWidth, int gridHeight, float gridNodeSize)
+    public Grid(int gridWidthSize, int gridHeightSize, float gridHeight, float gridNodeSize, bool drawGrid)
     {
-        _width = gridWidth;
-        _height = gridHeight;
+        _width = gridWidthSize;
+        _height = gridHeightSize;
         _nodeSize = gridNodeSize;
         _nodes = new Node[_width, _height];
 
-        PopulateGrid();
+        PopulateGrid(gridHeight);
         SetNodesNeighbours();
+
+        if (drawGrid) DrawGrid(true);
     }
 
     public Node GetNodeAt(int i, int j)
@@ -28,14 +30,14 @@ public class Grid
     // <sumamary>
     // Populate Grid array with nodes
     // </summary>
-    private void PopulateGrid()
+    private void PopulateGrid(float gridHeight)
     {
         for (int i = 0; i < _width; i++)
         {
             for (int j = 0; j < _height; j++)
             {
                 //The extra _nodeSize/2 sets the position to the center instead of corner
-                Vector3 nodePos = new Vector3(i * _nodeSize + _nodeSize / 2, 0, j * _nodeSize + _nodeSize / 2);
+                Vector3 nodePos = new Vector3(i * _nodeSize + _nodeSize / 2, gridHeight, j * _nodeSize + _nodeSize / 2);
                 _nodes[i, j] = new Node(nodePos, _nodeSize);
             }
         }
@@ -78,19 +80,20 @@ public class Grid
     // <sumamary>
     // Drawing visual elements on screen
     // </summary>
-    public void DrawGrid()
+    private void DrawGrid(bool drawForever = false)
     {
         for (int i = 0; i < _width; i++)
         {
             for (int j = 0; j < _height; j++)
             {
-                DrawNode(_nodes[i, j]);
+                DrawNode(_nodes[i, j], drawForever);
             }
         }
     }
-    private void DrawNode(Node node)
+    private void DrawNode(Node node, bool drawForever = false)
     {
         Color drawColor = node.IsWallNode() ? Color.red : Color.white;
+        float drawTime = drawForever ? Mathf.Infinity : Time.deltaTime;
 
         Vector3 nodePosition = node.GetPosition();
 
@@ -99,10 +102,10 @@ public class Grid
         Vector3 TLcorner = nodePosition + new Vector3(-_nodeSize / 2, 0, _nodeSize / 2);
         Vector3 TRcorner = nodePosition + new Vector3(_nodeSize / 2, 0, _nodeSize / 2);
 
-        Debug.DrawLine(BLcorner, BRcorner, drawColor, Time.deltaTime);
-        Debug.DrawLine(BRcorner, TRcorner, drawColor, Time.deltaTime);
-        Debug.DrawLine(TRcorner, TLcorner, drawColor, Time.deltaTime);
-        Debug.DrawLine(TLcorner, BLcorner, drawColor, Time.deltaTime);
+        Debug.DrawLine(BLcorner, BRcorner, drawColor, drawTime);
+        Debug.DrawLine(BRcorner, TRcorner, drawColor, drawTime);
+        Debug.DrawLine(TRcorner, TLcorner, drawColor, drawTime);
+        Debug.DrawLine(TLcorner, BLcorner, drawColor, drawTime);
     }
 
 }

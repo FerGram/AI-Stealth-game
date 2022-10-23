@@ -14,11 +14,13 @@ TagManager:
   - FogonOcupado
   - FogonLibre
   - Cocinero
+  - Map
+  - Waiter
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - 1
   - Water
   - UI
   - Cake

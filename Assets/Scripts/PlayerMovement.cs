@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public float turnSpeed = 20f;
+    public float movementSpeed = 5f;
 
     Animator m_Animator;
     Rigidbody m_Rigidbody;
@@ -30,27 +31,24 @@ public class PlayerMovement : MonoBehaviour
         bool hasHorizontalInput = !Mathf.Approximately (horizontal, 0f);
         bool hasVerticalInput = !Mathf.Approximately (vertical, 0f);
         bool isWalking = hasHorizontalInput || hasVerticalInput;
-        m_Animator.SetBool ("IsWalking", isWalking);
+        m_Animator.SetBool ("isWalking", isWalking);
         
         if (isWalking)
         {
-            if (!m_AudioSource.isPlaying)
+            if (m_AudioSource && !m_AudioSource.isPlaying)
             {
                 m_AudioSource.Play();
             }
         }
         else
         {
-            m_AudioSource.Stop ();
+            if (m_AudioSource) m_AudioSource.Stop ();
         }
 
         Vector3 desiredForward = Vector3.RotateTowards (transform.forward, m_Movement, turnSpeed * Time.deltaTime, 0f);
         m_Rotation = Quaternion.LookRotation (desiredForward);
-    }
 
-    void OnAnimatorMove ()
-    {
-        m_Rigidbody.MovePosition (m_Rigidbody.position + m_Movement  * m_Animator.deltaPosition.magnitude);
-        m_Rigidbody.MoveRotation (m_Rotation);
+        m_Rigidbody.MovePosition(m_Rigidbody.position + m_Movement * movementSpeed * Time.deltaTime);
+        m_Rigidbody.MoveRotation(m_Rotation);
     }
 }
