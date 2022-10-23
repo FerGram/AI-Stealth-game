@@ -31,14 +31,14 @@ public class PlayerModification : MonoBehaviour
         }
         if (transportingCake)
         {
-            GetComponent<PlayerController>().speed = 0.04f;
+            GetComponent<PlayerMovement>().movementSpeed = 0.04f;
             cake.transform.position = new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z);
         }
         else
         {
-            if (GetComponent<PlayerController>().speed == 0.04f)
+            if (GetComponent<PlayerMovement>().movementSpeed == 0.04f)
             {
-                GetComponent<PlayerController>().speed = 0.07f;
+                GetComponent<PlayerMovement>().movementSpeed = 0.07f;
             }
         }
 

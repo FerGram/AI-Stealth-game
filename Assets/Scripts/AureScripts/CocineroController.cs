@@ -5,14 +5,21 @@ using UnityEngine.AI;
 
 public class CocineroController : MonoBehaviour
 {
-    public NavMeshAgent navMesh;
+   
     private MaquinaDeEstados fsm;
     private AudioSource audioSource;
 
-    public GameObject jugador;
+    public GameObject player;
+    private Rigidbody _rb;
     public GameObject entradaCocina;
     private GameObject clienteAlertado;
     public GameObject textoFlotante;
+    [Space]
+    [Header("Navigation")]
+    [SerializeField] Pathfinder _pathfinder;
+    [SerializeField] float _movementSpeed = 100f;
+    [SerializeField] float _rotationSpeed = 180f;    //Translates to degrees per second
+    [SerializeField] float _stoppingNodeDistance = 0.01f;
 
 
     //Patrulla
@@ -47,6 +54,10 @@ public class CocineroController : MonoBehaviour
     public bool putingCake = false;
     private bool transportingCake = false;
 
+    private void Awake()
+    {
+        _rb = GetComponent<Rigidbody>();
+    }
     void Start()
     {
         fogones = GameObject.FindGameObjectsWithTag("FogonLibre");
@@ -57,10 +68,10 @@ public class CocineroController : MonoBehaviour
 
         int randomNumber = Random.Range(0, fogones.Length);
         fogonActual = fogones[randomNumber];
-        
-        navMesh.SetDestination(fogonActual.transform.position);
-        
-        
+
+        _pathfinder.StartPathfinding(_rb, fogonActual.transform, _movementSpeed, _stoppingNodeDistance, _rotationSpeed);
+
+
     }
 
     void FixedUpdate()
@@ -210,11 +221,11 @@ public class CocineroController : MonoBehaviour
         if (canSeePlayer)
         {
             cantSeeTimer = 0.0f;
-            lastPlaceSeen = jugador.transform.position;
+            lastPlaceSeen = player.transform.position;
 
-            if(Vector3.Distance(transform.position, jugador.transform.position) > distanceToPursuit)
+            if(Vector3.Distance(transform.position, player.transform.position) > distanceToPursuit)
             {
-                Seek(jugador.transform.position);
+                Seek(player.transform.position);
             }
             else
             {
@@ -226,7 +237,7 @@ public class CocineroController : MonoBehaviour
         {
             cantSeeTimer += Time.deltaTime;
 
-            Vector3 lookPos = jugador.transform.position - transform.position;
+            Vector3 lookPos = player.transform.position - transform.position;
 
             Quaternion rotation = Quaternion.LookRotation(lookPos);
             transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * lookDamping);
@@ -267,7 +278,7 @@ public class CocineroController : MonoBehaviour
         
          GameObject knifeThrowed = Instantiate(knifePrefab, knifeSpawn.transform.position, knifePrefab.transform.rotation);
 
-         Vector3 predictedPoint = new Vector3(jugador.transform.position.x, jugador.transform.position.y, jugador.transform.position.z) + (jugador.GetComponent<Rigidbody>().velocity * Time.deltaTime * 250);
+         Vector3 predictedPoint = new Vector3(player.transform.position.x, player.transform.position.y, player.transform.position.z) + (player.GetComponent<Rigidbody>().velocity * Time.deltaTime * 250);
          Vector3 directionedForce = predictedPoint - transform.position;
          //directionedForce = new Vector3(directionedForce.x + Random.Range(-knifeOffset, knifeOffset), directionedForce.y + Random.Range(-knifeOffset, knifeOffset), directionedForce.z + Random.Range(-knifeOffset, knifeOffset)).normalized;
          knifeThrowed.GetComponent<Rigidbody>().AddForce(directionedForce.normalized * 15, ForceMode.Impulse);
@@ -283,13 +294,15 @@ public class CocineroController : MonoBehaviour
         fogonActual.tag = "FogonLibre";
 
         fogonActual = objetivo;
-        
-        navMesh.SetDestination(fogonActual.transform.position);
+               
+        _pathfinder.StartPathfinding(_rb, fogonActual.transform, _movementSpeed, _stoppingNodeDistance, _rotationSpeed);
     }
 
     public void Seek(Vector3 location)
     {
-        navMesh.SetDestination(location);
+        _pathfinder.StartPathfinding(_rb, location, _movementSpeed, _stoppingNodeDistance, _rotationSpeed);
+
+
     }
 
     private List<GameObject> BuscarNPCSEnRadio(int radio, GameObject[] arrayNpc)
@@ -317,8 +330,8 @@ public class CocineroController : MonoBehaviour
     private bool EstaJugadorEnRadio(int radio)
     {
         float x, y, a, b;
-        x = jugador.transform.position.x;
-        y = jugador.transform.position.y;
+        x = player.transform.position.x;
+        y = player.transform.position.y;
         a = transform.position.x;
         b = transform.position.y;
         if ((x - a) * (x - a) + (y - b) * (y - b) <= radio * radio)

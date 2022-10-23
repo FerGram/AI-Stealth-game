@@ -23,7 +23,7 @@ public class ManageTime : MonoBehaviour
         GameObject[] fogones = GameObject.FindGameObjectsWithTag("FogonLibre");
         int randomNumber = UnityEngine.Random.Range(0, fogones.Length);
         fogonInicialCake = fogones[randomNumber];
-        cake = Instantiate(cakePrefab, fogonInicialCake.transform.position, Quaternion.identity);
+        cake = Instantiate(cakePrefab, new Vector3(fogonInicialCake.transform.position.x, fogonInicialCake.transform.position.y + 0.8f,fogonInicialCake.transform.position.z ), Quaternion.identity);
     }
     void Update()
     {
