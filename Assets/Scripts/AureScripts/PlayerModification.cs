@@ -7,7 +7,7 @@ public class PlayerModification : MonoBehaviour
     
     [SerializeField] float detectCakeRadius;
     bool cakeDetected = false;
-    bool transportingCake = false;
+    public bool transportingCake = false;
     [SerializeField] LayerMask cakeMask;
     [SerializeField] GameObject cake;
 

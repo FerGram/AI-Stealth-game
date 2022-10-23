@@ -1862,7 +1862,7 @@ PrefabInstance:
     - target: {fileID: 453582048238128614, guid: 1fde1864eedfd7b4bb815c1d2fad7db6,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.13
+      value: -5.89
       objectReference: {fileID: 0}
     - target: {fileID: 453582048238128614, guid: 1fde1864eedfd7b4bb815c1d2fad7db6,
         type: 3}
@@ -1872,7 +1872,7 @@ PrefabInstance:
     - target: {fileID: 453582048238128614, guid: 1fde1864eedfd7b4bb815c1d2fad7db6,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.42
+      value: -0.67
       objectReference: {fileID: 0}
     - target: {fileID: 453582048238128614, guid: 1fde1864eedfd7b4bb815c1d2fad7db6,
         type: 3}
@@ -2276,6 +2276,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   detectCakeRadius: 0.82
+  transportingCake: 0
   cakeMask:
     serializedVersion: 2
     m_Bits: 64
