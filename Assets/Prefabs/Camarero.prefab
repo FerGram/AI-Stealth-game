@@ -318,9 +318,9 @@ MonoBehaviour:
   jugador: {fileID: 0}
   textoFlotante: {fileID: 0}
   _pathfinder: {fileID: 0}
-  _movementSpeed: 10
-  _rotationSpeed: 10
-  _stoppingNodeDistance: 0.1
+  _movementSpeed: 5
+  _rotationSpeed: 5
+  _stoppingNodeDistance: 0.2
   radioDeteccion: 2
   segundosDeAlerta: 5
 --- !u!54 &5939774788255627528

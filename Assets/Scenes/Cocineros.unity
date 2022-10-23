@@ -1571,37 +1571,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3517817456f8084c9bcc904ec77ac83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  navMesh: {fileID: 945535453}
-  fsm: {fileID: 0}
-  audioSource: {fileID: 0}
-  jugador: {fileID: 6077229646586432058}
-  entradaCocina: {fileID: 439186688}
-  clienteAlertado: {fileID: 0}
-  textoFlotante: {fileID: 438733400}
-  irMesas: 0
-  irCocina: 0
-  fogones: []
-  fogonActual: {fileID: 0}
-  radioDeteccion: 1
-  segundosDeAlerta: 10
-  cocineros: []
-  canSeePlayer: 0
-  canSeeCake: 0
-  coroutineStarted: 0
-  lastPlayerPosition: {x: 0, y: 0, z: 0}
-  knifeSpawn: {fileID: 1737732469}
-  knifePrefab: {fileID: 6362521137512145085, guid: 848574d52a8bae54ebbc0cb3839d8cc2,
-    type: 3}
-  knifeReady: 1
-  knifeOffset: 0.1
-  cantSeeTime: 3
-  cantSeeTimer: 0
-  lookDamping: 5
-  firstTimePatroling: 1
-  lastPlaceSeen: {x: 0, y: 0, z: 0}
-  distanceToPursuit: 2
-  putingCake: 0
-  transportingCake: 0
 --- !u!114 &945535455
 MonoBehaviour:
   m_ObjectHideFlags: 0
