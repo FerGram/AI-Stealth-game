@@ -75,7 +75,7 @@ public class ConoDeVision : MonoBehaviour
 						visibleTargets.Add(target);
 						print("Detectado");
 						AlertaCliente = true;
-					}					
+					}
 				}
 				else
 				{
@@ -98,10 +98,23 @@ public class ConoDeVision : MonoBehaviour
 		return new Vector3(Mathf.Sin(angleInDegrees * Mathf.Deg2Rad), 0, Mathf.Cos(angleInDegrees * Mathf.Deg2Rad));
 	}
 
+	//private void OnDrawGizmos()
+	//{
+	//	Gizmos.DrawRay(transform.position, transform.right);
+	//}
+
 	private void OnDrawGizmos()
 	{
-		Gizmos.DrawRay(transform.position, transform.right);
+		float totalFOV = viewAngle;
+		float rayRange = viewRadius;
+		float halfFOV = totalFOV / 2.0f;
+		Quaternion leftRayRotation = Quaternion.AngleAxis(-halfFOV+90f, Vector3.up);
+		Quaternion rightRayRotation = Quaternion.AngleAxis(halfFOV+90f, Vector3.up);
+		Vector3 leftRayDirection = leftRayRotation * transform.forward;
+		Vector3 rightRayDirection = rightRayRotation * transform.forward;
+		Gizmos.DrawRay(transform.position, leftRayDirection * rayRange);
+		Gizmos.DrawRay(transform.position, rightRayDirection * rayRange);
+		Gizmos.DrawWireSphere(transform.position, rayRange);
+		
 	}
-
-	
 }
