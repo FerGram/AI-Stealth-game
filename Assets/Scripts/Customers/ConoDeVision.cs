@@ -19,11 +19,24 @@ public class ConoDeVision : MonoBehaviour
 	[HideInInspector]
 	public List<Transform> visibleTargets = new List<Transform>();
 
+	public bool AlertaCliente = false;
+    public GameObject textoFlotanteCliente;
+    private AudioSource audiosource;
+
 	void Start()
 	{
 		StartCoroutine("FindTargetsWithDelay", .2f);
+
+		audiosource = GetComponent<AudioSource>();
 	}
 
+	void Update()
+    {
+        if (AlertaCliente)
+        {
+            audiosource.Play();
+        }
+    }
 
 	IEnumerator FindTargetsWithDelay(float delay)
 	{
@@ -61,14 +74,14 @@ public class ConoDeVision : MonoBehaviour
 					{
 						visibleTargets.Add(target);
 						print("Detectado");
-						GetComponentInParent<ClienteController>().AlertaCliente = true;
-						
+						AlertaCliente = true;
 					}					
 				}
 				else
 				{
 					visibleTargets.Clear();
 					print("No detectado");
+					AlertaCliente = false;
 					
 				}
 			}
