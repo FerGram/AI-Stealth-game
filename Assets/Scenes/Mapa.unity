@@ -1258,7 +1258,7 @@ MonoBehaviour:
   _gridWidthResolution: 80
   _gridHeightResolution: 120
   _gridNodeSize: 0.25
-  _showGrid: 1
+  _showGrid: 0
 --- !u!4 &84745700
 Transform:
   m_ObjectHideFlags: 0
@@ -1267,7 +1267,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 84745698}
   m_LocalRotation: {x: -0, y: -0.70710576, z: -0, w: 0.70710784}
-  m_LocalPosition: {x: -0.0697186, y: 0.36, z: 0.41068268}
+  m_LocalPosition: {x: -0.0697186, y: 0.25, z: 0.41068268}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3467,14 +3467,14 @@ PrefabInstance:
       objectReference: {fileID: 84745699}
     - target: {fileID: 3295859420509451940, guid: 1de1feebedc95764eb923f3e55c81dd0,
         type: 3}
-      propertyPath: textoFlotante
-      value: 
-      objectReference: {fileID: 1156857676}
-    - target: {fileID: 3295859420509451940, guid: 1de1feebedc95764eb923f3e55c81dd0,
-        type: 3}
       propertyPath: _entradaCocina
       value: 
       objectReference: {fileID: 396759289}
+    - target: {fileID: 3295859420509451940, guid: 1de1feebedc95764eb923f3e55c81dd0,
+        type: 3}
+      propertyPath: _stoppingNodeDistance
+      value: 0.35
+      objectReference: {fileID: 0}
     - target: {fileID: 3295859421404057130, guid: 1de1feebedc95764eb923f3e55c81dd0,
         type: 3}
       propertyPath: m_RootOrder
@@ -3488,7 +3488,7 @@ PrefabInstance:
     - target: {fileID: 3295859421404057130, guid: 1de1feebedc95764eb923f3e55c81dd0,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 3295859421404057130, guid: 1de1feebedc95764eb923f3e55c81dd0,
         type: 3}
@@ -7567,12 +7567,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 708315045}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &727008924 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1006704198532575395, guid: 1de1feebedc95764eb923f3e55c81dd0,
-    type: 3}
-  m_PrefabInstance: {fileID: 919785492}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &727402861 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4273780958161094108, guid: cdbef1beb6c7f4f48b4532fbd79f08e1,
@@ -8161,12 +8155,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4137727885089914676, guid: 017116cb4280b48eca9d618e6bb8a86c,
     type: 3}
   m_PrefabInstance: {fileID: 411847170}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &756370036 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1006704198532575395, guid: 1de1feebedc95764eb923f3e55c81dd0,
-    type: 3}
-  m_PrefabInstance: {fileID: 1133400308}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &765734522
 PrefabInstance:
@@ -9395,19 +9383,9 @@ PrefabInstance:
       objectReference: {fileID: 84745699}
     - target: {fileID: 3295859420509451940, guid: 1de1feebedc95764eb923f3e55c81dd0,
         type: 3}
-      propertyPath: textoFlotante
-      value: 
-      objectReference: {fileID: 727008924}
-    - target: {fileID: 3295859420509451940, guid: 1de1feebedc95764eb923f3e55c81dd0,
-        type: 3}
       propertyPath: _entradaCocina
       value: 
       objectReference: {fileID: 396759289}
-    - target: {fileID: 3295859420509451940, guid: 1de1feebedc95764eb923f3e55c81dd0,
-        type: 3}
-      propertyPath: radioDeteccion
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 3295859421404057130, guid: 1de1feebedc95764eb923f3e55c81dd0,
         type: 3}
       propertyPath: m_RootOrder
@@ -9421,7 +9399,7 @@ PrefabInstance:
     - target: {fileID: 3295859421404057130, guid: 1de1feebedc95764eb923f3e55c81dd0,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 3295859421404057130, guid: 1de1feebedc95764eb923f3e55c81dd0,
         type: 3}
@@ -9467,11 +9445,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Camarero (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 3295859421404353034, guid: 1de1feebedc95764eb923f3e55c81dd0,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1de1feebedc95764eb923f3e55c81dd0, type: 3}
@@ -11773,19 +11746,9 @@ PrefabInstance:
       objectReference: {fileID: 84745699}
     - target: {fileID: 3295859420509451940, guid: 1de1feebedc95764eb923f3e55c81dd0,
         type: 3}
-      propertyPath: textoFlotante
-      value: 
-      objectReference: {fileID: 756370036}
-    - target: {fileID: 3295859420509451940, guid: 1de1feebedc95764eb923f3e55c81dd0,
-        type: 3}
       propertyPath: _entradaCocina
       value: 
       objectReference: {fileID: 396759289}
-    - target: {fileID: 3295859420509451940, guid: 1de1feebedc95764eb923f3e55c81dd0,
-        type: 3}
-      propertyPath: radioDeteccion
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 3295859421404057130, guid: 1de1feebedc95764eb923f3e55c81dd0,
         type: 3}
       propertyPath: m_RootOrder
@@ -11799,7 +11762,7 @@ PrefabInstance:
     - target: {fileID: 3295859421404057130, guid: 1de1feebedc95764eb923f3e55c81dd0,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 3295859421404057130, guid: 1de1feebedc95764eb923f3e55c81dd0,
         type: 3}
@@ -11845,11 +11808,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Camarero (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 3295859421404353034, guid: 1de1feebedc95764eb923f3e55c81dd0,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1de1feebedc95764eb923f3e55c81dd0, type: 3}
@@ -12487,12 +12445,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AlertaCliente: 0
   textoFlotanteCliente: {fileID: 0}
---- !u!1 &1156857676 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1006704198532575395, guid: 1de1feebedc95764eb923f3e55c81dd0,
-    type: 3}
-  m_PrefabInstance: {fileID: 359395060}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1159451218
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13079,7 +13031,7 @@ PrefabInstance:
     - target: {fileID: 3295859420509451940, guid: 1de1feebedc95764eb923f3e55c81dd0,
         type: 3}
       propertyPath: _stoppingNodeDistance
-      value: 0.1
+      value: 0.35
       objectReference: {fileID: 0}
     - target: {fileID: 3295859421404057130, guid: 1de1feebedc95764eb923f3e55c81dd0,
         type: 3}
@@ -13094,7 +13046,7 @@ PrefabInstance:
     - target: {fileID: 3295859421404057130, guid: 1de1feebedc95764eb923f3e55c81dd0,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 3295859421404057130, guid: 1de1feebedc95764eb923f3e55c81dd0,
         type: 3}
@@ -18163,7 +18115,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 10, y: 2.220446e-16, z: 10}
+  m_Size: {x: 10, y: 0.01, z: 10}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1598049859
 PrefabInstance:
@@ -25580,7 +25532,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2407873662710887378
 MonoBehaviour:
   m_ObjectHideFlags: 0

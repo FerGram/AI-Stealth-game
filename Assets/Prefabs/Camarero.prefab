@@ -316,11 +316,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _entradaCocina: {fileID: 0}
   jugador: {fileID: 0}
-  textoFlotante: {fileID: 0}
+  textoFlotante: {fileID: 1006704198532575395}
   _pathfinder: {fileID: 0}
-  _movementSpeed: 5
-  _rotationSpeed: 5
-  _stoppingNodeDistance: 0.2
+  _movementSpeed: 2.5
+  _rotationSpeed: 4
+  _stoppingNodeDistance: 0.35
   radioDeteccion: 2
   segundosDeAlerta: 5
 --- !u!54 &5939774788255627528
@@ -985,7 +985,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3385723223282117581}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.016894985}
+  m_LocalPosition: {x: 0, y: -0.11, z: 0.016894985}
   m_LocalScale: {x: 0.008, y: 0.008, z: 0.008}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1129,6 +1129,12 @@ PrefabInstance:
 --- !u!4 &808887625317343157 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3786704514938892562, guid: 73c9f2e72cb09a7429bf77095dceef50,
+    type: 3}
+  m_PrefabInstance: {fileID: 4590483809164799655}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1006704198532575395 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3624312007380868612, guid: 73c9f2e72cb09a7429bf77095dceef50,
     type: 3}
   m_PrefabInstance: {fileID: 4590483809164799655}
   m_PrefabAsset: {fileID: 0}

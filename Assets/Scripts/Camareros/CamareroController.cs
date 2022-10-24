@@ -221,7 +221,8 @@ public class CamareroController : MonoBehaviour
     IEnumerator SeekObjectWithRetard(GameObject objetivo)
     {
         yield return new WaitForSeconds(Random.Range(1, 3));
-        
+        Debug.Log("WEuwve");
+
         if (_irCocina)
         {
             _mesaActual.tag = "MesaLibre";

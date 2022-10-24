@@ -81,21 +81,25 @@ public class Pathfinder : MonoBehaviour
         {
             Vector3 agentPos = agent.position;
             Vector3 nodePos = path[0].GetPosition();
-            nodePos.y = agentPos.y;
+
+            agentPos.y = 0;
+            nodePos.y = 0;
 
             while (Vector3.Distance(agentPos, nodePos) > stoppingNodeDistance)
             {
                 //Move towards next node
                 Vector3 movementDir = path[0].GetPosition() - agent.position;
-                Debug.Log(movementDir);
                 agent.velocity = movementDir.normalized * speed;
+                agent.velocity = new Vector3(agent.velocity.x, 0, agent.velocity.z);
+                Debug.Log(movementDir.normalized);
+                Debug.Log("Me muevo");
 
                 //Finished rotation
                 if (Quaternion.Angle(agent.rotation, targetRotation) < 0.01f)
                 {
-                    agentPos = agent.position;
-                    nodePos = path[0].GetPosition();
-                    nodePos.y = agentPos.y;
+                    //agentPos = agent.position;
+                    //nodePos = path[0].GetPosition();
+                    //nodePos.y = agentPos.y;
 
                     Vector3 targetLook = (nodePos - agentPos);
 
@@ -105,17 +109,22 @@ public class Pathfinder : MonoBehaviour
                     targetLook = targetLook.normalized;
 
                     targetRotation = Quaternion.LookRotation(targetLook, Vector3.up);
-                    
+                    Debug.Log("Giro");
                 }
-                Quaternion desiredRotation = Quaternion.RotateTowards(agent.transform.localRotation, targetRotation, Mathf.PI);
+                Quaternion desiredRotation = Quaternion.RotateTowards(agent.transform.localRotation, targetRotation, Mathf.PI * rotationSpeed);
                 agent.transform.localRotation = desiredRotation;
                 yield return null;
-            }
 
+                agentPos = agent.position;
+                nodePos = path[0].GetPosition();
+
+                agentPos.y = 0;
+                nodePos.y = 0;
+            }
+            Debug.Log("Removed Node");
             path.RemoveAt(0);
             yield return null;
         }
-        Debug.Log("YOOOO");
         agent.velocity = Vector3.zero;
     }
 }
