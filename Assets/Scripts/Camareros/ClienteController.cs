@@ -7,6 +7,7 @@ public class ClienteController : MonoBehaviour
     public bool AlertaCliente = false;
     public GameObject textoFlotanteCliente;
     private AudioSource audiosource;
+
     void Start()
     {
         audiosource = GetComponent<AudioSource>();
@@ -16,7 +17,12 @@ public class ClienteController : MonoBehaviour
     {
         if (AlertaCliente)
         {
-            audiosource.Play();
+            if (!audiosource.isPlaying) audiosource.Play();
+            textoFlotanteCliente.SetActive(true);
+        }
+        else
+        {
+            textoFlotanteCliente.SetActive(false);
         }
     }
 }

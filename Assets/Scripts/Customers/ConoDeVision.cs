@@ -69,7 +69,7 @@ public class ConoDeVision : MonoBehaviour
 				{
 					visibleTargets.Clear();
 					print("No detectado");
-					
+
 				}
 			}
 		}

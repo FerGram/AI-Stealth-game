@@ -70,25 +70,12 @@ public class CamareroController : MonoBehaviour
 
     void Update()
     {
-        foreach (GameObject cliente in clientes)
-        {
-            ClienteController clienteController = cliente.GetComponent<ClienteController>();
-            if (clienteController.AlertaCliente && fsm.estadoActual == MaquinaDeEstados.Estado.patrulla)
-            {
-                clienteAlertado = cliente;
-                fsm.ActivarEstado(MaquinaDeEstados.Estado.alerta);
-                MostrarTextoFlotante("?");
-                TimerGlobal.globalTime = 0;
-                TimerGlobal.timerActivado = true;
-                clienteController.textoFlotanteCliente.SetActive(true);
-            }
-        }
+
 
 
         if (EstaJugadorEnRadio(radioDeteccion) && fsm.estadoActual != MaquinaDeEstados.Estado.persecucion)
         {
             audioSource.Play();
-            //_pathfinder.StartPathfinding(_rb, jugador.transform, _movementSpeed, _stoppingNodeDistance, _rotationSpeed);
             fsm.ActivarEstado(MaquinaDeEstados.Estado.persecucion);
         }
 
@@ -147,6 +134,21 @@ public class CamareroController : MonoBehaviour
             //SeekObjectWithRetard(_mesaActual);
         }
 
+        //Alerta cliente
+        foreach (GameObject cliente in clientes)
+        {
+            ClienteController clienteController = cliente.GetComponent<ClienteController>();
+            if (clienteController.AlertaCliente)
+            {
+                clienteAlertado = cliente;
+                Seek(clienteAlertado.transform.GetChild(0).gameObject);
+                fsm.ActivarEstado(MaquinaDeEstados.Estado.alerta);
+                MostrarTextoFlotante("?");
+                TimerGlobal.globalTime = 0;
+                TimerGlobal.timerActivado = true;
+            }
+        }
+
     }
     private void Alerta()
     {
@@ -154,25 +156,24 @@ public class CamareroController : MonoBehaviour
         //Ir a zona donde se ha producido la alerta
         //Si en 5 segundos no detecta mapache en circulo de vision: estado patrulla. Sino, estado perseguir
 
-        List<GameObject> camarerosCercanos = BuscarNPCSEnRadio(radioDeteccion, camareros);
+        /*List<GameObject> camarerosCercanos = BuscarNPCSEnRadio(radioDeteccion, camareros);
         foreach (GameObject camarero in camarerosCercanos)
         {
             camarero.GetComponent<CamareroController>().fsm.ActivarEstado(MaquinaDeEstados.Estado.alerta);
             camarero.GetComponent<CamareroController>().MostrarTextoFlotante("?");
             camarero.GetComponent<CamareroController>().clienteAlertado = clienteAlertado;
-        }
-        StartCoroutine(SeekObjectWithRetard(clienteAlertado));
+        }*/
+        
 
-
-        if (EstaJugadorEnRadio(radioDeteccion))
+        if (EstaJugadorEnRadio(radioDeteccion) && fsm.estadoActual != MaquinaDeEstados.Estado.persecucion)
         {
+            //_pathfinder.StartPathfinding(_rb, jugador.transform, _movementSpeed, _stoppingNodeDistance, _rotationSpeed);
             fsm.ActivarEstado(MaquinaDeEstados.Estado.persecucion);
         }
             
 
         if (TimerGlobal.globalTime >= segundosDeAlerta)
-        {
-            clienteAlertado.GetComponent<ClienteController>().textoFlotanteCliente.SetActive(false);
+        {          
             clienteAlertado.GetComponent<ClienteController>().AlertaCliente = false;
             fsm.ActivarEstado(MaquinaDeEstados.Estado.patrulla);
             TimerGlobal.globalTime = 0;
@@ -212,16 +213,21 @@ public class CamareroController : MonoBehaviour
     private void Perseguir()
     {
         MostrarTextoFlotante("!");
-        if (EstaJugadorEnRadio(radioDeteccion))
+        List<GameObject> camarerosCercanos = BuscarNPCSEnRadio(radioDeteccion, camareros);
+        foreach (GameObject camarero in camarerosCercanos)
         {
-            _pathfinder.StartPathfinding(_rb, jugador.transform, _movementSpeed, _stoppingNodeDistance, _rotationSpeed);
+            if(camarero.GetComponent<CamareroController>().fsm.estadoActual != MaquinaDeEstados.Estado.persecucion)
+            {
+                //_pathfinder.StartPathfinding(camarero.GetComponent<Rigidbody>(), jugador.transform, _movementSpeed, _stoppingNodeDistance, _rotationSpeed);
+                camarero.GetComponent<CamareroController>().fsm.ActivarEstado(MaquinaDeEstados.Estado.persecucion);
+            }    
         }
+            _pathfinder.StartPathfinding(_rb, jugador.transform, _movementSpeed, _stoppingNodeDistance, _rotationSpeed);
     }
 
     IEnumerator SeekObjectWithRetard(GameObject objetivo)
     {
         yield return new WaitForSeconds(Random.Range(1, 3));
-        Debug.Log("WEuwve");
 
         if (_irCocina)
         {

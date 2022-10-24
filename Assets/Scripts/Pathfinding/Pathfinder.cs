@@ -23,6 +23,8 @@ public class Pathfinder : MonoBehaviour
     }
     public void StartPathfinding(Rigidbody agent, Vector3 endPos, float speed, float stoppingNodeDistance, float rotationSpeed)
     {
+        CancelPathfinding();
+
         _startNode = GetClosestNodeToPosition(agent.position);
         _endNode = GetClosestNodeToPosition(endPos);
 
@@ -126,5 +128,10 @@ public class Pathfinder : MonoBehaviour
             yield return null;
         }
         agent.velocity = Vector3.zero;
+    }
+
+    private void CancelPathfinding()
+    {
+        StopCoroutine("StartNavigation");
     }
 }

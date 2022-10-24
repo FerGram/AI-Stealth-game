@@ -322,7 +322,7 @@ MonoBehaviour:
   _rotationSpeed: 4
   _stoppingNodeDistance: 0.35
   radioDeteccion: 2
-  segundosDeAlerta: 5
+  segundosDeAlerta: 8
 --- !u!54 &5939774788255627528
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -12,7 +12,7 @@ public class TimerGlobal : MonoBehaviour
         if (timerActivado)
         {
              globalTime += Time.deltaTime;
-             Debug.Log(globalTime);
+             Debug.LogWarning(globalTime);
         }
 
     }
