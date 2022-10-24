@@ -10619,7 +10619,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0.47180563, y: 0, z: 0, w: 0.8817026}
-  m_LocalPosition: {x: 14.63, y: 5.2, z: 20.128}
+  m_LocalPosition: {x: 13.422, y: 5.2, z: 17.668001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -16991,7 +16991,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1437276157}
   m_LocalRotation: {x: 0.47180563, y: -0, z: -0, w: 0.8817026}
-  m_LocalPosition: {x: 14.63, y: 5.2, z: 20.128}
+  m_LocalPosition: {x: 13.422, y: 5.2, z: 17.668001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -20016,7 +20016,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1650783374}
   m_LocalRotation: {x: -0, y: 0.70710677, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -7.286, y: 0.252, z: -7.45}
+  m_LocalPosition: {x: -7.439, y: 0.252, z: -7.217}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -23019,7 +23019,7 @@ PrefabInstance:
     - target: {fileID: 7597413076431156624, guid: 88a0c7f7da9465447b9388329ed4408e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 14.63
+      value: 13.422
       objectReference: {fileID: 0}
     - target: {fileID: 7597413076431156624, guid: 88a0c7f7da9465447b9388329ed4408e,
         type: 3}
@@ -23029,7 +23029,7 @@ PrefabInstance:
     - target: {fileID: 7597413076431156624, guid: 88a0c7f7da9465447b9388329ed4408e,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 22.5
+      value: 20.04
       objectReference: {fileID: 0}
     - target: {fileID: 7597413076431156624, guid: 88a0c7f7da9465447b9388329ed4408e,
         type: 3}
@@ -23085,6 +23085,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8475746790314706952, guid: 88a0c7f7da9465447b9388329ed4408e,
+        type: 3}
+      propertyPath: movementSpeed
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8639606472899615209, guid: 88a0c7f7da9465447b9388329ed4408e,
         type: 3}
@@ -25854,7 +25859,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2407873661850605439}
   m_LocalRotation: {x: -0, y: 0.85547894, z: -0, w: 0.5178376}
-  m_LocalPosition: {x: 12.835, y: 0.19, z: 23.525}
+  m_LocalPosition: {x: 12.835, y: 0.25, z: 23.525}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -27979,19 +27984,15 @@ MonoBehaviour:
   textoFlotante: {fileID: 263498488}
   player: {fileID: 1896749561}
   _pathfinder: {fileID: 84745699}
-  _movementSpeed: 5
+  _movementSpeed: 2.5
   _rotationSpeed: 5
   _stoppingNodeDistance: 0.2
   fogonActual: {fileID: 0}
   radioDeteccion: 1
   canSeePlayer: 0
-  canSeeCake: 0
   knifeSpawn: {fileID: 1377204093}
   knifePrefab: {fileID: 6362521137512145085, guid: 848574d52a8bae54ebbc0cb3839d8cc2,
     type: 3}
-  lookDamping: 5
-  cantSeeTime: 3
-  putingCake: 0
 --- !u!54 &8724674572034056812
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Collections;
 using UnityEngine;
 
-public class CamareroController : MonoBehaviour
+public class CamareroController : Agent
 {
     private MaquinaDeEstados fsm;
     private AudioSource audioSource;
@@ -36,6 +36,8 @@ public class CamareroController : MonoBehaviour
     private GameObject[] camareros;
     private GameObject[] clientes;
 
+    private bool _isPursuing = false;
+
     private void Awake()
     {
         _rb = GetComponent<Rigidbody>();
@@ -56,13 +58,13 @@ public class CamareroController : MonoBehaviour
         {
             _irMesas = false;
             _irCocina = true;
-            _pathfinder.StartPathfinding(_rb, _entradaCocina.transform, _movementSpeed, _stoppingNodeDistance, _rotationSpeed);
+            StartNavigation(_rb, _pathfinder.GetPath(_rb, _entradaCocina.transform), _movementSpeed, _stoppingNodeDistance, _rotationSpeed);
         }
         else
         {
             _irMesas = true;
             _irCocina = false;
-            _pathfinder.StartPathfinding(_rb, _mesaActual.transform, _movementSpeed, _stoppingNodeDistance, _rotationSpeed);
+            StartNavigation(_rb, _pathfinder.GetPath(_rb, _mesaActual.transform), _movementSpeed, _stoppingNodeDistance, _rotationSpeed);
         }
 
         
@@ -112,23 +114,24 @@ public class CamareroController : MonoBehaviour
         //Tiene que ir de la entrada de la cocina a la mesa que esté disponible (sin camareros)
 
 
-        if (Vector3.Distance(transform.position, _mesaActual.transform.position) < 1 && _irMesas)
+        if (Vector3.Distance(transform.position, _mesaActual.transform.position) < _stoppingNodeDistance && _irMesas)
         {
             //Está cerca de mesa, tiene que ir a cocina
             _irMesas = false;
-            _mesaActual.tag = "MesaOcupada";
+            _mesaActual.tag = "MesaLibre";
             _irCocina = true;
             StartCoroutine(SeekObjectWithRetard(_entradaCocina));
             //SeekObjectWithRetard(_entradaCocina);
         }
         
-        else if (Vector3.Distance(transform.position, _entradaCocina.transform.position) < 1 && _irCocina)
+        else if (Vector3.Distance(transform.position, _entradaCocina.transform.position) < _stoppingNodeDistance && _irCocina)
         {
             //Está cerca de la cocina, tiene que ir a una mesa
             _irCocina = false;
             _irMesas = true;
             _mesas = GameObject.FindGameObjectsWithTag("MesaLibre");
             _mesaActual = _mesas[Random.Range(0, _mesas.Length)];
+            _mesaActual.tag = "MesaOcupada";
             Debug.Log("Voy a la mesa");
             StartCoroutine(SeekObjectWithRetard(_mesaActual));
             //SeekObjectWithRetard(_mesaActual);
@@ -190,15 +193,14 @@ public class CamareroController : MonoBehaviour
                     camcontrol._irMesas = false;
                     camcontrol._irCocina = true;
                     Rigidbody camRb = camcontrol.gameObject.GetComponent<Rigidbody>();
-                    _pathfinder.StartPathfinding(camRb, _entradaCocina.transform, _movementSpeed, _stoppingNodeDistance, _rotationSpeed);
+                    StartNavigation(camRb, _pathfinder.GetPath(_rb, _entradaCocina.transform), _movementSpeed, _stoppingNodeDistance, _rotationSpeed);
                 }
                 else
                 {
                     camcontrol._irMesas = true;
                     camcontrol._irCocina = false;
                     Rigidbody camRb = camcontrol.GetComponent<Rigidbody>();
-                    _pathfinder.StartPathfinding(camRb, _mesaActual.transform, _movementSpeed, _stoppingNodeDistance, _rotationSpeed);
-
+                    StartNavigation(camRb, _pathfinder.GetPath(_rb, _mesaActual.transform), _movementSpeed, _stoppingNodeDistance, _rotationSpeed);
                 }
                 camcontrol.OcultarTextoFlotante();
 
@@ -222,23 +224,23 @@ public class CamareroController : MonoBehaviour
                 camarero.GetComponent<CamareroController>().fsm.ActivarEstado(MaquinaDeEstados.Estado.persecucion);
             }    
         }
-            _pathfinder.StartPathfinding(_rb, jugador.transform, _movementSpeed, _stoppingNodeDistance, _rotationSpeed);
+        if (!_isPursuing)
+        {
+            StartNavigation(_rb, _pathfinder.GetPath(_rb, jugador.transform), _movementSpeed, _stoppingNodeDistance, _rotationSpeed);
+            _isPursuing = true;
+            Invoke("ToggleIsPursuing", 1.5f);
+        }
     }
 
     IEnumerator SeekObjectWithRetard(GameObject objetivo)
     {
         yield return new WaitForSeconds(Random.Range(1, 3));
-
-        if (_irCocina)
-        {
-            _mesaActual.tag = "MesaLibre";
-        }
-        _pathfinder.StartPathfinding(_rb, objetivo.transform, _movementSpeed, _stoppingNodeDistance, _rotationSpeed);
+        StartNavigation(_rb, _pathfinder.GetPath(_rb, objetivo.transform), _movementSpeed, _stoppingNodeDistance, _rotationSpeed);
     }
 
     public void Seek(GameObject location)
     {
-        _pathfinder.StartPathfinding(_rb, location.transform, _movementSpeed, _stoppingNodeDistance, _rotationSpeed);
+        StartNavigation(_rb, _pathfinder.GetPath(_rb, location.transform), _movementSpeed, _stoppingNodeDistance, _rotationSpeed);
     }
 
     private List<GameObject> BuscarNPCSEnRadio(int radio, GameObject[] arrayNpc)
@@ -262,5 +264,10 @@ public class CamareroController : MonoBehaviour
             return true;
         }
         else return false;
+    }
+
+    private void ToggleIsPursuing()
+    {
+        _isPursuing = !_isPursuing;
     }
 }

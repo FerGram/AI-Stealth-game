@@ -21,10 +21,13 @@ public class Pathfinder : MonoBehaviour
     {
         _grid = new Grid(_gridWidthResolution, _gridHeightResolution, transform.position.y, _gridNodeSize, _showGrid);
     }
-    public void StartPathfinding(Rigidbody agent, Vector3 endPos, float speed, float stoppingNodeDistance, float rotationSpeed)
-    {
-        CancelPathfinding();
 
+    public List<Node> GetPath(Rigidbody agent, Transform endPos)
+    {
+        return GetPath(agent, endPos.position);
+    }
+    public List<Node> GetPath(Rigidbody agent, Vector3 endPos)
+    {
         _startNode = GetClosestNodeToPosition(agent.position);
         _endNode = GetClosestNodeToPosition(endPos);
 
@@ -37,13 +40,10 @@ public class Pathfinder : MonoBehaviour
             {
                 Debug.DrawLine(path[i - 1].GetPosition(), path[i].GetPosition(), Color.green, 3);
             }
-
-            StartCoroutine(StartNavigation(agent, path, speed, stoppingNodeDistance, rotationSpeed));
-#if DEBUG_INFO
-            Debug.Log("Algorithm done, drawing path...");
-#endif
+            return path;
         }
         else Debug.LogWarning("Algorithm is not valid");
+        return null;
     }
 
     private Node GetClosestNodeToPosition(Vector3 pos)
@@ -71,67 +71,5 @@ public class Pathfinder : MonoBehaviour
         return closest;
     }
 
-    public void StartPathfinding(Rigidbody agent, Transform endPos, float speed, float stoppingNodeDistance, float rotationSpeed)
-    {
-        StartPathfinding(agent, endPos.position, speed, stoppingNodeDistance, rotationSpeed);
-    }
-
-    IEnumerator StartNavigation(Rigidbody agent, List<Node> path, float speed, float stoppingNodeDistance, float rotationSpeed)
-    {
-        Quaternion targetRotation = agent.transform.localRotation;
-        while (path.Count > 0)
-        {
-            Vector3 agentPos = agent.position;
-            Vector3 nodePos = path[0].GetPosition();
-
-            agentPos.y = 0;
-            nodePos.y = 0;
-
-            while (Vector3.Distance(agentPos, nodePos) > stoppingNodeDistance)
-            {
-                //Move towards next node
-                Vector3 movementDir = path[0].GetPosition() - agent.position;
-                agent.velocity = movementDir.normalized * speed;
-                agent.velocity = new Vector3(agent.velocity.x, 0, agent.velocity.z);
-                Debug.Log(movementDir.normalized);
-                Debug.Log("Me muevo");
-
-                //Finished rotation
-                if (Quaternion.Angle(agent.rotation, targetRotation) < 0.01f)
-                {
-                    //agentPos = agent.position;
-                    //nodePos = path[0].GetPosition();
-                    //nodePos.y = agentPos.y;
-
-                    Vector3 targetLook = (nodePos - agentPos);
-
-                    if (Mathf.Abs(targetLook.x) > Mathf.Abs(targetLook.z)) targetLook.z = 0;
-                    else targetLook.x = 0;
-
-                    targetLook = targetLook.normalized;
-
-                    targetRotation = Quaternion.LookRotation(targetLook, Vector3.up);
-                    Debug.Log("Giro");
-                }
-                Quaternion desiredRotation = Quaternion.RotateTowards(agent.transform.localRotation, targetRotation, Mathf.PI * rotationSpeed);
-                agent.transform.localRotation = desiredRotation;
-                yield return null;
-
-                agentPos = agent.position;
-                nodePos = path[0].GetPosition();
-
-                agentPos.y = 0;
-                nodePos.y = 0;
-            }
-            Debug.Log("Removed Node");
-            path.RemoveAt(0);
-            yield return null;
-        }
-        agent.velocity = Vector3.zero;
-    }
-
-    private void CancelPathfinding()
-    {
-        StopCoroutine("StartNavigation");
-    }
+    
 }

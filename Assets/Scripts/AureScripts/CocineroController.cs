@@ -1,9 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.AI;
 
-public class CocineroController : MonoBehaviour
+public class CocineroController : Agent
 {   
     private MaquinaDeEstados fsm;
     private AudioSource audioSource;    
@@ -16,7 +17,7 @@ public class CocineroController : MonoBehaviour
     [SerializeField] Pathfinder _pathfinder;
     [SerializeField] float _movementSpeed = 100f;
     [SerializeField] float _rotationSpeed = 180f;    //Translates to degrees per second
-    [SerializeField] float _stoppingNodeDistance = 0.01f;
+    [SerializeField] float _stoppingNodeDistance = 0.2f;
     [Space]
 
     [Header("Patrulla")]
@@ -25,22 +26,17 @@ public class CocineroController : MonoBehaviour
     [SerializeField] private int radioDeteccion;
   
     public bool canSeePlayer = false;
-    public bool canSeeCake = false;
     [Space]
 
     [Header("Perseguir")]
     [SerializeField] private GameObject knifeSpawn;
     [SerializeField] private GameObject knifePrefab;
-    [SerializeField] float lookDamping = 5.0f;
-    [SerializeField] float cantSeeTime = 3.0f;
-    private bool coroutineStarted = false;    
+    //[SerializeField] float lookDamping = 5.0f;
+    //[SerializeField] float cantSeeTime = 3.0f;
     private bool knifeReady = true;    
-    float cantSeeTimer = 0.0f;
-    bool firstTimePatroling = true;
-    Vector3 lastPlaceSeen;
-    float distanceToPursuit = 2.0f;
-    public bool putingCake = false;
-    private bool transportingCake = false;
+
+    private bool _isPursuing = false;
+    private bool _readyToChangeFire = false;
 
     private void Awake()
     {
@@ -54,7 +50,9 @@ public class CocineroController : MonoBehaviour
         Random.InitState(System.DateTime.Now.Millisecond);
         int randomNumber = Random.Range(0, fogones.Length);
         fogonActual = fogones[randomNumber];
-        _pathfinder.StartPathfinding(_rb, fogonActual.transform, _movementSpeed, _stoppingNodeDistance, _rotationSpeed);
+
+        StartNavigation(_rb, _pathfinder.GetPath(_rb, fogonActual.transform), _movementSpeed, _stoppingNodeDistance, _rotationSpeed);
+        Invoke("ToggleChangeFire", 0.5f);
     }
 
     void FixedUpdate()
@@ -62,19 +60,10 @@ public class CocineroController : MonoBehaviour
         if (fsm.estadoActual == MaquinaDeEstados.Estado.patrulla)
         {          
             Patrullar();
-            if (canSeePlayer)
-            {
-                audioSource.Play();
-                //StopAllCoroutines();
-                Seek(transform.position);
-                knifeReady = true;
-                fsm.ActivarEstado(MaquinaDeEstados.Estado.persecucion);
-            }
         }        
         else
         {
             Perseguir();
-           
         }
     }
     private void MostrarTextoFlotante(string text)
@@ -95,57 +84,53 @@ public class CocineroController : MonoBehaviour
         textoFlotante.GetComponent<TextMesh>().color = Color.white;
     }
     private void Patrullar()
-    {        
-        GameObject cake = GameObject.FindGameObjectWithTag("Cake");
-        if (transportingCake)
-        {
-            cake.transform.position = new Vector3(transform.position.x , transform.position.y + 0.5f, transform.position.z + 0.5f);
-        }
-        if (putingCake)
-        {        
-            if(Vector3.Distance(transform.position, cake.transform.position) < 0.5f && !transportingCake)
-            {
-                transportingCake = true;               
-                Seek(GameObject.Find("GameManager").GetComponent<ManageTime>().fogonInicialCake.transform.position);
-                cake.GetComponent<Rigidbody>().isKinematic = true;               
-            }
-            else
-            {
-                if (!transportingCake)
-                {
-                    Seek(cake.transform.position);                    
-                }            
-            }      
-            if (transportingCake && Vector3.Distance(transform.position, GameObject.Find("GameManager").GetComponent<ManageTime>().fogonInicialCake.transform.position) < 1.0f)
-            {                
-                cake.GetComponent<Rigidbody>().isKinematic = false;
-                cake.transform.position = GameObject.Find("GameManager").GetComponent<ManageTime>().fogonInicialCake.transform.position;
-                transportingCake = false;
-                putingCake = false;
-                GameObject.Find("GameManager").GetComponent<ManageTime>().cakeInPlace = true;
-                firstTimePatroling = true;
-            }           
-        }
+    {
+        #region NotEnoughTime
+        //NOT ENOUGH TIME TO IMPLEMENT
+        //GameObject cake = GameObject.FindGameObjectWithTag("Cake");
+        //if (transportingCake)
+        //{
+        //    cake.transform.position = new Vector3(transform.position.x , transform.position.y + 0.5f, transform.position.z + 0.5f);
+        //}
+        //if (putingCake)
+        //{        
+        //    if(Vector3.Distance(transform.position, cake.transform.position) < 0.5f && !transportingCake)
+        //    {
+        //        transportingCake = true;          
+        //        Seek(GameObject.Find("GameManager").GetComponent<ManageTime>().fogonInicialCake.transform.position);
+        //        cake.GetComponent<Rigidbody>().isKinematic = true;   
+        //    }
+        //    else
+        //    {
+        //        if (!transportingCake)
+        //        {
+        //            Seek(cake.transform.position);                    
+        //        }            
+        //    }      
+        //    if (transportingCake && Vector3.Distance(transform.position, GameObject.Find("GameManager").GetComponent<ManageTime>().fogonInicialCake.transform.position) < 1.0f)
+        //    {                
+        //        cake.GetComponent<Rigidbody>().isKinematic = false;
+        //        cake.transform.position = GameObject.Find("GameManager").GetComponent<ManageTime>().fogonInicialCake.transform.position;
+        //        transportingCake = false;
+        //        putingCake = false;
+        //        GameObject.Find("GameManager").GetComponent<ManageTime>().cakeInPlace = true;
+        //        firstTimePatroling = true;
+        //    }           
+        //}
+        #endregion
 
-        else
+        if (_readyToChangeFire && Vector3.Distance(transform.position, fogonActual.transform.position) < _stoppingNodeDistance)
         {
-            if (Vector3.Distance(transform.position, fogonActual.transform.position) < 1 || firstTimePatroling)
-            {                
-                firstTimePatroling = false;
-                fogonActual.tag = "FogonOcupado";
-                fogones = GameObject.FindGameObjectsWithTag("FogonLibre");
-                GameObject nuevoFogon = fogones[Random.Range(0, fogones.Length)];
-                if (!coroutineStarted)
-                {
-                    StartCoroutine(SeekObjectWithRetard(nuevoFogon));
-                    coroutineStarted = true;
-                }
-            }
-            else
-            {
-                coroutineStarted = false;
-            }
-        }    
+            Debug.Log("Going towards objective");
+            fogonActual.tag = "FogonOcupado";
+            fogones = GameObject.FindGameObjectsWithTag("FogonLibre");
+            GameObject nuevoFogon = fogones[Random.Range(0, fogones.Length)];
+
+            _readyToChangeFire = false;
+
+            StartCoroutine(SeekObjectWithRetard(nuevoFogon));
+            
+        }
     }
     private void Perseguir()
     {       
@@ -155,35 +140,37 @@ public class CocineroController : MonoBehaviour
             StartCoroutine("PrepareKnife");
             knifeReady = false;
         }
-        if (canSeePlayer)
+        if (canSeePlayer && !_isPursuing)
         {
-            cantSeeTimer = 0.0f;
-            lastPlaceSeen = player.transform.position;
-            if(Vector3.Distance(transform.position, player.transform.position) > distanceToPursuit)
-            {
-                Seek(player.transform.position);
-            }
-            else
-            {
-                Seek(transform.position);
-            }           
+            Seek(player.transform.position);
+            _isPursuing = true;
+            Invoke("ToggleIsPursuing", 1.5f);
+
+            //cantSeeTimer = 0.0f;
+            //lastPlaceSeen = player.transform.position;
+            //if(Vector3.Distance(transform.position, player.transform.position) > distanceToPursuit)
+            //{
+            //    Seek(player.transform.position);
+            //}
+            //else
+            //{
+            //    Seek(transform.position);
+            //}           
         }
-        else
+        else if (!_isPursuing)
         {
-            cantSeeTimer += Time.deltaTime;
-            Vector3 lookPos = player.transform.position - transform.position;
-            Quaternion rotation = Quaternion.LookRotation(lookPos);
-            transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * lookDamping);
-            Seek(lastPlaceSeen);
-        }
-        if (cantSeeTimer >= cantSeeTime)
-        {
-            firstTimePatroling = true;
-            coroutineStarted = false;
+            //firstTimePatroling = true;
+            //coroutineStarted = false;
             fsm.ActivarEstado(MaquinaDeEstados.Estado.patrulla);
             OcultarTextoFlotante();
+            //cantSeeTimer += Time.deltaTime;
+            //Vector3 lookPos = player.transform.position - transform.position;
+            //Quaternion rotation = Quaternion.LookRotation(lookPos);
+            //transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * lookDamping);
+            //Seek(lastPlaceSeen);
         }
     }
+
     IEnumerator PrepareKnife()
     {
         MostrarTextoRojo();
@@ -207,14 +194,25 @@ public class CocineroController : MonoBehaviour
     }
     IEnumerator SeekObjectWithRetard(GameObject objetivo)
     {
-        yield return new WaitForSeconds(Random.Range(3, 8));        
+        yield return new WaitForSeconds(Random.Range(3, 8));
+        Invoke("ToggleChangeFire", 1f);
         fogonActual.tag = "FogonLibre";
-        fogonActual = objetivo;               
-        _pathfinder.StartPathfinding(_rb, fogonActual.transform, _movementSpeed, _stoppingNodeDistance, _rotationSpeed);
+        fogonActual = objetivo;
+        StartNavigation(_rb, _pathfinder.GetPath(_rb, fogonActual.transform), _movementSpeed, _stoppingNodeDistance, _rotationSpeed);
     }
 
     public void Seek(Vector3 location)
     {
-        _pathfinder.StartPathfinding(_rb, location, _movementSpeed, _stoppingNodeDistance, _rotationSpeed);
+        StartNavigation(_rb, _pathfinder.GetPath(_rb, location), _movementSpeed, _stoppingNodeDistance, _rotationSpeed);
+    }
+
+    private void ToggleIsPursuing()
+    {
+        _isPursuing = !_isPursuing;
+    }
+
+    private void ToggleChangeFire()
+    {
+        _readyToChangeFire = !_readyToChangeFire;
     }
 }

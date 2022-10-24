@@ -21,18 +21,18 @@ public class FieldOfView : MonoBehaviour
     }   
 	void FindVisibleTargets()
 	{
-		cakeInRadius = Physics.OverlapSphere(transform.position, viewRadius, cakeMask);
-		if (cakeInRadius.Length != 0)
-		{
-			Transform target = cakeInRadius[0].transform;			
-			if (GameObject.Find("GameManager").GetComponent<ManageTime>().cakeInPlace == false && !GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerModification>().transportingCake)
-            {
-				if (TryGetComponent(out CocineroController controller))
-				{
-					controller.gameObject.GetComponent<CocineroController>().putingCake = true;
-				}				
-			}			
-		}
+		//cakeInRadius = Physics.OverlapSphere(transform.position, viewRadius, cakeMask);
+		//if (cakeInRadius.Length != 0)
+		//{
+		//	Transform target = cakeInRadius[0].transform;			
+		//	if (GameObject.Find("GameManager").GetComponent<ManageTime>().cakeInPlace == false && !GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerModification>().transportingCake)
+  //          {
+		//		if (TryGetComponent(out CocineroController controller))
+		//		{
+		//			controller.gameObject.GetComponent<CocineroController>().putingCake = true;
+		//		}				
+		//	}			
+		//}
 		targetsInViewRadius = Physics.OverlapSphere(transform.position, viewRadius, targetMask);
 		for (int i = 0; i < targetsInViewRadius.Length; i++)
 		{
