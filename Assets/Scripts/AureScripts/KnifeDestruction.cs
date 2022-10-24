@@ -4,18 +4,16 @@ using UnityEngine;
 
 public class KnifeDestruction : MonoBehaviour
 {
-    public bool isMortal = true;
+    private bool isMortal = true;
     private void Awake()
     {
         StartCoroutine("DestroyKnife");
     }
-
     IEnumerator DestroyKnife()
     {
         yield return new WaitForSeconds(20.0f);
         Destroy(this.gameObject);
     }
-
     private void OnCollisionEnter(Collision collision)
     {
         if(isMortal && collision.gameObject.tag == "Player")
@@ -24,8 +22,7 @@ public class KnifeDestruction : MonoBehaviour
         }
         else
         {
-            isMortal = false;
-            //GetComponent<Rigidbody>().isKinematic = true;
+            isMortal = false;            
         }
     }
 }

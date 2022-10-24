@@ -10,18 +10,14 @@ public class NoiseMake : MonoBehaviour
     void Start()
     {
         coliders = Physics.OverlapSphere(transform.position, soundRadius);
-
         foreach (Collider c in coliders)
         {
             if (c.CompareTag("Waiter"))
-            {
-                //c.gameObject.WaiterController.Notice();
+            {                
                 print("Noticed");
             }
         }
-
-        StartCoroutine("DestroySound");
-        
+        StartCoroutine("DestroySound");        
     }
 
 
@@ -30,7 +26,6 @@ public class NoiseMake : MonoBehaviour
         yield return new WaitForSeconds(soundLifeTime);
         Destroy(gameObject);
     }
-
     private void OnDrawGizmos()
     {
         Gizmos.DrawWireSphere(gameObject.transform.position, soundRadius);

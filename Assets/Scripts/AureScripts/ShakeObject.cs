@@ -5,29 +5,22 @@ using System.Collections;
 
 public class ShakeObject : MonoBehaviour
 {
-
+	[SerializeField] float shakeCooldown;
+	[SerializeField] float shake_decay = 0.002f;
+	[SerializeField] float shake_intensity = .3f;
 	private Vector3 originPosition;
 	private Quaternion originRotation;
-	public float shake_decay = 0.002f;
-	public float shake_intensity = .3f;
-
 	private float temp_shake_intensity = 0;
-	[SerializeField] float shakeCooldown;
 	private bool canShake = true;
-
-
-    
-    private void OnCollisionEnter(Collision collision)
+	private void OnCollisionEnter(Collision collision)
     {
         if (collision.collider.CompareTag("Player") && canShake)
         {
 			Shake();
 			StartCoroutine("Shaking");
 			canShake = false;
-		}
-		
+		}		
     }
-
     void Update()
 	{
 		if (temp_shake_intensity > 0)
@@ -41,15 +34,12 @@ public class ShakeObject : MonoBehaviour
 			temp_shake_intensity -= shake_decay;
 		}
 	}
-
 	void Shake()
 	{
 		originPosition = transform.position;
 		originRotation = transform.rotation;
 		temp_shake_intensity = shake_intensity;
-
 	}
-
 	IEnumerator Shaking()
     {
 		yield return new WaitForSeconds(shakeCooldown);
