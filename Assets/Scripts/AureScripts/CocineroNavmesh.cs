@@ -211,12 +211,12 @@ public class CocineroNavmesh : MonoBehaviour
     {
         yield return new WaitForSeconds(Random.Range(3, 8));        
         fogonActual.tag = "FogonLibre";
-        fogonActual = objetivo;               
-        _pathfinder.StartPathfinding(_rb, fogonActual.transform, _movementSpeed, _stoppingNodeDistance, _rotationSpeed);
+        fogonActual = objetivo;
+        navMesh.destination = fogonActual.transform.position;
     }
 
     public void Seek(Vector3 location)
     {
-        _pathfinder.StartPathfinding(_rb, location, _movementSpeed, _stoppingNodeDistance, _rotationSpeed);
+        navMesh.destination = location;
     }
 }
