@@ -194,7 +194,7 @@ public class CocineroController : Agent
     }
     IEnumerator SeekObjectWithRetard(GameObject objetivo)
     {
-        yield return new WaitForSeconds(Random.Range(3, 8));
+        yield return new WaitForSeconds(Random.Range(2, 5));
         Invoke("ToggleChangeFire", 1f);
         fogonActual.tag = "FogonLibre";
         fogonActual = objetivo;

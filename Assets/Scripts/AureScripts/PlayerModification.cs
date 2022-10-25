@@ -27,14 +27,14 @@ public class PlayerModification : MonoBehaviour
         }
         if (transportingCake)
         {
-            GetComponent<PlayerMovement>().movementSpeed = 0.04f;
-            cake.transform.position = new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z);
+            GetComponent<PlayerMovement>().movementSpeed = 4f;
+            cake.transform.position = new Vector3(transform.position.x, transform.position.y + 0.8f, transform.position.z);
         }
         else
         {
-            if (GetComponent<PlayerMovement>().movementSpeed == 0.04f)
+            if (GetComponent<PlayerMovement>().movementSpeed == 4f)
             {
-                GetComponent<PlayerMovement>().movementSpeed = 0.07f;
+                GetComponent<PlayerMovement>().movementSpeed = 5f;
             }
         }
 
@@ -54,8 +54,9 @@ public class PlayerModification : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.E) && !transportingCake && cakeDetected)
         {
-            cake.transform.position = new Vector3(transform.position.x, transform.position.y + 2, transform.position.z);            
+            cake.transform.position = new Vector3(transform.position.x, transform.position.y + 3, transform.position.z);            
             transportingCake = true;
+            cake.GetComponent<Rigidbody>().isKinematic = true;
             GameObject.Find("GameManager").GetComponent<ManageTime>().cakeInPlace = false;
         }
 
