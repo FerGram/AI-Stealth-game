@@ -50,7 +50,7 @@ public class ConoDeVision : MonoBehaviour
 	void FindVisibleTargets()
 	{
 
-		visibleTargets.Clear();
+	
 		
 		Collider[] targetsInViewRadius = Physics.OverlapSphere(transform.position, viewRadius, targetMask);
 
