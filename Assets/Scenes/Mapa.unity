@@ -26312,10 +26312,11 @@ GameObject:
   - component: {fileID: 2407873661850110815}
   - component: {fileID: 2407873661841089721}
   - component: {fileID: 2407873662710887378}
-  - component: {fileID: 8724674572034056811}
+  - component: {fileID: 8724674572034056814}
   - component: {fileID: 8724674572034056810}
   - component: {fileID: 232685533}
   - component: {fileID: 8724674572034056812}
+  - component: {fileID: 8724674572034056813}
   m_Layer: 8
   m_Name: cocinero
   m_TagString: Cocinero
@@ -27964,34 +27965,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &8724674572034056811
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2407873661850605439}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e3517817456f8084c9bcc904ec77ac83, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  textoFlotante: {fileID: 263498488}
-  player: {fileID: 1896749561}
-  _pathfinder: {fileID: 84745699}
-  _movementSpeed: 5
-  _rotationSpeed: 5
-  _stoppingNodeDistance: 0.2
-  fogonActual: {fileID: 0}
-  radioDeteccion: 1
-  canSeePlayer: 0
-  canSeeCake: 0
-  knifeSpawn: {fileID: 1377204093}
-  knifePrefab: {fileID: 6362521137512145085, guid: 848574d52a8bae54ebbc0cb3839d8cc2,
-    type: 3}
-  lookDamping: 5
-  cantSeeTime: 3
-  putingCake: 0
 --- !u!54 &8724674572034056812
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -28008,6 +27981,56 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!195 &8724674572034056813
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2407873661850605439}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!114 &8724674572034056814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2407873661850605439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91500884d30bfa14784b56870b436a7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textoFlotante: {fileID: 263498488}
+  player: {fileID: 1896749561}
+  _pathfinder: {fileID: 0}
+  _movementSpeed: 2
+  _rotationSpeed: 1
+  _stoppingNodeDistance: 0.2
+  fogonActual: {fileID: 0}
+  radioDeteccion: 0
+  canSeePlayer: 0
+  canSeeCake: 0
+  knifeSpawn: {fileID: 1377204093}
+  knifePrefab: {fileID: 6362521137512145085, guid: 848574d52a8bae54ebbc0cb3839d8cc2,
+    type: 3}
+  lookDamping: 5
+  cantSeeTime: 3
+  putingCake: 0
 --- !u!1001 &8776104169814057523
 PrefabInstance:
   m_ObjectHideFlags: 0
