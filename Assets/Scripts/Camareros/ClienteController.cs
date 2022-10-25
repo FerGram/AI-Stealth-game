@@ -17,7 +17,7 @@ public class ClienteController : MonoBehaviour
     {
         if (AlertaCliente)
         {
-            if (!audiosource.isPlaying) audiosource.Play();
+           //if (!audiosource.isPlaying) audiosource.Play();
             textoFlotanteCliente.SetActive(true);
         }
         else

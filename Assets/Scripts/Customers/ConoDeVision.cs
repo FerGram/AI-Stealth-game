@@ -87,7 +87,18 @@ public class ConoDeVision : MonoBehaviour
 
 	private void OnDrawGizmos()
 	{
-		Gizmos.DrawRay(transform.position, transform.right);
+		//Gizmos.DrawRay(transform.position, transform.right);
+		float totalFOV = viewAngle;
+		float rayRange = viewRadius;
+		float halfFOV = totalFOV / 2.0f;
+		Quaternion leftRayRotation = Quaternion.AngleAxis(-halfFOV + 90f, Vector3.up);
+		Quaternion rightRayRotation = Quaternion.AngleAxis(halfFOV + 90f, Vector3.up);
+
+		Vector3 leftRayDirection = leftRayRotation * transform.forward;
+		Vector3 rightRayDirection = rightRayRotation * transform.forward;
+		Gizmos.DrawRay(transform.position, leftRayDirection * rayRange);
+		Gizmos.DrawRay(transform.position, rightRayDirection * rayRange);
+		Gizmos.DrawSphere(transform.position, rayRange);
 	}
 
 	

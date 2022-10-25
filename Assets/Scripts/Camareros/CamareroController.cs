@@ -134,7 +134,6 @@ public class CamareroController : Agent
             _mesaActual.tag = "MesaOcupada";
             Debug.Log("Voy a la mesa");
             StartCoroutine(SeekObjectWithRetard(_mesaActual));
-            //SeekObjectWithRetard(_mesaActual);
         }
 
         //Alerta cliente
@@ -170,7 +169,6 @@ public class CamareroController : Agent
 
         if (EstaJugadorEnRadio(radioDeteccion) && fsm.estadoActual != MaquinaDeEstados.Estado.persecucion)
         {
-            //_pathfinder.StartPathfinding(_rb, jugador.transform, _movementSpeed, _stoppingNodeDistance, _rotationSpeed);
             fsm.ActivarEstado(MaquinaDeEstados.Estado.persecucion);
         }
             
@@ -220,7 +218,6 @@ public class CamareroController : Agent
         {
             if(camarero.GetComponent<CamareroController>().fsm.estadoActual != MaquinaDeEstados.Estado.persecucion)
             {
-                //_pathfinder.StartPathfinding(camarero.GetComponent<Rigidbody>(), jugador.transform, _movementSpeed, _stoppingNodeDistance, _rotationSpeed);
                 camarero.GetComponent<CamareroController>().fsm.ActivarEstado(MaquinaDeEstados.Estado.persecucion);
             }    
         }
