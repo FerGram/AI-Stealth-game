@@ -27,6 +27,7 @@ public class PlayerModification : MonoBehaviour
         }
         if (transportingCake)
         {
+            cake.transform.GetChild(0).gameObject.SetActive(false);
             GetComponent<PlayerMovement>().movementSpeed = 4f;
             cake.transform.position = new Vector3(transform.position.x, transform.position.y + 0.8f, transform.position.z);
         }

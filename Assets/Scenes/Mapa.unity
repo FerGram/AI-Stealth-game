@@ -1258,7 +1258,7 @@ MonoBehaviour:
   _gridWidthResolution: 80
   _gridHeightResolution: 120
   _gridNodeSize: 0.25
-  _showGrid: 1
+  _showGrid: 0
 --- !u!4 &84745700
 Transform:
   m_ObjectHideFlags: 0
